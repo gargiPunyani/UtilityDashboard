@@ -174,7 +174,7 @@ const MainNav = ({ openPopup, handleTogglePopup }) => {
       <div className="time text-7xl font-semibold mt-6">{displayTime}</div>
       <div className="date mt-5 text-xl">{showDate}</div>
     </div>
-    <div className="balanceOuterMost">
+    <div className="balanceOuterMost text-black">
       {SidebarBalance.map((item) => {
         return (
           <div className="balanceOuter" key={item.id}>
@@ -193,7 +193,6 @@ const MainNav = ({ openPopup, handleTogglePopup }) => {
     </div>
             </div>
             </div>
-
           </div>
         </div>
       </div>

@@ -1,7 +1,5 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import SideNavbar from "../../../../SharedComponent/SideNavbar";
-import MainNav from "../../../../SharedComponent/MainNavbar";
 import { newAccountDetail } from "../../../../constant";
 import { useFormik } from "formik";
 import { bankAccountSchema } from "../../../../Login/LoginLeft/Schema";
@@ -31,12 +29,7 @@ const NewBank = () => {
   return (
     <div className="newBankOuterMost">
       <div className="newBankOuter">
-        <div className="homeInner flex w-full">
-          <div className="dashboardLeft bg-white shadow-lg ">
-            <SideNavbar />
-          </div>
-          <div className="dashboardRight max-w-full w-full overflow-auto ">
-            <MainNav />
+ 
             <div className="dashboardBtn button mb-2 p-3">
               <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
                 <span>
@@ -98,8 +91,7 @@ const NewBank = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+  
   );
 };
 

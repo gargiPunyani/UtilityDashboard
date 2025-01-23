@@ -1,22 +1,13 @@
 import React from "react";
-
 import { Link } from "react-router-dom";
 import { basicDetails, basicDetails2, permanentAddress } from "../../../../constant";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRefresh } from "@fortawesome/free-solid-svg-icons";
-import SideNavbar from "../../../../SharedComponent/SideNavbar";
-import MainNav from "../../../../SharedComponent/MainNavbar";
 
 const CreateUser = () => {
   return (
     <div className="createUserOuterMost">
       <div className="createUserOuter">
-        <div className="homeInner flex  w-full">
-          <div className="dashboardLeft bg-white shadow-lg ">
-            <SideNavbar />
-          </div>
-          <div className="dashboardRight max-w-full w-full">
-            <MainNav />
             <div className="dashboardBtn button mb-2 p-3">
               <button className="dahsboardButton relative p-2 mt-2 items-center text-xs font-semibold decoration-none cursor-pointer ">
                 <span>
@@ -132,8 +123,6 @@ const CreateUser = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
   );
 };
 

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { profileData, SidebarBalance } from "../../constant";
 import { Link } from "react-router-dom";
 
-const MainNav = () => {
+const MainNav = ({ openPopup, handleTogglePopup }) => {
   const [accordionData, setAccordionData] = useState({
     one: true,
     two: true,
@@ -21,7 +21,7 @@ const MainNav = () => {
   // console.log(displayTime, "time")
 
   const handleOpen = (id) => {
-    console.log(id, "id");
+    // console.log(id, "id");
     if (id === 1) {
       setAccordionData({ ...accordionData, one: !accordionData.one, two: true, three: true,
       });
@@ -53,24 +53,25 @@ const MainNav = () => {
                 <p>Master</p>
               </div>
               <div className="angleDown">
-                <FontAwesomeIcon icon={faAngleDown} className="inline-block" style={{display: `${accordionData.one ?"inline-block ": "none"}` }} />
-                <FontAwesomeIcon icon={faAngleUp} className="hidden" style={{display: `${accordionData.one ?"none ": "inline-block"}`}} />
-                <div
-                  id={1} className="hidden absolute z-10 bg-white p-5 text-justify w-auto shadow-lg shadow-gray-500/50"
+                <FontAwesomeIcon icon={faAngleDown} className="angleDownIcon inline-block" style={{display: `${accordionData.one ?"inline-block ": "none"}` }} />
+                <FontAwesomeIcon icon={faAngleUp} className="hiangleUpIcon dden" style={{display: `${accordionData.one ?"none ": "inline-block"}`}} />
+                <div  onClick={() => handleTogglePopup("navItem1")}
+                  id={1} className="mainNavItems hidden absolute z-10 bg-white p-5 text-justify w-auto shadow-lg shadow-gray-500/50"
                   style={{display: `${accordionData.one ? "none" : "block"}`,top: "50px",}}>
+                     {/* {openPopup === "navItem1" && <div className="popup"> */}
                   <ul>
-                    <li className="mb-4 hover:text-blue-700"><Link to={"/bank-master"}> Bank Master </Link></li>
-                    <li className="mb-4 hover:text-blue-700"><Link to={"/role-master"}> Role Master </Link></li>
-                    <li className="mb-4 hover:text-blue-700"><Link to={"/status-master"}> Status Master </Link></li>
-                    <li className="mb-4 hover:text-blue-700"><Link to={"/service-master"}> Service Master </Link></li>
-                    {/* <li className="mb-4 hover:text-blue-700"><Link to={"/payment-method"}> Payment Method Master </Link></li> */}
-                    <li className="mb-4 hover:text-blue-700"><Link to={"/payment-beneficiary-method"}> Payout Beneficiary Master </Link></li>
-                    <li className="mb-4 hover:text-blue-700"><Link to={"/agent-onboarding-list"}> Agent Onboarding List </Link></li>
-                    <li className="mb-4 hover:text-blue-700"><Link to={"/contact-enquiry"}> Contact Enquiry </Link></li>
-                    <li className="mb-4 hover:text-blue-700"><Link to={"/company-staff-permission"}> Compant Staff Permission </Link></li>
-                    <li className="mb-4 hover:text-blue-700"><Link to={"/broadcast"}> Broadcast </Link></li>
+                    <li className="mainNavList mb-4 hover:text-blue-700"><Link to={"/bank-master"}> Bank Master </Link></li>
+                    <li className="mainNavList mb-4 hover:text-blue-700"><Link to={"/role-master"}> Role Master </Link></li>
+                    <li className="mainNavList mb-4 hover:text-blue-700"><Link to={"/status-master"}> Status Master </Link></li>
+                    <li className="mainNavList mb-4 hover:text-blue-700"><Link to={"/service-master"}> Service Master </Link></li>
+                    <li className="mainNavList mb-4 hover:text-blue-700"><Link to={"/payment-beneficiary-method"}> Payout Beneficiary Master </Link></li>
+                    <li className="mainNavList mb-4 hover:text-blue-700"><Link to={"/agent-onboarding-list"}> Agent Onboarding List </Link></li>
+                    <li className="mainNavList mb-4 hover:text-blue-700"><Link to={"/contact-enquiry"}> Contact Enquiry </Link></li>
+                    <li className="mainNavList mb-4 hover:text-blue-700"><Link to={"/company-staff-permission"}> Compant Staff Permission </Link></li>
+                    <li className="mainNavList mb-4 hover:text-blue-700"><Link to={"/broadcast"}> Broadcast </Link></li>
 
                   </ul>
+                  {/* </div>} */}
                 </div>
               </div>
             </div>
@@ -82,16 +83,19 @@ const MainNav = () => {
                 <p>Settings</p>
               </div>
               <div className="angleDown">
-              <FontAwesomeIcon icon={faAngleDown} className="inline-block" style={{display: `${accordionData.two ?"inline-block ": "none"}` }} />
-                <FontAwesomeIcon icon={faAngleUp} className="hidden xs:inline-block" style={{display: `${accordionData.two ? "none ": "inline-block"}`}} />
-                  <div id={2} className="hidden absolute z-10 bg-white p-5 shadow-lg shadow-gray-500/50" style={{ display: `${accordionData.two ? "none" : "block"}`,   top: "50px" }}>
+              <FontAwesomeIcon icon={faAngleDown} className="angleDownIcon inline-block" style={{display: `${accordionData.two ?"inline-block ": "none"}` }} />
+                <FontAwesomeIcon icon={faAngleUp} className="angleUpIcon hidden xs:inline-block" style={{display: `${accordionData.two ? "none ": "inline-block"}`}} />
+                  <div onClick={() => handleTogglePopup("navItem2")}
+                  id={2} className="mainNavItems hidden absolute z-10 bg-white p-5 shadow-lg shadow-gray-500/50" style={{ display: `${accordionData.two ? "none" : "block"}`,   top: "50px" }}>
+                  {/* {openPopup === "navItem2" && <div className="popup"> */}
                   <ul>
-                    <li className="mb-4 hover:text-blue-700"><Link to={"/site-settings"}> Site Setting </Link></li>
-                    <li className="mb-4 hover:text-blue-700"><Link to={"/company-settings"}> Company Setting </Link></li>
-                    <li className="mb-4 hover:text-blue-700"><Link to={"/package-setting"}> Package Setting </Link></li>
-                    <li className="mb-4 hover:text-blue-700"><Link to={"/bank-setting"}>Bank Setting </Link></li>
-                    <li className="mb-4 hover:text-blue-700"><Link to={"/sms-settings"}>SMS Setting </Link></li>
+                    <li className="mainNavList mb-4 hover:text-blue-700"><Link to={"/site-settings"}> Site Setting </Link></li>
+                    <li className="mainNavList mb-4 hover:text-blue-700"><Link to={"/company-settings"}> Company Setting </Link></li>
+                    <li className="mainNavList mb-4 hover:text-blue-700"><Link to={"/package-setting"}> Package Setting </Link></li>
+                    <li className="mainNavList mb-4 hover:text-blue-700"><Link to={"/bank-setting"}>Bank Setting </Link></li>
+                    <li className="mainNavList mb-4 hover:text-blue-700"><Link to={"/sms-settings"}>SMS Setting </Link></li>
                   </ul>
+                  {/* </div>} */}
                 </div>
               </div>
             </div>
@@ -161,7 +165,7 @@ const MainNav = () => {
             <div className={`moreInfoLeftOuter transition-all ease-in-out duration-700 shadow-lg h-screen w-full absolute xs:w-1/2 lg:w-1/4 z-10 bg-white top-0 right-0 ${ accordionData.three ? "opacity-0 pointer-events-none " : "opacity-100 pointer-events-auto  "}`}
     style={{ transform: accordionData.three ? "translateX(100%)" : "translateX(0)" , display: accordionData.three ? "none" :"block" }}
     id={3}>
-    <div className="bg-blue-700 p-5 moreInfoLeft text-white">
+    <div className="moreInfoLeft bg-blue-700 p-5 text-white">
       <div className="close absolute right-5 top-3 cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#fff">
           <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />

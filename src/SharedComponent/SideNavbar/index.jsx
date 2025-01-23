@@ -9,7 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const SideNavbar = () => {
+const SideNavbar = ({ openPopup, handleTogglePopup }) => {
   const [isopen, setIsOpen] = useState(false);
   const [dropdown, setDropdown] = useState({
     one: false,
@@ -21,84 +21,36 @@ const SideNavbar = () => {
   });
   const handleHideShow = () => {
     setIsOpen(!isopen);
-    console.log(isopen);
+    // console.log(isopen);
   };
   const handleDropdown = (id) => {
-    console.log(id);
+    // console.log(id);
     if (id === 1) {
-      setDropdown({
-        ...dropdown,
-        one: !dropdown.one,
-        two: false,
-        three: false,
-        four: false,
-        five: false,
-        six: false,
-      });
+      setDropdown({ ...dropdown, one: !dropdown.one, two: false, three: false, four: false, five: false, six: false, });
     }
     if (id === 2) {
-      setDropdown({
-        ...dropdown,
-        two: !dropdown.two,
-        one: false,
-        three: false,
-        four: false,
-        five: false,
-        six: false,
-      });
+      setDropdown({ ...dropdown, two: !dropdown.two, one: false, three: false, four: false, five: false, six: false, });
     }
     if (id === 3) {
-      setDropdown({
-        ...dropdown,
-        three: !dropdown.three,
-        two: false,
-        one: false,
-        four: false,
-        five: false,
-        six: false,
-      });
+      setDropdown({ ...dropdown, three: !dropdown.three, two: false, one: false, four: false, five: false, six: false, });
     }
     if (id === 4) {
-      setDropdown({
-        ...dropdown,
-        four: !dropdown.four,
-        two: false,
-        three: false,
-        five: false,
-        six: false,
-        one: false,
-      });
+      setDropdown({ ...dropdown, four: !dropdown.four, two: false, three: false, five: false, six: false, one: false, });
     }
     if (id === 5) {
-      setDropdown({
-        ...dropdown,
-        five: !dropdown.five,
-        one: false,
-        three: false,
-        two: false,
-        six: false,
-        four: false,
-      });
+      setDropdown({ ...dropdown, five: !dropdown.five, one: false, three: false, two: false, six: false, four: false, });
     }
     if (id === 6) {
-      setDropdown({
-        ...dropdown,
-        six: !dropdown.six,
-        two: false,
-        one: false,
-        four: false,
-        five: false,
-        three: false,
-      });
+      setDropdown({ ...dropdown, six: !dropdown.six, two: false, one: false, four: false, five: false, three: false,});
     }
   };
-  useEffect(() => {
-    document.addEventListener("mousedown", handleDropdown);
+  // useEffect(() => {
+  //   document.addEventListener("mousedown", handleDropdown);
 
-    return () => {
-      document.removeEventListener("mousedown", handleDropdown);
-    };
-  }, []);
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleDropdown);
+  //   };
+  // }, []);
   return (
     <div
       className={`sideNavOuterMost transition-all bg-white ease-in-out duration-700 delay-700 transform ${
@@ -196,10 +148,11 @@ const SideNavbar = () => {
             </div>
           </div>
           <div
-            id={1}
+            id={1} onClick={() => handleTogglePopup("sideItem1")}
             className=" dropdownItems w-[40vh] absolute left-[70%] shadow-2xl shadow-slate-400 rounded-md h-auto cursor-pointer hidden text-sm z-10 bg-white text-justify p-1 "
             style={{ display: `${dropdown.one ? "block" : "none"}` }}
           >
+            {/* {openPopup === "sideItem1" && <div className="popup" > */}
             <ul>
               <li className="dropdownList m-4 text-gray-600 hover:text-blue-400  ">
                 <Link to="/dashboard">
@@ -207,6 +160,7 @@ const SideNavbar = () => {
                 </Link>
               </li>
             </ul>
+            {/* </div>} */}
           </div>
           <div
             className="sideNavStart relative text-center flex p-3 justify-between cursor-pointer items-center"
@@ -257,10 +211,11 @@ const SideNavbar = () => {
             </div>
           </div>
           <div
-            id={2}
+            id={2} onClick={() => handleTogglePopup("sideItem2")}
             className="dropdownItems w-[40vh] absolute left-[70%] shadow-2xl shadow-slate-400 rounded-md h-auto z-10  transition-all text-justify duration-300 text-sm ease-in-out cursor-pointer hidden bg-white p-1"
             style={{ display: `${dropdown.two ? "block" : "none"}` }}
           >
+            {/* {openPopup === "sideItem2" && <div className="popup"> */}
             <ul>
               <li className="dropdownList m-4 text-gray-600 hover:text-blue-400 ">
                 <Link to="/field-executive">
@@ -277,8 +232,7 @@ const SideNavbar = () => {
               <li className="dropdownList m-4 text-gray-600 hover:text-blue-400 uppercase ">
                 <Link to="/super-distributor">
 
-                  <FontAwesomeIcon icon={faAnglesRight} /> SuperDistributor(SDS)
-                  (0)
+                  <FontAwesomeIcon icon={faAnglesRight} /> SuperDistributor(SDS) (0)
                 </Link>
               </li>
               <li className="dropdownList m-4 text-gray-600 hover:text-blue-400 uppercase ">
@@ -295,8 +249,7 @@ const SideNavbar = () => {
               </li>
               <li className="dropdownList m-4 text-gray-600 hover:text-blue-400  ">
                 <Link to={"/not-working"}>
-                  <FontAwesomeIcon icon={faAnglesRight} /> Not Working Members
-                  (0)
+                  <FontAwesomeIcon icon={faAnglesRight} /> Not Working Members (0)
                 </Link>
               </li>
               <li className="dropdownList m-4 text-gray-600 hover:text-blue-400  ">
@@ -312,6 +265,7 @@ const SideNavbar = () => {
                 </Link>
               </li>
             </ul>
+            {/* </div>} */}
           </div>
           <div
             className="sideNavStart relative text-center flex p-3 justify-between cursor-pointer items-center"
@@ -363,10 +317,11 @@ const SideNavbar = () => {
             </div>
           </div>
           <div
-            id={3}
+            id={3} onClick={() => handleTogglePopup("sideItem3")}
             className="dropdownItems w-[40vh] absolute left-[70%] overflow-y-scroll h-[75vh] top-[22%] shadow-2xl shadow-slate-400 rounded-md bg-white z-10 hidden cursor-pointer text-sm text-justify p-1 "
             style={{ display: `${dropdown.three ? "block" : "none"}` }}
           >
+            {/* {openPopup === "sideItem3" && <div className="popup">   */}
             <ul>
               <li className="dropdownList m-4 text-gray-600 hover:text-blue-400  ">
                 <Link to={"/mobile-history"}>
@@ -459,6 +414,7 @@ const SideNavbar = () => {
                 </Link>
               </li>
             </ul>
+            {/* </div>} */}
           </div>
           <div
             className="sideNavStart relative text-center flex p-3 justify-between cursor-pointer items-center"
@@ -510,10 +466,11 @@ const SideNavbar = () => {
             </div>
           </div>
           <div
-            id={4}
+            id={4} onClick={() => handleTogglePopup("sideItem4")}
             className=" dropdownItems w-[40vh] absolute left-[70%] shadow-2xl shadow-slate-400 h-auto cursor-pointer hidden z-10 text-sm bg-white text-justify p-1 "
             style={{ display: `${dropdown.four ? "block" : "none"}` }}
           >
+            {/* {openPopup === "sideItem4" && <div className="popup"> */}
             <ul>
               <li className="dropdownList m-4 text-gray-600 hover:text-blue-400 ">
                 <Link to={"/balance-transfer"}>
@@ -552,6 +509,7 @@ const SideNavbar = () => {
                 </Link>
               </li>
             </ul>
+            {/* </div>} */}
           </div>
           <div
             className="sideNavStart relative text-center flex p-3 justify-between cursor-pointer items-center"
@@ -603,14 +561,11 @@ const SideNavbar = () => {
             </div>
           </div>
           <div
-            id={5}
+            id={5} onClick={() => handleTogglePopup("sideItem5")}
             className="dropdownItems w-[40vh] absolute left-[70%] shadow-2xl shadow-slate-400 rounded-md h-auto  cursor-pointer hidden text-sm z-10 bg-white text-justify p-1 "
-            style={{
-              display: `${dropdown.five ? "block" : "none"}`,
-              color: `${dropdown.two ? "#0056DC" : ""}`,
-              top: `${dropdown.five ? "" : "0"}`,
-            }}
+            style={{ display: `${dropdown.five ? "block" : "none"}`,  color: `${dropdown.two ? "#0056DC" : ""}`,  top: `${dropdown.five ? "" : "0"}`,   }}
           >
+            {/* {openPopup === "sideItem5" && <div className="popup"> */}
             <ul>
               <li className="dropdownList m-4 text-gray-600 hover:text-blue-400 ">
                 <Link to={"/pending-disputes"}>
@@ -625,6 +580,7 @@ const SideNavbar = () => {
                 </Link>
               </li>
             </ul>
+            {/* </div>} */}
           </div>
           <div
             className="sideNavStart relative text-center flex p-3 justify-between cursor-pointer items-center"
@@ -676,10 +632,11 @@ const SideNavbar = () => {
             </div>
           </div>
           <div
-            id={6}
+            id={6} onClick={() => handleTogglePopup("sideItem6")}
             className="dropdownItems w-[40vh] absolute left-[70%] bottom-0 xs:bottom-auto shadow-2xl shadow-slate-400 rounded-md h-auto cursor-pointer hidden text-sm z-10 bg-white text-justify p-1 "
             style={{ display: `${dropdown.six ? "block" : "none"}` }}
           >
+            {/* {openPopup === "sideItem6" && <div className="popup"> */}
             <ul>
               <li className="dropdownList m-4 text-gray-600 hover:text-blue-400 ">
                 <Link to="/fe-income">
@@ -717,6 +674,7 @@ const SideNavbar = () => {
                 </Link>
               </li>
             </ul>
+            {/* </div>} */}
           </div>
         </div>
       </div>

@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import SideNavbar from "../../SharedComponent/SideNavbar";
-import MainNav from "../../SharedComponent/MainNavbar";
 import { Link } from "react-router-dom";
 import SearchWallet from "../../SharedComponent/SearchWallet";
 import ExecutiveTable from "../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable";

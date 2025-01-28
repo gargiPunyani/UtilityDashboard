@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { newAccountDetail } from "../../../../constant";
 import { useFormik } from "formik";
-import { bankAccountSchema } from "../../../../Login/LoginLeft/Schema";
+import { bankAccountSchema } from "../../../../../Login/LoginLeft/Schema";
 
 const initialValues = {
   bName: "",

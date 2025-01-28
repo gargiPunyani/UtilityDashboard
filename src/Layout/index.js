@@ -1,8 +1,8 @@
 
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
-import SideNavbar from "../SharedComponent/SideNavbar";
-import MainNav from "../SharedComponent/MainNavbar";
+import SideNavbar from "../Components/SharedComponent/SideNavbar";
+import MainNav from "../Components/SharedComponent/MainNavbar";
 
 const Layout = () => {
   // Centralized state for open popup

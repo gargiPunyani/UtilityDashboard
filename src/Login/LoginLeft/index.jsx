@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import LoginLogo from "../../Assests/webwiseLogo.png";
+import LoginLogo from "../../Assests/webwiseLogo.png"
 import { useFormik } from "formik";
 import { loginSchema } from "./Schema";
 import { useNavigate, Link } from "react-router-dom";

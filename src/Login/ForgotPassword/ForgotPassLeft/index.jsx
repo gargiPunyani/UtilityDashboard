@@ -1,5 +1,5 @@
 import React from 'react'
-import forgotpass from "../../../Assests/Twofactorauthentication.svg"
+import forgotpass from "../../../Components/Assests/Twofactorauthentication.svg"
 
 const ForgotPassLeft = () => {
   return (

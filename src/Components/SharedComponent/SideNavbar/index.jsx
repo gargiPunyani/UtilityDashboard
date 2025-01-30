@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import logo from "../../Assests/webwiseLogo.png";
-import logo2 from "../../Assests/webwiseLogoAlphabet.png";
+import logo from "../../../Assests/webwiseLogo.png";
+import logo2 from "../../../Assests/webwiseLogoAlphabet.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAngleDown,

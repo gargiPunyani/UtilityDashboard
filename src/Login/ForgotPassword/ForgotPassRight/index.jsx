@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from "../../../Components/Assests/webwiseLogo.png"
+import logo from "../../../Assests/webwiseLogo.png"
 import { Link, useNavigate } from 'react-router-dom'
 
 const ForgotPasswordRight= () => {

@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./index.css"
-// import "./index.css";
+import "./index.css";
 import "./output.css";
 import HomeCards from "./Components/AdminDashboard/Home/HomeCards";
 import ProfileView from "./Components/AdminDashboard/Profile";
@@ -19,7 +18,7 @@ import CreateUser from "./Components/AdminDashboard/Members/FieldExecutive/Creat
 import IncomeReport from "./Components/Report/IncomeReport";
 import Admin from "./Components/UserIncome/Admin";
 import SuperAdminIncome from "./Components/UserIncome/SuperAdmin";
-// import Distributor from "./Components/UserIncome/Distributor";
+import Distributor from "./Components/UserIncome/Distributor";
 import NotWorking from "./Components/UserIncome/NotWorkingMember";
 import CommissionBal from "./Components/Payment/CommissionBalance";
 import BalanceReturn from "./Components/Payment/BalanceReturn";

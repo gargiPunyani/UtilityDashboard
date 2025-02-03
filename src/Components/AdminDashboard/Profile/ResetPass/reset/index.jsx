@@ -9,6 +9,7 @@ const Reset = () => {
       old_password: "",
       api_token: localStorage.getItem("token")
     })
+
   const handleChange = (e) => {
     setPassData({ ...passData, [e.target.id]: e.target.value });
   };
@@ -29,9 +30,15 @@ const Reset = () => {
     } catch (error) {
       return error
     }}
-  const api_token = localStorage.getItem("token")
-  const old_password= localStorage.getItem("password")
-  const order_id= sessionStorage.getItem("order_id")
+    
+    const handleOtp=async()=>{
+      const api_token= localStorage.getItem("token")
+      await resetApi (api_token)
+    }
+
+    const api_token = localStorage.getItem("token")
+    const old_password= localStorage.getItem("password")
+    const order_id= sessionStorage.getItem("order_id")
 
   const handleSubmit=async(e, password, confrim_otp)=>{
       e.preventDefault()
@@ -52,11 +59,7 @@ const Reset = () => {
           return(error)
         }
       }
-      const handleOtp=async()=>{
-      const api_token= localStorage.getItem("token")
-      await resetApi (api_token)
-    }
-
+     
   return (
     <div className='passwordOuterMost '>
         <div className='passwordOuter'>

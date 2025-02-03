@@ -41,30 +41,9 @@ const MainNav = ({ openPopup, handleTogglePopup }) => {
       });
     }
   }
-    const resetApi = async(item, api_token)=>{
-      try {
-        const response= await axios.post(`https://soft.delhitech.in/api/app/password-reset-otp `,{
-          api_token: localStorage.getItem("token"),
-        })
-        // console.log("reset:", response.data )
-        sessionStorage.setItem("order_id",  response.data.order_id )
-        console.log( response.data.order_id)
-        // console.log(api_token, "token" )
-      } catch (error) {
-        // console.log(error)
-        return(error)
-      }
-    }
-
-    const api_token = localStorage.getItem("token") 
-    // console.log("token: ",api_token)
-    
-    const handleApi= async (item, api_token)=>{
-      if(item.id === "reset"){
-       
-        await resetApi(api_token)
-      }
-    }
+  const userName = localStorage.getItem("userName:") 
+  // console.log(userName, "userName")
+  
   return (
     <div className="navOuterMost w-full bg-white">
       <div className="navOuter h-20 shadow-lg shadow-gray-500/10 w-full">
@@ -144,7 +123,7 @@ const MainNav = ({ openPopup, handleTogglePopup }) => {
                   </div>
                   <div className="adminDetialsOut">
                     <div className="adminDetials">
-                    <h3>Super Admin</h3>
+                    <h3>{userName}</h3>
                     </div>
                     <div className="adminType">
                       (CBS)

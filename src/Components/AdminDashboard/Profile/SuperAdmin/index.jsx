@@ -2,6 +2,9 @@ import React from "react";
 import { superAdminDetails } from "../../../constant";
 
 const SuperAdmin = () => {
+  const userName = localStorage.getItem("userName:") 
+  // console.log(userName, "userName")
+
   return (
     <div className="superAdminOuterMost">
       <div className="superAdminOuter">
@@ -14,7 +17,7 @@ const SuperAdmin = () => {
             />
           </div>
           <div className="font-semibold mt-4">
-            <p>SUPER ADMIN</p>
+            <p>{userName}</p>
           </div>
           <div className="adminMemberType text-gray-600">
             <p>CBS</p>

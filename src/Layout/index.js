@@ -10,7 +10,7 @@ const Layout = () => {
 
   // Function to toggle popups
   const handleTogglePopup = (id) => {
-    console.log(id,"helloid")
+    // console.log(id,"helloid")
     setOpenPopup((prev) => (prev === id ? null : id));
   };
   const popupData = {
@@ -18,8 +18,8 @@ const Layout = () => {
     2: "This is content for popup 2",
   };
 
-  console.log("Current openPopup State:", openPopup);
-  console.log("Popup Data:", popupData[openPopup]);
+  // console.log("Current openPopup State:", openPopup);
+  // console.log("Popup Data:", popupData[openPopup]);
 
   return (
     <div className="layoutOuterMost">

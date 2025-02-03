@@ -31,10 +31,11 @@ const LoginLeft = () => {
         localStorage.setItem("mobile", response.data.mobile);
         localStorage.setItem("password", response.data.upwd);
         setIsLogin(true);
-        console.log(response.data)
+        // console.log(response.data)
       }
     } catch (error) {
-      console.log(error,'here')
+      // console.log(error,'here')
+      return error
     }
   };
 
@@ -56,8 +57,9 @@ const LoginLeft = () => {
       localStorage.getItem("uid");
       localStorage.getItem("borwserData");
 
+
       if (responseData.data.status === "success") {
-      
+        localStorage.setItem("userName:" , responseData.data.name)
         localStorage.setItem("token", responseData.data.api_token);
         alert("Welcome")
         navigate("/dashboard"
@@ -69,10 +71,10 @@ const LoginLeft = () => {
       // console.log(responseData.data)
       // console.log("status:",responseData.status)
       // console.log("response",responseData);
-      console.log("userName:" , responseData.data.name);
+      // console.log("userName:" , responseData.data.name);
       // console.log("token", responseData.data.api_token);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       return(error)
     }
   };

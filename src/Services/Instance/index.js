@@ -8,19 +8,22 @@ const axiosInstance = axios.create({
     Accept: "application/json",
   }
 });
-axiosInstance.interceptors.request.use(
-  (config) => {
-    const api_token = localStorage.getItem("token",true);
-    if (api_token) {
-      config.headers.Authorization = `Bearer${api_token}`;
-    }
-    return config;
-  },
-  (error) => {
+try {
+  axiosInstance.interceptors.request.use(
+    (config) => {
+      const api_token = localStorage.getItem("token",true);
+      if (api_token) {
+        config.headers.Authorization = `Bearer${api_token}`;
+      }
+      return config;
+    },
+  );
+    
+} catch (error) {
     console.log(error);
-    return Promise.reject(error);
-  }
-);
+    // return Promise.reject(error);
+
+}
 axiosInstance.interceptors.response.use(
   (response) => response,
   (error) => Promise.reject(error)

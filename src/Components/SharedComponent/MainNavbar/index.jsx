@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { profileData, SidebarBalance } from "../../constant";
 import { Link } from "react-router-dom";
+import axiosInstance from "../../../Services/Instance";
+import axios from "axios";
 
 const MainNav = ({ openPopup, handleTogglePopup }) => {
   const [accordionData, setAccordionData] = useState({
@@ -39,7 +41,30 @@ const MainNav = ({ openPopup, handleTogglePopup }) => {
       });
     }
   }
+    const resetApi = async(item, api_token)=>{
+      try {
+        const response= await axios.post(`https://soft.delhitech.in/api/app/password-reset-otp `,{
+          api_token: localStorage.getItem("token"),
+        })
+        // console.log("reset:", response.data )
+        sessionStorage.setItem("order_id",  response.data.order_id )
+        console.log( response.data.order_id)
+        // console.log(api_token, "token" )
+      } catch (error) {
+        // console.log(error)
+        return(error)
+      }
+    }
 
+    const api_token = localStorage.getItem("token") 
+    // console.log("token: ",api_token)
+    
+    const handleApi= async (item, api_token)=>{
+      if(item.id === "reset"){
+       
+        await resetApi(api_token)
+      }
+    }
   return (
     <div className="navOuterMost w-full bg-white">
       <div className="navOuter h-20 shadow-lg shadow-gray-500/10 w-full">
@@ -130,7 +155,7 @@ const MainNav = ({ openPopup, handleTogglePopup }) => {
                 <div className="profileData bg-white">
                 {profileData.map((item)=>{
                   return(
-                    <div className="profilePrviewer"  key={item.id}>
+                    <div className="profilePrviewer" key={item.id} >
                       {item.href ? (
                         <a href={item.href}>
                           <div className="profilePrview hover:text-blue-700 flex m-4 gap-6">

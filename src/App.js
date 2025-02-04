@@ -68,6 +68,9 @@ import BilPay from "./Components/Report/BillPay";
 import SuspendedUser from "./Components/AdminDashboard/Members/SuspendedUser";
 import NewPackage from "./Components/AdminDashboard/Settings/PackageSetting/NewPackage";
 import Layout from "./Layout";
+import LPG from "./Components/Report/Recharges/LpgGas";
+import GasHistory from "./Components/Report/Recharges/GasHistory";
+import Fastag from "./Components/Report/Recharges/FastagHistory";
 
 const App = () => {
   return (
@@ -110,6 +113,9 @@ const App = () => {
           <Route path="/upi" element={<Upi/>}/>
           <Route path="/qr-collection" element={<QRCollection/>} />
           <Route path="/wallet-transfer" element={<WalletTransfer/>} />
+          <Route path="/lpg-history" element= {<LPG/>}/>
+          <Route path="/gas-gistory" element = {<GasHistory/>}/>
+          <Route path="/fastags-history" element={<Fastag/>}/>
           {/* members */}
           <Route path="/field-executive" element={<FieldExecutive/>}/>
           <Route path="/distributor-ds" element={<DistributorDS/>}/>

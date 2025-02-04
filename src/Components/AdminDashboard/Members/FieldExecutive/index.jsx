@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import SideNavbar from "../../../SharedComponent/SideNavbar";
-import MainNav from "../../../SharedComponent/MainNavbar";
 import { Link, useNavigate } from "react-router-dom";
 import ExecutiveTable from "./FieldExecutiveTable";
 
@@ -56,7 +54,8 @@ const FieldExecutive = () => {
     },
   ];
   const [records, setRecords] = useState(rows);
-  const handleChange = (e) => {
+  
+  const handleChange = async (e) => {  
     const newData = rows.filter((row) => {
       console.log(e.target.value);
       return (

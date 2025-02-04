@@ -3,8 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { profileData, SidebarBalance } from "../../constant";
 import { Link } from "react-router-dom";
-import axiosInstance from "../../../Services/Instance";
-import axios from "axios";
 
 const MainNav = ({ openPopup, handleTogglePopup }) => {
   const [accordionData, setAccordionData] = useState({
@@ -44,6 +42,12 @@ const MainNav = ({ openPopup, handleTogglePopup }) => {
   const userName = localStorage.getItem("userName:") 
   // console.log(userName, "userName")
   
+  const handleApi = (item)=>{
+    if (item.id === "logout"){
+      localStorage.clear()
+    }
+  }
+
   return (
     <div className="navOuterMost w-full bg-white">
       <div className="navOuter h-20 shadow-lg shadow-gray-500/10 w-full">
@@ -134,7 +138,7 @@ const MainNav = ({ openPopup, handleTogglePopup }) => {
                 <div className="profileData bg-white">
                 {profileData.map((item)=>{
                   return(
-                    <div className="profilePrviewer" key={item.id} >
+                    <div className="profilePrviewer" key={item.id} onClick={()=>handleApi(item)}>
                       {item.href ? (
                         <a href={item.href}>
                           <div className="profilePrview hover:text-blue-700 flex m-4 gap-6">

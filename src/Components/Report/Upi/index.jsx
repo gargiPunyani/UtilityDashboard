@@ -4,6 +4,8 @@ import SideNavbar from '../../SharedComponent/SideNavbar'
 import MainNav from '../../SharedComponent/MainNavbar'
 import DateWiseSearch from '../../SharedComponent/DateWiseSearch'
 import ExecutiveTable from '../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable'
+import instance from '../../../Services/InstanceAxios'
+import axios from 'axios'
 
 const Upi = () => {
     const columns=[{
@@ -86,14 +88,40 @@ const Upi = () => {
       },]
 
     const [ records, setRecords] = useState(rows);
+    // const number =  rows.mobile
+    //   console.log(mobile)
+    const searchApi = async(api_token, mobile)=>{
+      try {
+        const response = await instance.post("money/sender-check",
+          mobile 
+        )
+        console.log(response)
+      } catch (error) {
+        return error
+      }}
+    //   try {
+    //     const response = await axios.post("https://soft.delhitech.in/api/app/money/sender-check",{
+    //       number,
+    //       api_token: localStorage.getItem("token")
+    //     },   
+    //     {headers: {
+    //       Accept: "application/json",
+    //     }}
+    //   )
+    //     console.log(response.data)
+    //   } catch (error) {
+    //     return error   
+    //   }
+     
 
-      const handleChange=(e)=>{
-        const newRecords = rows.filter(row=>{
-            console.log(e.target.value , "DateSearch")
-            return row.date.includes(e.target.value) || row.id.includes(e.target.value) || row.user.toLowerCase().includes(e.target.value) || row.mobile.includes(e.target.value)
+    const handleChange= async(e, api_token , number)=>{
+        await searchApi(api_token, number)
+        // const newRecords = rows.filter(row=>{
+        //     console.log(e.target.value , "DateSearch")
+        //     return row.date.includes(e.target.value) || row.id.includes(e.target.value) || row.user.toLowerCase().includes(e.target.value) || row.mobile.includes(e.target.value)
 
-         })
-        setRecords(newRecords)
+        //  })
+        // setRecords(newRecords)
     }
     const handleDownload=(rows)=>{}
   return (

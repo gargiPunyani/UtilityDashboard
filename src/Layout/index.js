@@ -1,44 +1,58 @@
-
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Outlet } from "react-router-dom";
 import SideNavbar from "../Components/SharedComponent/SideNavbar";
 import MainNav from "../Components/SharedComponent/MainNavbar";
+import Footer from "../Components/SharedComponent/Footer"
 
 const Layout = () => {
-  // Centralized state for open popup
   const [openPopup, setOpenPopup] = useState(null);
-
-  // Function to toggle popups
+  const navbarRef = useRef(null);
+  const sidebarRef = useRef(null);;
+  
   const handleTogglePopup = (id) => {
-    // console.log(id,"helloid")
     setOpenPopup((prev) => (prev === id ? null : id));
   };
-  const popupData = {
-    1: "This is content for popup 1",
-    2: "This is content for popup 2",
+
+  const handleClickOutside = (e) => {
+    if (
+      (navbarRef.current && navbarRef.current.contains(e.target)) ||
+      (sidebarRef.current && sidebarRef.current.contains(e.target))
+    ) {
+      return; 
+    }
+    setOpenPopup(null);
   };
 
-  // console.log("Current openPopup State:", openPopup);
-  // console.log("Popup Data:", popupData[openPopup]);
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="layoutOuterMost">
       <div className="layoutOut">
         <div className="layoutInner w-full flex">
-          {/* Sidebar */}
-          <div className="layoutSide bg-white">
-            <SideNavbar openPopup={openPopup} handleTogglePopup={handleTogglePopup} />
+          <div className="layoutSide bg-white" ref={sidebarRef}>
+            <SideNavbar
+              openPopup={openPopup}
+              handleTogglePopup={handleTogglePopup}
+            />
           </div>
 
-          {/* Main Content */}
-          <div className="layoutMain w-full">
-            {/* Navbar */}
-            <MainNav openPopup={openPopup} handleTogglePopup={handleTogglePopup} />
+          <div className="layoutMain w-full" >
+          <div ref={navbarRef}>
+              <MainNav openPopup={openPopup} handleTogglePopup={handleTogglePopup} />
+            </div>
 
-            {/* Content */}
+            {/* content or child components */}
             <main className="flex-1 p-2 bg-gray-100">
               <Outlet />
             </main>
+            {/* <div className="footerSection bg-white bottom-0 w-full absolute left-[50%] translate-x-[-50%]  p-3">
+              <Footer/>
+            </div> */}
           </div>
         </div>
       </div>
@@ -47,7 +61,6 @@ const Layout = () => {
 };
 
 export default Layout;
-
 
 // import React, { useState } from "react";
 // import { Outlet } from "react-router-dom";
@@ -67,7 +80,7 @@ export default Layout;
 //           <div className="layoutSide bg-white">
 //             {/* Sidebar */}
 //             <SideNavbar openPopup={openPopup} handleTogglePopup= {handleTogglePopup}/>
-//             </div> 
+//             </div>
 //             {/* Main Content */}
 //             <div className="layoutMain w-full ">
 //               {/* Navbar */}

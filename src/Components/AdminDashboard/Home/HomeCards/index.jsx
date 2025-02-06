@@ -14,14 +14,14 @@ const HomeCards = () => {
         {BalanceCards.map((item) => {
           return (
             <div className="homeOuterCards shadow-xl p-5 rounded-lg bg-white mb-5" key={item.id}>
-              <div className="cardsHead text-sm xl:text-lg font-semibold xl:font-medium">
+              <div className="cardsHead text-sm xl:text-md font-semibold xl:font-semibold">
                 <p>{item.heading}</p>
               </div>
               <div className="cardsIcon flex justify-between items-center gap-2 mt-4 mb-4">
                 <div>{item.icon }</div>
-                <div className="cardAmt font-semibold text-md xl:text-xl">{item.amount}</div>
+                <div className="cardAmt font-semibold text-md xl:text-md">{item.amount}</div>
               </div>
-              <div className="cardDetails text-sm xl:text-lg">
+              <div className="cardDetails text-sm xl:text-md">
                 <p>{item.details}</p>
               </div>
             </div>
@@ -29,7 +29,7 @@ const HomeCards = () => {
         })}
       </div>
       <div className="sales p-5 bg-white">
-        <div className="saleHeading uppercase p-2 text-lg font-semibold ">
+        <div className="saleHeading uppercase p-2 text-md font-semibold ">
           <h2 >
             Today's Sale
           </h2>
@@ -42,10 +42,10 @@ const HomeCards = () => {
                     {item.icon}
                 </div>
                 <div className="salesInner ml-2">
-                    <div className="salesName font-semibold">
+                    <div className="salesName text-md font-semibold">
                     <p>{item.head}</p>
                     </div>
-                    <div className="success flex gap-2 justify-start">
+                    <div className="success flex gap-2 text-sm justify-start">
                         <div className="successHead text-green-500">
                         <p >Success: </p>
                         </div>
@@ -53,7 +53,7 @@ const HomeCards = () => {
                             <p>{item.Success}</p>
                             </div>
                     </div>
-                    <div className="failure flex gap-5 justify-start">
+                    <div className="failure flex gap-5 text-sm justify-start">
                         <div className="failureHead text-red-500">
                         <p>Failure: </p>
                         </div>

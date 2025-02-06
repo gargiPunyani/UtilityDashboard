@@ -5,11 +5,10 @@ import React from "react";
 const WalletDownload = ({ handleSerach }) => {
   return (
     <div className="walletDownloadOutMost">
-      <div className="walletDownload">
+      <div className="walletDownload bg-white p-3">
         <div
           className="dateInner md:flex gap-8 items-center text-xs"
-          onChange={handleSerach}
-        >
+          onChange={handleSerach} >
           <div className="date md:flex gap-8 w-full md:w-[65%] mb-3">
             <div className="dateFrom w-full">
               <p>From: *</p>

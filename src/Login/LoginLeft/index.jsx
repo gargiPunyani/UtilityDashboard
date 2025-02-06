@@ -57,12 +57,11 @@ const LoginLeft = () => {
       localStorage.getItem("uid");
       localStorage.getItem("borwserData");
 
-
-      if (responseData.data.status === "success") {
+      if (responseData.data.status === "success" && responseData.data.name === "Retail User") {
         localStorage.setItem("userName:" , responseData.data.name)
         localStorage.setItem("token", responseData.data.api_token);
         alert("Welcome")
-        navigate("/dashboard"
+        navigate("/retailer-dashboard"
           , {replace: true} 
         )
       }

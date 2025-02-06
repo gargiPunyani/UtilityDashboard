@@ -71,6 +71,16 @@ import Layout from "./Layout";
 import LPG from "./Components/Report/Recharges/LpgGas";
 import GasHistory from "./Components/Report/Recharges/GasHistory";
 import Fastag from "./Components/Report/Recharges/FastagHistory";
+import RetialerHome from "./Components/RetailerDashboard/RetailerHome";
+import RBillPayment from "./Components/RetailerDashboard/CCBill";
+import RLedgerReport from "./Components/RetailerDashboard/LedgerReport";
+import ReturnRequest from "./Components/RetailerDashboard/Balance/ReturnRequest";
+import Prepaid from "./Components/RetailerDashboard/RetailerHome/RServices/Prepaid";
+import DTHRecharge from "./Components/RetailerDashboard/RetailerHome/RServices/DTHRecharge";
+import Postpaid from "./Components/RetailerDashboard/RetailerHome/RServices/Postpaid";
+import Landline from "./Components/RetailerDashboard/RetailerHome/RServices/Landline";
+import Electricity from "./Components/RetailerDashboard/RetailerHome/RServices/Electricity";
+import Water from "./Components/RetailerDashboard/RetailerHome/RServices/Water";
 
 const App = () => {
   return (
@@ -155,6 +165,23 @@ const App = () => {
           <Route path="/contact-enquiry" element={<ContactEnquiry/>} />
           <Route path="/company-staff-permission" element={<CompanyStaff/>}  />
           <Route path="/broadcast" element={<Broadcast/>} />
+
+          {/* Ratialer Dashboard */}
+          <Route path="/retailer-dashboard" element={<RetialerHome/>}/>
+          {/* services */}
+          <Route path='/retailer-mobile-prepaid' element={<Prepaid/>}/>
+          <Route path="/retailer-dth-recharge" element={<DTHRecharge />}/>
+          <Route path="/retailer-mobile-postpaid" element={<Postpaid/>}/>
+          <Route path="/retailer-landline" element={<Landline/>}/>
+          <Route path="/retailer-electricity" element={<Electricity/>}/>
+          <Route path="/retailer-water" element={<Water/>}/>
+
+          {/* cc bill payment */}
+          <Route path="/retailer-bill-payments" element={<RBillPayment/>}/>
+          {/* reports */}
+          <Route path="/retailer-ledger-report" element={<RLedgerReport />}/>
+          {/* payments */}
+          <Route path="/retailer-balance-return-request" element={<ReturnRequest/>}/>
           </Route>
           </Routes>
       </BrowserRouter>

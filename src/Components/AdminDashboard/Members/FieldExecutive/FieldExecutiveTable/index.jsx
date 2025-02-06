@@ -6,7 +6,6 @@ const ExecutiveTable = ({ handleChange,columns = [], rows = [] }) => {
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
   const handleChangePage = (event, newPage) => {
-    setRowsPerPage(+event.target.value)
     setPage(newPage);
   };
 
@@ -14,6 +13,15 @@ const ExecutiveTable = ({ handleChange,columns = [], rows = [] }) => {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
+  // const handleChangePage = (event, newPage) => {
+  //   setRowsPerPage(+event.target.value)
+  //   setPage(newPage);
+  // };
+
+  // const handleChangeRowsPerPage = (event) => {
+  //   setRowsPerPage(+event.target.value);
+  //   setPage(0);
+  // };
 
   return (
     <div className="fieldTableOuterMost text-sm md:text-md bg-white">
@@ -42,12 +50,13 @@ const ExecutiveTable = ({ handleChange,columns = [], rows = [] }) => {
               .map((row) => {
                 console.log(row)
                 return (
-                  <TableRow key={row.id}>
+                  <TableRow  key={row.id}>
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (
-                        <TableCell key={column.id} align={column.align}>
+                        <TableCell key={column.id} align={column.align} >
                           {column.format && typeof value === 'number' ? column.format(value) : value}
+                          
                         </TableCell>
                       );
                     })}

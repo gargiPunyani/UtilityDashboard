@@ -10,15 +10,18 @@ const StatusDownload = ({handleSearch, handleDownload}) => {
              <div className="dateInner sm:text-sm lg:flex gap-8 items-center text-xs" onChange={handleSearch} >
                       <div className="date md:flex gap-8 w-full lg:w-[65%] mb-3">
                         <div className="dateFrom w-full">
-                          <p>From: *</p>
+                          <span>From</span>
+                          <span className='text-red-600'>*</span> <span >:</span>
                           <input type="date" className="dateFromInput cursor-pointer w-full mt-1 border-2 p-2 rounded-md" />
                         </div>
                         <div className="dateTo mt-2 md:m-0 w-full">
-                          <p>To: *</p>
+                          <span>To</span>
+                          <span className='text-red-600'>*</span> <span >:</span>
                           <input type="date" className="dateToInput cursor-pointer w-full mt-1 border-2 p-2 rounded-md" />
                         </div>
                         <div className="dateTo mt-2 md:m-0 w-full">
-                          <p>Status Type: *</p>
+                          <span>Status Type</span>
+                          <span className='text-red-600'>*</span> <span >:</span>
                           <input type="text" className="dateToInput cursor-pointer w-full mt-1 border-2 p-2 rounded-md" placeholder="Status Type" />
                         </div>
                       </div>

@@ -1,91 +1,95 @@
 import { faClock, faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faAnglesRight, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export const sideNavbarItems= [{ 
+export const sidebarItems= [{ 
     id: 1, 
     label: "Dashboard", 
-    icon: <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill= " "> <path d="M280-400q17 0 28.5-11.5T320-440q0-17-11.5-28.5T280-480q-17 0-28.5 11.5T240-440q0 17 11.5 28.5T280-400Zm0-160q17 0 28.5-11.5T320-600q0-17-11.5-28.5T280-640q-17 0-28.5 11.5T240-600q0 17 11.5 28.5T280-560Zm80 160h360v-80H360v80Zm0-160h360v-80H360v80Zm-40 440v-80H160q-33 0-56.5-23.5T80-280v-480q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v480q0 33-23.5 56.5T800-200H640v80H320ZM160-280h640v-480H160v480Zm0 0v-480 480Z" /> </svg>,
-    dropdownItems: [
-      { label: "Admin Dashboard", link: "/dashboard" }     
+    svg: <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill= " #0056DC "> <path d="M280-400q17 0 28.5-11.5T320-440q0-17-11.5-28.5T280-480q-17 0-28.5 11.5T240-440q0 17 11.5 28.5T280-400Zm0-160q17 0 28.5-11.5T320-600q0-17-11.5-28.5T280-640q-17 0-28.5 11.5T240-600q0 17 11.5 28.5T280-560Zm80 160h360v-80H360v80Zm0-160h360v-80H360v80Zm-40 440v-80H160q-33 0-56.5-23.5T80-280v-480q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v480q0 33-23.5 56.5T800-200H640v80H320ZM160-280h640v-480H160v480Zm0 0v-480 480Z" /> </svg>,
+    link: [
+      { label: "Admin Dashboard", to: "/dashboard" }     
     ]
   },
   { 
     id: 2, 
     label: "Members", 
-    icon: <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill= " " > <path d="M40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm720 0v-120q0-44-24.5-84.5T666-434q51 6 96 20.5t84 35.5q36 20 55 44.5t19 53.5v120H760ZM360-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm400-160q0 66-47 113t-113 47q-11 0-28-2.5t-28-5.5q27-32 41.5-71t14.5-81q0-42-14.5-81T544-792q14-5 28-6.5t28-1.5q66 0 113 47t47 113ZM120-240h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0 320Zm0-400Z" />
+    svg: <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill= " #0056DC " > <path d="M40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm720 0v-120q0-44-24.5-84.5T666-434q51 6 96 20.5t84 35.5q36 20 55 44.5t19 53.5v120H760ZM360-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm400-160q0 66-47 113t-113 47q-11 0-28-2.5t-28-5.5q27-32 41.5-71t14.5-81q0-42-14.5-81T544-792q14-5 28-6.5t28-1.5q66 0 113 47t47 113ZM120-240h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0 320Zm0-400Z" />
               </svg>,
-    dropdownItems: [
-      { label: "FieldExecutive(FE) (1)", link: "/field-executive" },
-      { label: "FRANCHISE(FSDS)", link: "/franchise" },
-      { label: "SuperDistributor(SDS) (0) ", link: "/super-distributor" },
-      { label: "Distributor(DS) (1)", link: "/distributor-ds" },
-      { label: "RETAILER(RT) (2)", link: "/retailer" },
-      { label: "Not Working Members (0) ", link: "/not-working" },
-      { label: " Suspended User ", link: "/suspended-user" },
-      { label: "Not Working User (0) ", link: "/not-working-user-list" },
+    link: [
+      { label: "FieldExecutive(FE) (1)", to: "/field-executive" },
+      { label: "FRANCHISE(FSDS)", to: "/franchise" },
+      { label: "SuperDistributor(SDS) (0) ", to: "/super-distributor" },
+      { label: "Distributor(DS) (1)", to: "/distributor-ds" },
+      { label: "RETAILER(RT) (2)", to: "/retailer" },
+      { label: "Not Working Members (0) ", to: "/not-working" },
+      { label: " Suspended User ", to: "/suspended-user" },
+      { label: "Not Working User (0) ", to: "/not-working-user-list" },
       
     ]
   },
   { 
     id: 3, 
     label: "Report",
-    icon:<svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill= " "> <path d="M320-480v-80h320v80H320Zm0-160v-80h320v80H320Zm-80 240h300q29 0 54 12.5t42 35.5l84 110v-558H240v400Zm0 240h442L573-303q-6-8-14.5-12.5T540-320H240v160Zm480 80H240q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h480q33 0 56.5 23.5T800-800v640q0 33-23.5 56.5T720-80Zm-480-80v-640 640Zm0-160v-80 80Z" />
+    svg:<svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill= " #0056DC "> <path d="M320-480v-80h320v80H320Zm0-160v-80h320v80H320Zm-80 240h300q29 0 54 12.5t42 35.5l84 110v-558H240v400Zm0 240h442L573-303q-6-8-14.5-12.5T540-320H240v160Zm480 80H240q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h480q33 0 56.5 23.5T800-800v640q0 33-23.5 56.5T720-80Zm-480-80v-640 640Zm0-160v-80 80Z" />
               </svg> , 
-    dropdownItems: [
-      { label: "Recharge", link: "/mobile-history" },
-      { label: "Bill Payments", link: "/bill-payments" },
-      { label: "Verify", link: "/verify" },
-      { label: "BAnking", link: "/banking" },
-      { label: "Aeps", link: "/aeps" },
-      { label: "Payout", link: "/payout" },
-      { label: "Pan card", link: "/pancard" },
-      { label: "UPI", link: "/upi" },
-      { label: "Wallet Transfer", link: "/wallet-transfer" },
-      { label: "Investment", link: "/investment" },
-      { label: "QR Collection", link: "/qr-collection" },
-      { label: "Pending Transaction", link: "/pending-report" },
-      { label: "Admin Profit Report", link: "/admin-report" },
-      { label: "Refund Manager", link: "/refund-manager" },
-      { label: "Api Summary", link: "/api-summary" },
-      { label: "Ledger Report", link: "/ledger-report" },
-      { label: " Payment Report", link: "/pending-report" },
+    icon:  faAnglesRight ,
+    link: [
+      { label: "Recharge", to: "/mobile-history" },
+      { label: "Bill Payments", to: "/bill-payments" },
+      { label: "Verify", to: "/verify" },
+      { label: "BAnking", to: "/banking" },
+      { label: "Aeps", to: "/aeps" },
+      { label: "Payout", to: "/payout" },
+      { label: "Pan card", to: "/pancard" },
+      { label: "UPI", to: "/upi" },
+      { label: "Wallet Transfer", to: "/wallet-transfer" },
+      { label: "Investment", to: "/investment" },
+      { label: "QR Collection", to: "/qr-collection" },
+      { label: "Pending Transaction", to: "/pending-report" },
+      { label: "Admin Profit Report", to: "/admin-report" },
+      { label: "Refund Manager", to: "/refund-manager" },
+      { label: "Api Summary", to: "/api-summary" },
+      { label: "Ledger Report", to: "/ledger-report" },
+      { label: " Payment Report", to: "/pending-report" },
     ]},{ 
       id: 4, 
       label: "Payment", 
-      icon: <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill= " "> <path d="M549-120 280-400v-80h140q53 0 91.5-34.5T558-600H240v-80h306q-17-35-50.5-57.5T420-760H240v-80h480v80H590q14 17 25 37t17 43h88v80h-81q-8 85-70 142.5T420-400h-29l269 280H549Z" />
+      svg: <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill= " #0056DC "> <path d="M549-120 280-400v-80h140q53 0 91.5-34.5T558-600H240v-80h306q-17-35-50.5-57.5T420-760H240v-80h480v80H590q14 17 25 37t17 43h88v80h-81q-8 85-70 142.5T420-400h-29l269 280H549Z" />
               </svg>,
-      dropdownItems: [
-        { label: "Balance Transfer ", link: "/balance-transfer" },
-        { label: " Balance Return ", link: "/balance-return" } ,   
-        { label: "Balance Return Request ", link: "/balance-return-request" } ,  
-        { label: "Payment Request Review ", link: "/payment-view" } ,   
-        { label: "Purchase Balance ", link: "/purchase-bal" } ,   
-        { label: "Commission Wallet Transfer ", link: "/commission-detail" } ,   
+
+      link: [
+        { label: "Balance Transfer ", to: "/balance-transfer" },
+        { label: " Balance Return ", to: "/balance-return" } ,   
+        { label: "Balance Return Request ", to: "/balance-return-request" } ,  
+        { label: "Payment Request Review ", to: "/payment-view" } ,   
+        { label: "Purchase Balance ", to: "/purchase-bal" } ,   
+        { label: "Commission Wallet Transfer ", to: "/commission-detail" } ,   
 
       ]
     },{ 
       id: 5, 
       label: "Dispute", 
-      icon:  <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill= " "> <path d="M880-80 720-240H320q-33 0-56.5-23.5T240-320v-40h440q33 0 56.5-23.5T760-440v-280h40q33 0 56.5 23.5T880-640v560ZM160-473l47-47h393v-280H160v327ZM80-280v-520q0-33 23.5-56.5T160-880h440q33 0 56.5 23.5T680-800v280q0 33-23.5 56.5T600-440H240L80-280Zm80-240v-280 280Z" />
+      svg:  <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill= " #0056DC "> <path d="M880-80 720-240H320q-33 0-56.5-23.5T240-320v-40h440q33 0 56.5-23.5T760-440v-280h40q33 0 56.5 23.5T880-640v560ZM160-473l47-47h393v-280H160v327ZM80-280v-520q0-33 23.5-56.5T160-880h440q33 0 56.5 23.5T680-800v280q0 33-23.5 56.5T600-440H240L80-280Zm80-240v-280 280Z" />
               </svg>,
-      dropdownItems: [
-        { label: "Pending Dispute", link: "/pending-disputes" } ,
-        { label: "Solved Dispute", link: "/solve-dispute" } 
+
+      link: [
+        { label: "Pending Dispute", to: "/pending-disputes" } ,
+        { label: "Solved Dispute", to: "/solve-dispute" } 
       ]
     },
     { 
       id: 6, 
       label: " User Income", 
-      icon: <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill= " "> <path d="M560-440q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM280-320q-33 0-56.5-23.5T200-400v-320q0-33 23.5-56.5T280-800h560q33 0 56.5 23.5T920-720v320q0 33-23.5 56.5T840-320H280Zm80-80h400q0-33 23.5-56.5T840-480v-160q-33 0-56.5-23.5T760-720H360q0 33-23.5 56.5T280-640v160q33 0 56.5 23.5T360-400Zm440 240H120q-33 0-56.5-23.5T40-240v-440h80v440h680v80ZM280-400v-320 320Z" />
+      svg: <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill= " #0056DC "> <path d="M560-440q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM280-320q-33 0-56.5-23.5T200-400v-320q0-33 23.5-56.5T280-800h560q33 0 56.5 23.5T920-720v320q0 33-23.5 56.5T840-320H280Zm80-80h400q0-33 23.5-56.5T840-480v-160q-33 0-56.5-23.5T760-720H360q0 33-23.5 56.5T280-640v160q33 0 56.5 23.5T360-400Zm440 240H120q-33 0-56.5-23.5T40-240v-440h80v440h680v80ZM280-400v-320 320Z" />
               </svg>,
-      dropdownItems: [
-        { label: " Field Executive(FE) Income ", link: "/fe-income" } ,    
-        { label: " FRANCHISE(FSDS) Income ", link: "/franchise-fsds" } ,    
-        { label: " Super Distributor(SDS) Income ", link: "/super-admin" },     
-        { label: " RETAILER(RT) Income ", link: "/retailer-income" } ,    
-        { label: " Suspended User (SU) Income ", link: "/suspended-user-income" } ,
-        { label: " Not Working Members Income ", link: "/not-working" } , 
+
+      link: [
+        { label: " Field Executive(FE) Income ", to: "/fe-income" } ,    
+        { label: " FRANCHISE(FSDS) Income ", to: "/franchise-fsds" } ,    
+        { label: " Super Distributor(SDS) Income ", to: "/super-admin" },     
+        { label: " RETAILER(RT) Income ", to: "/retailer-income" } ,    
+        { label: " Suspended User (SU) Income ", to: "/suspended-user-income" } ,
+        { label: " Not Working Members Income ", to: "/not-working" } , 
       ]
     },
     

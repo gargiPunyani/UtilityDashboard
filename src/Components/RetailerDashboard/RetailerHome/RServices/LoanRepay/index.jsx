@@ -29,7 +29,7 @@ const LoanRepayment = () => {
         <div className="loanImage bg-white h-[60vh] w-[60%] p-5 ">
           <img
             className="loanImage h-[100%] m-auto"
-            src="https://res.cloudinary.com/dixfg1bvv/image/upload/v1738824373/images_fdt4sv.png"
+            src="https://res.cloudinary.com/dixfg1bvv/image/upload/v1738908718/bank-credit-loan-payment_ksowip.jpg"
             alt="loanImage"
           />
         </div>

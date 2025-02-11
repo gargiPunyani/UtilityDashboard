@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { Outlet } from "react-router-dom";
 import SideNavbar from "../Components/SharedComponent/SideNavbar";
 import MainNav from "../Components/SharedComponent/MainNavbar";
-import Footer from "../Components/SharedComponent/Footer"
 
 const Layout = () => {
   const [openPopup, setOpenPopup] = useState(null);

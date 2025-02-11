@@ -57,7 +57,7 @@ const RBillPayment = () => {
     },]
   return (
     <div className="rBillPayOuter">
-      <div className="rBillPayOut">
+      <div className="rBillPayOut text-sm">
         <div className="rBillPayInner p-3">
           <div className="dashboardBtn button mb-3">
             <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
@@ -67,7 +67,7 @@ const RBillPayment = () => {
               </span>
             </button>
           </div>
-          <div className="SearchDownload">
+          <div className="SearchDownload shadow-lg rounded-md ">
             <StatusDownload/>
           </div>
           <div className="dataTable p-3 bg-white rounded-md shadow-xl mt-6"> 

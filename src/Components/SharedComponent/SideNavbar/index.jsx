@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../../Assests/webwiseLogo.png";
 import logo2 from "../../../Assests/webwiseLogoAlphabet.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 
 const SideNavbar = () => {
   const [isopen, setIsOpen] = useState(false);
+  // const [ isClickInside ,setIsClickInside] = useState(false)
   const [dropdown, setDropdown] = useState({
     one: false,
     two: false,
@@ -44,20 +45,34 @@ const SideNavbar = () => {
       setDropdown({ ...dropdown, six: !dropdown.six, two: false, one: false, four: false, five: false, three: false,});
     }
   };
-  const dropdownRef =useRef()
-  useEffect(() => {
-  const closeDropdown= (e)=>{
-   
-    if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-      setDropdown({});
-    }
-  }
-    document.addEventListener("mousedown", closeDropdown);
+  const handleClickOutside = (event) => {
+    const navElement = document.querySelector(".sideNavOuterMost");
+    const dropdownElement = document.querySelector(".dropdownItems");
 
+    if (
+      navElement &&
+      dropdownElement &&
+      !navElement.contains(event.target) &&
+      !dropdownElement.contains(event.target)
+    ) {
+      setDropdown({
+        one: false,
+        two: false,
+        three: false,
+        four: false,
+        five: false,
+        six: false,
+      });
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", closeDropdown);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+ 
   return (
     <div
       className={`sideNavOuterMost transition-all bg-white ease-in-out duration-700 delay-700 transform ${
@@ -124,7 +139,7 @@ const SideNavbar = () => {
             </div>
           </div>
           <div
-            id={1}  ref={dropdownRef}  onClick={(e) => e.stopPropagation()} 
+            id={1} onClick={(e) => e.stopPropagation()} 
             className=" dropdownItems w-[40vh] absolute left-[70%] shadow-2xl shadow-slate-400 rounded-md h-auto cursor-pointer hidden text-xs z-10 bg-white text-justify p-1 "
             style={{ display: `${dropdown.one ? "block" : "none"}` }} >
             {/* {openPopup === "sideItem1" && <div className="popup" > */}
@@ -162,7 +177,7 @@ const SideNavbar = () => {
             </div>
           </div>
           <div
-            id={2} ref={dropdownRef}  onClick={(e) => e.stopPropagation()} 
+            id={2}onClick={(e) => e.stopPropagation()} 
             className="dropdownItems w-[40vh] absolute left-[70%] shadow-2xl shadow-slate-400 rounded-md h-auto z-10  transition-all text-justify duration-300 text-xs ease-in-out cursor-pointer hidden bg-white p-1"
             style={{ display: `${dropdown.two ? "inline-block" : "none"}` }} >
             {/* {openPopup === "sideItem2" && <div className="popup"> */}
@@ -214,7 +229,7 @@ const SideNavbar = () => {
             </div>
           </div>
           <div
-            id={3} ref={dropdownRef}  onClick={(e) => e.stopPropagation()} 
+            id={3}onClick={(e) => e.stopPropagation()} 
             className="dropdownItems w-[40vh] absolute left-[70%] overflow-y-scroll h-[75vh] top-[22%] shadow-2xl shadow-slate-400 rounded-md bg-white z-10 hidden cursor-pointer text-xs text-justify p-1 "
             style={{ display: `${dropdown.three ? "block" : "none"}` }} >
             {/* {openPopup === "sideItem3" && <div className="popup">   */}
@@ -285,7 +300,7 @@ const SideNavbar = () => {
             </div>
           </div>
           <div
-            id={4} ref={dropdownRef}  onClick={(e) => e.stopPropagation()} 
+            id={4}onClick={(e) => e.stopPropagation()} 
             className=" dropdownItems w-[40vh] absolute left-[70%] shadow-2xl shadow-slate-400 h-auto cursor-pointer hidden z-10 text-xs bg-white text-justify p-1 "
             style={{ display: `${dropdown.four ? "block" : "none"}` }} >
             {/* {openPopup === "sideItem4" && <div className="popup"> */}
@@ -333,7 +348,7 @@ const SideNavbar = () => {
             </div>
           </div>
           <div
-            id={5} ref={dropdownRef}  onClick={(e) => e.stopPropagation()} 
+            id={5}onClick={(e) => e.stopPropagation()} 
             className="dropdownItems w-[40vh] absolute left-[70%] shadow-2xl shadow-slate-400 rounded-md h-auto  cursor-pointer hidden text-xs z-10 bg-white text-justify p-1 "
             style={{ display: `${dropdown.five ? "block" : "none"}`,  color: `${dropdown.two ? "#0056DC" : ""}`,  top: `${dropdown.five ? "" : "0"}`,   }} >
             {/* {openPopup === "sideItem5" && <div className="popup"> */}
@@ -373,7 +388,7 @@ const SideNavbar = () => {
             </div>
           </div>
           <div
-            id={6} ref={dropdownRef}  onClick={(e) => e.stopPropagation()}  
+            id={6}onClick={(e) => e.stopPropagation()}  
             className="dropdownItems w-[40vh] absolute left-[70%] bottom-0 xs:bottom-auto shadow-2xl shadow-slate-400 rounded-md h-auto cursor-pointer hidden text-xs z-10 bg-white text-justify p-1 "
             style={{ display: `${dropdown.six ? "block" : "none"}` }} >
             {/* {openPopup === "sideItem6" && <div className="popup"> */}

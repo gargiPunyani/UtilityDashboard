@@ -5,7 +5,7 @@ const RetailerHomeCard = () => {
   return (
     <div className="cardOuterMost">
       <div className="cardsOuter">
-        <div className="cardInner gap-6 mt-5 grid grid-cols-5 items-center">
+        <div className="cardInner gap-6 mt-5 grid xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 items-center">
           {retailerHomeCard.map((item) => {
             return (
               <div

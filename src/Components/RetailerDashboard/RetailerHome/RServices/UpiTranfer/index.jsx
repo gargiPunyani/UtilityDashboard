@@ -9,8 +9,8 @@ const UpiTransfer = () => {
   return (
     <div className="upiTransferOuterMost">
       <div className="upiTransferOut">
-        <div className="upiTransferInner">
-          <div className="dashboardBtn button mt-3 px-5">
+        <div className="upiTransferInner p-4">
+          <div className="dashboardBtn button mt-3 ">
             <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
               <span>
                 <Link to={"/retailer-dashboard"}> Dashboard </Link>
@@ -18,16 +18,16 @@ const UpiTransfer = () => {
               </span>
             </button>
           </div>
-          <div className="upiTransfer bg-white w-[100%] h-[60vh] shadow-lg rounded-md p-4">
+          <div className="upiTransfer bg-white w-[100%] h-[60vh] shadow-lg mt-5 rounded-md p-4">
             <div className="providerFormHead uppercase mb-3 font-medium">
               <h3>UPI Transfer</h3>
             </div>
             <hr />
             <div className="upiTransferForm">
               <form>
-                <div className="upiTransferData uppercase">
-                  <label htmlFor="upiTransfer">provider</label>
-                  <select className="upiTransferDataOptions border-2 outline-none p-2 mt-2 rounded-md text-gray-600">
+                <div className="upiTransferData uppercase my-5">
+                  <label htmlFor="upiTransfer">provider: </label>
+                  <select className="upiTransferDataOptions border-2 w-full outline-none p-2 mt-2 rounded-md text-gray-600">
                     <option>Gpay</option>
                     <option>Phone Pe</option>
                     <option>Paytm</option>
@@ -35,32 +35,32 @@ const UpiTransfer = () => {
                     <option>Bank Tranfer</option>
                   </select>
                 </div>
-                <div className="upiTransferDetails grid grid-cols-2 gap-5">
+                <div className="upiTransferDetails grid grid-cols-2 my-5 gap-5">
                   <div className="upiTransferData uppercase">
-                    <label htmlFor="upiTransfer">Upi Id</label>
+                    <label htmlFor="upiTransfer">Upi Id: </label>
                     <input
-                      className="upiTransferInput border-2 outline-none p-2 mt-2 rounded-md text-gray-600"
+                      className="upiTransferInput border-2 w-full outline-none p-2 mt-2 rounded-md text-gray-600"
                       placeholder="Ex: 123456789@oksbi"
                     />
                   </div>
                   <div className="upiTransferData uppercase">
-                    <label htmlFor="upiTransfer">Beneficiary Name:</label>
+                    <label htmlFor="upiTransfer">Beneficiary Name: </label>
                     <input
-                      className="upiTransferInput border-2 outline-none p-2 mt-2 rounded-md text-gray-600"
+                      className="upiTransferInput border-2 w-full outline-none p-2 mt-2 rounded-md text-gray-600"
                       placeholder="Beneficiary Name"
                     />
                   </div>
                   <div className="upiTransferData uppercase">
-                    <label htmlFor="upiTransfer">Customer Number</label>
+                    <label htmlFor="upiTransfer">Customer Number: </label>
                     <input
-                      className="upiTransferInput border-2 outline-none p-2 mt-2 rounded-md text-gray-600"
+                      className="upiTransferInput border-2 w-full outline-none p-2 mt-2 rounded-md text-gray-600"
                       placeholder="Ex: 9876543211"
                     />
                   </div>
                   <div className="upiTransferData uppercase">
-                    <label htmlFor="upiTransfer">Amount</label>
+                    <label htmlFor="upiTransfer">Amount: </label>
                     <input
-                      className="upiTransferInput border-2 outline-none p-2 mt-2 rounded-md text-gray-600"
+                      className="upiTransferInput border-2 w-full outline-none p-2 mt-2 rounded-md text-gray-600"
                       placeholder="Amount"
                     />
                   </div>

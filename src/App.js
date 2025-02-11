@@ -73,7 +73,7 @@ import GasHistory from "./Components/Report/Recharges/GasHistory";
 import Fastag from "./Components/Report/Recharges/FastagHistory";
 import RetialerHome from "./Components/RetailerDashboard/RetailerHome";
 import RBillPayment from "./Components/RetailerDashboard/CCBill";
-import RLedgerReport from "./Components/RetailerDashboard/LedgerReport";
+import RLedgerReport from "./Components/RetailerDashboard/LedgerReport"
 import ReturnRequest from "./Components/RetailerDashboard/Balance/ReturnRequest";
 import Prepaid from "./Components/RetailerDashboard/RetailerHome/RServices/Prepaid";
 import DTHRecharge from "./Components/RetailerDashboard/RetailerHome/RServices/DTHRecharge";
@@ -81,6 +81,21 @@ import Postpaid from "./Components/RetailerDashboard/RetailerHome/RServices/Post
 import Landline from "./Components/RetailerDashboard/RetailerHome/RServices/Landline";
 import Electricity from "./Components/RetailerDashboard/RetailerHome/RServices/Electricity";
 import Water from "./Components/RetailerDashboard/RetailerHome/RServices/Water";
+import LoanRepayment from "./Components/RetailerDashboard/RetailerHome/RServices/LoanRepay";
+import RPayout from "./Components/RetailerDashboard/RetailerHome/RServices/Payout";
+import UpiTransfer from "./Components/RetailerDashboard/RetailerHome/RServices/UpiTranfer";
+import DMT from "./Components/RetailerDashboard/RetailerHome/RServices/DMT2";
+import CcBill from "./Components/RetailerDashboard/RetailerHome/RServices/CcBill";
+import RPaymentRequest from "./Components/RetailerDashboard/Balance/PaymentRequest";
+import MobilePostpaid from "./Components/RetailerDashboard/Reports/BillPayments/MobilePostpaid";
+import ElectricityHistory from "./Components/RetailerDashboard/Reports/BillPayments/Electricity";
+import LandlineHistory from "./Components/RetailerDashboard/Reports/BillPayments/LandlineHistory";
+import MobileReport from "./Components/RetailerDashboard/Reports/Recharge/MobileReport";
+import DTHReport from "./Components/RetailerDashboard/Reports/Recharge/DthReport";
+import WaterReport from "./Components/RetailerDashboard/Reports/WaterReport";
+import CCBillHistory from "./Components/RetailerDashboard/Reports/BillPayments/CcBill";
+import LoanRepayHistory from "./Components/RetailerDashboard/Reports/BillPayments/LoanRepay";
+import QRCollectionHistory from "./Components/RetailerDashboard/Reports/QRcollection";
 
 const App = () => {
   return (
@@ -175,10 +190,26 @@ const App = () => {
           <Route path="/retailer-landline" element={<Landline/>}/>
           <Route path="/retailer-electricity" element={<Electricity/>}/>
           <Route path="/retailer-water" element={<Water/>}/>
-
+          <Route path="/retailer-loan-repay" element={<LoanRepayment/>}/>
+          <Route path="/retailer-upi-transfer" element={<UpiTransfer/>}/>
+          <Route path="/retailer-payout" element={<RPayout/>}/>
+          <Route path="/retailer-dmt" element={<DMT/>}/>
+          <Route path="/retailer-cc-bill" element={<CcBill/>}/>
+          {/* reports */}
+          <Route path="/retailer-mobile-postpaid-history" element={<MobilePostpaid/>} />
+          <Route path="/retailer-electricity-history" element={<ElectricityHistory/>}/>
+          <Route path="/retailer-landline-history" element={<LandlineHistory/>}/>
+          <Route path="/retailer-mobile-report-history" element={<MobileReport/>}/>
+          <Route path="/retailer-dth-history" element={<DTHReport/>}/>
+          <Route path="/retailer-water-history" element={<WaterReport/>}/>
+          <Route path="/reatiler-cc-repayment-history" element={<CCBillHistory/>}/>
+          <Route path="/retailer-loan-repayment-history" element={<LoanRepayHistory />}/>
+          <Route path="/retailer-qrcollection-history" element={<QRCollectionHistory/>}/>
+          
           {/* cc bill payment */}
           <Route path="/retailer-bill-payments" element={<RBillPayment/>}/>
-          {/* reports */}
+          <Route path="/retailer-payment-request" element={<RPaymentRequest/>}/>
+          {/* Ledger reports */}
           <Route path="/retailer-ledger-report" element={<RLedgerReport />}/>
           {/* payments */}
           <Route path="/retailer-balance-return-request" element={<ReturnRequest/>}/>

@@ -31,6 +31,7 @@ const RPayout = () => {
             <div className="providerFormHead uppercase mb-3 font-semibold ">
               <h3>Payout</h3>
             </div>
+            
             <hr />
             <div className="payInner my-3">
               <label htmlFor="mobile">Mobile Number: </label>
@@ -46,9 +47,20 @@ const RPayout = () => {
               </button>
             </div>
           </div>
-
+          <div className="beneficiaryList bg-white w-[100%] shadow-lg rounded-md p-4 my-10">
+          <div className="payout flex justify-between mb-3 items-center">
+            <div className="beneficiaryHead uppercase font-semibold">
+              <h3>Beneficiary List </h3>
+            </div>
+            <div className="addBeneficiary">
+              <button className="addBeneficiaryBtn bg-red-500 rounded-md text-white p-2 ">Add Beneficiary </button>
+            </div>
+            </div>
+            <hr />
+            <BeneficiaryList rows={rows} columns={columns} />
+          </div>
           <div className="payoutForm bg-white w-[100%] shadow-lg rounded-md p-4 my-10">
-            <div className="payoutFormHead mb-3 uppercase font-semibold">
+            <div className="payoutFormHead uppercase mb-3 font-semibold">
               <h3>Transaction</h3>
             </div>
             <hr />
@@ -64,13 +76,7 @@ const RPayout = () => {
             </div>
           </div>
 
-          <div className="beneficiaryList bg-white w-[100%] shadow-lg rounded-md p-4 my-10">
-            <div className="beneficiaryHead uppercase my-3 font-medium">
-              <h3>Beneficiary List </h3>
-            </div>
-            <hr />
-            <BeneficiaryList rows={rows} columns={columns} />
-          </div>
+        
         </div>
       </div>
     </div>

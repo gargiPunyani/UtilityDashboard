@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import logo from "../../../Assests/webwiseLogo.png";
 import logo2 from "../../../Assests/webwiseLogoAlphabet.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown, faAngleUp, faAnglesRight } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown, faAngleUp, faAnglesRight} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { sidebarItems } from "../../constant";
 
@@ -24,7 +24,7 @@ const SideNavbar = () => {
       setActiveDropdown(null);
     }
   };
-
+  
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
@@ -40,14 +40,27 @@ const SideNavbar = () => {
     >
       <div className="sideNavOuter h-screen relative">
         <div className="sideNavInner cursor-pointer p-2 flex items-center justify-between">
-          <div className={`logo h-16 w-40 m-auto transition-transform ${isOpen ? "hidden" : "block"}`}>
+          <div
+            className={`logo h-16 w-40 m-auto transition-transform ${
+              isOpen ? "hidden" : "block"
+            }`}
+          >
             <img src={logo} alt="logo" />
           </div>
-          <div className={`logoAlphabet w-20 p-2 transition-transform ${isOpen ? "block" : "hidden"}`}>
+          <div
+            className={`logoAlphabet w-20 p-2 transition-transform ${
+              isOpen ? "block" : "hidden"
+            }`}
+          >
             <img src={logo2} alt="logo" />
           </div>
-          <div className="hideDisplay p-2 cursor-pointer" onClick={toggleSidebar}
-          style={{position: `${ isOpen ? "absolute" : "relative"}`,  right: `${isOpen ? "-35px" : "-10px"}`}}
+          <div
+            className="hideDisplay p-2 cursor-pointer"
+            onClick={toggleSidebar}
+            style={{
+              position: `${isOpen ? "absolute" : "relative"}`,
+              right: `${isOpen ? "-35px" : "-10px"}`,
+            }}
           >
             <span className="w-7 h-1 mb-1 bg-black block"></span>
             <span className="w-5 h-1 mb-1 bg-black block"></span>
@@ -56,21 +69,24 @@ const SideNavbar = () => {
         </div>
 
         <div className="sideNavBar ">
+          
           {sidebarItems.map(({ id, label, link, svg }) => (
             <div className="sideNav" key={id}>
               <div
                 className={`sideNavStart flex items-center text-center justify-between p-3 cursor-pointer ${
-                  activeDropdown === id ? "bg-blue-100 text-blue-600" : "text-black"
+                  activeDropdown === id
+                    ? "bg-blue-100 text-blue-600"
+                    : "text-black"
                 }`}
                 onClick={() => toggleDropdown(id)}
               >
-                <div className="sideNavData flex items-center gap-2" 
-                  style={{margin: `${isOpen ? "auto" : "" }`}}>
-                 <div className="sideNavIcon">
-                  {svg }
-                  </div>
+                <div
+                  className="sideNavData flex items-center gap-2"
+                  style={{ margin: `${isOpen ? "auto" : ""}` }}
+                >
+                  <div className="sideNavIcon">{svg}</div>
                   <div className="sideNavHeading">
-                  {!isOpen && <span>{label}</span>}
+                    {!isOpen && <span>{label}</span>}
                   </div>
                 </div>
                 {!isOpen && (
@@ -80,17 +96,25 @@ const SideNavbar = () => {
                   />
                 )}
               </div>
-
-              {/* Dropdown Content */}
               {activeDropdown === id && link.length > 0 && (
-                <div className="dropdownItems left-[40%] w-full text-xs z-10 bg-white shadow-md rounded p-2"
-                style={{width: `${activeDropdown ? "250px" : "100%" }`, position :`${activeDropdown ? "absolute" : "absolute"}`}}
+                <div
+                  className="dropdownItems left-[40%] w-full text-xs z-10 bg-white shadow-md rounded p-2"
+                  style={{
+                    width: `${activeDropdown ? "250px" : "100%"}`,
+                    position: `${activeDropdown ? "absolute" : "absolute"}`,
+                  }}
                 >
                   <ul>
                     {link.map(({ to, label }, index) => (
-                      <li key={index} className="p-2 text-gray-800 w-full top-0 hover:text-blue-500">
+                      <li
+                        key={index}
+                        className="p-2 text-gray-800 w-full top-0 hover:text-blue-500"
+                      >
                         <Link to={to}>
-                          <FontAwesomeIcon icon={faAnglesRight} className="mr-2" />
+                          <FontAwesomeIcon
+                            icon={faAnglesRight}
+                            className="mr-2"
+                          />
                           {label}
                         </Link>
                       </li>
@@ -182,7 +206,7 @@ export default SideNavbar;
 //       document.removeEventListener("mousedown", handleClickOutside);
 //     };
 //   }, []);
- 
+
 //   return (
 //     <div
 //       className={`sideNavOuterMost transition-all bg-white ease-in-out duration-700 delay-700 transform ${
@@ -249,7 +273,7 @@ export default SideNavbar;
 //             </div>
 //           </div>
 //           <div
-//             id={1} onClick={(e) => e.stopPropagation()} 
+//             id={1} onClick={(e) => e.stopPropagation()}
 //             className=" dropdownItems w-[40vh] absolute left-[70%] shadow-2xl shadow-slate-400 rounded-md h-auto cursor-pointer hidden text-xs z-10 bg-white text-justify p-1 "
 //             style={{ display: `${dropdown.one ? "block" : "none"}` }} >
 //             {/* {openPopup === "sideItem1" && <div className="popup" > */}
@@ -287,7 +311,7 @@ export default SideNavbar;
 //             </div>
 //           </div>
 //           <div
-//             id={2}onClick={(e) => e.stopPropagation()} 
+//             id={2}onClick={(e) => e.stopPropagation()}
 //             className="dropdownItems w-[40vh] absolute left-[70%] shadow-2xl shadow-slate-400 rounded-md h-auto z-10  transition-all text-justify duration-300 text-xs ease-in-out cursor-pointer hidden bg-white p-1"
 //             style={{ display: `${dropdown.two ? "inline-block" : "none"}` }} >
 //             {/* {openPopup === "sideItem2" && <div className="popup"> */}
@@ -339,7 +363,7 @@ export default SideNavbar;
 //             </div>
 //           </div>
 //           <div
-//             id={3}onClick={(e) => e.stopPropagation()} 
+//             id={3}onClick={(e) => e.stopPropagation()}
 //             className="dropdownItems w-[40vh] absolute left-[70%] overflow-y-scroll h-[75vh] top-[22%] shadow-2xl shadow-slate-400 rounded-md bg-white z-10 hidden cursor-pointer text-xs text-justify p-1 "
 //             style={{ display: `${dropdown.three ? "block" : "none"}` }} >
 //             {/* {openPopup === "sideItem3" && <div className="popup">   */}
@@ -410,7 +434,7 @@ export default SideNavbar;
 //             </div>
 //           </div>
 //           <div
-//             id={4}onClick={(e) => e.stopPropagation()} 
+//             id={4}onClick={(e) => e.stopPropagation()}
 //             className=" dropdownItems w-[40vh] absolute left-[70%] shadow-2xl shadow-slate-400 h-auto cursor-pointer hidden z-10 text-xs bg-white text-justify p-1 "
 //             style={{ display: `${dropdown.four ? "block" : "none"}` }} >
 //             {/* {openPopup === "sideItem4" && <div className="popup"> */}
@@ -458,7 +482,7 @@ export default SideNavbar;
 //             </div>
 //           </div>
 //           <div
-//             id={5}onClick={(e) => e.stopPropagation()} 
+//             id={5}onClick={(e) => e.stopPropagation()}
 //             className="dropdownItems w-[40vh] absolute left-[70%] shadow-2xl shadow-slate-400 rounded-md h-auto  cursor-pointer hidden text-xs z-10 bg-white text-justify p-1 "
 //             style={{ display: `${dropdown.five ? "block" : "none"}`,  color: `${dropdown.two ? "#0056DC" : ""}`,  top: `${dropdown.five ? "" : "0"}`,   }} >
 //             {/* {openPopup === "sideItem5" && <div className="popup"> */}
@@ -498,7 +522,7 @@ export default SideNavbar;
 //             </div>
 //           </div>
 //           <div
-//             id={6}onClick={(e) => e.stopPropagation()}  
+//             id={6}onClick={(e) => e.stopPropagation()}
 //             className="dropdownItems w-[40vh] absolute left-[70%] bottom-0 xs:bottom-auto shadow-2xl shadow-slate-400 rounded-md h-auto cursor-pointer hidden text-xs z-10 bg-white text-justify p-1 "
 //             style={{ display: `${dropdown.six ? "block" : "none"}` }} >
 //             {/* {openPopup === "sideItem6" && <div className="popup"> */}

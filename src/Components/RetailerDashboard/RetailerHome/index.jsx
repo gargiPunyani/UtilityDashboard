@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import RetailerHomeCard from "./Cards";
 import RDataTable from "./DataTable";
+// import Footer from "../../SharedComponent/Footer"
 
 const RetialerHome = () => {
   return (
@@ -30,6 +31,9 @@ const RetialerHome = () => {
           <RDataTable />
         </div>
       </div>
+      {/* <div className="footerSection mt-6 ">
+        <Footer/>
+      </div> */}
     </div>
   );
 };

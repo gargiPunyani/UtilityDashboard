@@ -89,7 +89,7 @@ const LoginLeft = () => {
         // const token = localStorage.getItem(token)
         // const uid = localStorage.getItem(uid)
         // const borwserData = localStorage.getItem(borwserData)
-        
+        // resetForm()
         const { mobile, password, otp, borwserData, uid, api_token } = values;
         callLogin({ mobile, password });
         loginOtp({ otp, api_token,  mobile, password, uid, borwserData });

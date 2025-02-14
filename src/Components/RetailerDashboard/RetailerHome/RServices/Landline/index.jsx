@@ -1,12 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ProviderForm from '../ProviderForm'
 import { Link } from 'react-router-dom'
 
 const Landline = () => {
+  const [providers, setProviders] = useState([]);
+    
+      useEffect(() => {
+        // Get the service_id from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const service_id = urlParams.get("service_id");
+    
+        // Retrieve data from sessionStorage using the service_id
+        const storedData = sessionStorage.getItem(`providers_${service_id}`);
+    
+        if (storedData) {
+          setProviders(JSON.parse(storedData));
+        } else {
+          console.error("No data found for this service ID in sessionStorage.");
+        }
+      }, []);
   return (
     <div className="landlineOuterMost">
     <div className="landlineOut">
-      <div className="dashboardBtn button mt-3 px-5">
+      <div className="dashboardBtn button mt-3 px-5 text-sm ">
         <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
           <span>
             <Link to={"/retailer-dashboard"}> Dashboard </Link>
@@ -19,10 +35,7 @@ const Landline = () => {
         <ProviderForm
           heading={"Landline"}
           label1={"Provider :"}
-          option1={"Airtel Landline"}
-          option2={"VI Landline"}
-          option3={"TATA Landline"}
-          option4={"BSNL Landline"}
+          providers={providers}
           label2={"Landline Number with STD code :"}
           data={"Ex: 01262123456"}
         />

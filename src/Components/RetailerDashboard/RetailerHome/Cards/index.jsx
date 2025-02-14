@@ -1,7 +1,32 @@
 import React from "react";
 import { retailerHomeCard } from "../../../constant";
+import instance from "../../../../Services/InstanceAxios";
 
 const RetailerHomeCard = () => {
+  const getData = async (service_id) => {
+    console.log(service_id, "serviceeeeeeeeeee");
+
+    try {
+      const response = await instance.post("recharge/provider-list", {
+        service_id: service_id,
+        api_token: localStorage.getItem("token"),
+      });
+      console.log(service_id);
+      console.log(response, "Responsee");
+      sessionStorage.setItem(
+        `providers_${service_id}`,
+        JSON.stringify(response.data.providers)
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // const handleCard = async (service_id) => {
+  //   console.log(service_id,"eeeeeee")
+  //   // const api_token = localStorage.getItem("token");
+  //   await getData(  service_id );
+  // };
   return (
     <div className="cardOuterMost">
       <div className="cardsOuter">
@@ -9,12 +34,18 @@ const RetailerHomeCard = () => {
           {retailerHomeCard.map((item) => {
             return (
               <div
-                className="cardDetails grid items-center border-2 rounded-md cursor-pointer hover:transition-transition-smooth hover:shadow-2xl gap-3 text-center py-9 px-3 hover:bg-indigo-50"
+                className="cardDetails"
                 key={item.id}
-              >
+                onClick={(e) => {
+                  e.preventDefault();
+                  getData(item.service_id);
+                  setTimeout(() => {
+                    window.location.href = `${item.href}?service_id=${item.service_id}`;
+                  }, 300);
+                }}>
                 {item.href ? (
                   <a href={item.href}>
-                    <div className="cardData grid gap-3 items-center">
+                    <div className="cardData grid items-center border-2 rounded-md cursor-pointer hover:transition-transition-smooth hover:shadow-2xl gap-3 text-center py-9 px-3 hover:bg-indigo-50">
                       <div className="cardDataIcon m-auto">{item.icon}</div>
                       <div className="cardDataLabel">
                         <p>{item.label}</p>
@@ -23,7 +54,7 @@ const RetailerHomeCard = () => {
                   </a>
                 ) : (
                   <div
-                    className="cardData grid gap-3 items-center"
+                    className="cardData  grid items-center border-2 rounded-md cursor-pointer hover:transition-transition-smooth hover:shadow-2xl gap-3 text-center py-9 px-3 hover:bg-indigo-50"
                     key={item.id}
                   >
                     <div className="cardDataIcon m-auto">{item.icon}</div>

@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import StatusDownload from '../../../../SharedComponent/StatusDownload'
 import ExecutiveTable from '../../../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable'
+import instance from '../../../../../Services/InstanceAxios'
 
 const DMT3History = () => {
+  const [data, setData] = useState([]);
+    const [dateRange, setDateRange] = useState({
+      fromdate: "01-01-2024",
+      todate: new Date().toISOString().split("T")[0],
+    });
     const columns = [
         { id: "id", name: "ID" },
         { id: "date", name: "Date Time" },
@@ -18,7 +24,58 @@ const DMT3History = () => {
         { id: "status", name: "Status" },
         { id: "action", name: "Action" },
       ];
-      const data = [{}];
+      const getData = async (api_token, fromdate, todate) => {
+        try {
+          const resp = await instance.get(`/report/money-report`, {
+            params: { api_token, fromdate, todate },
+          });
+        console.log(resp, "response");
+        console.log(resp.data);
+        if (resp.data.length > 0) {
+          const transformedData = resp.data.map((item) => ({
+            id: item.order_id,
+            date: item.date,
+            provider_name: item.provider_name,
+            number: item.sender_number,
+            status: item.status,
+            amount: item.amount,
+            customer_name: item.customer_name,
+            name:item.bene_name,
+            bank: item.bene_bank,
+            accountNo: item.bene_account,
+            service:item.service_type,
+            type:item.type,
+            utr:item.utr
+          }));
+          setData(transformedData);
+        } else {
+         setData([])
+        }
+        // id: item.id || index + 1,
+        // provider: item.provider_name,
+        // number: item.mobile_number,
+        // tax: item.txn_id,
+        // op: item.opening_balance,
+        // amount: item.recharge_amount,
+        // profit: item.profit_amount,
+        // cl: item.closing_balance,
+        // wallet: item.wallet_type,
+        // status: item.recharge_status,
+        // action: "View Details"
+      } catch (error) {
+        console.log(error)
+        return error
+      }
+    };
+    const handleDate = (newDateRange) => {
+      setDateRange(newDateRange);
+    };
+    useEffect(() => {
+      const api_token = localStorage.getItem("token");
+      if (api_token) {
+        getData(api_token, dateRange.fromdate, dateRange.todate);
+      }
+    }, [dateRange]); 
   return (
     <div className="rDthReportOuter">
     <div className="rDthOut">

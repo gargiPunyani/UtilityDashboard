@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProviderForm from "../ProviderForm";
 import { Link } from "react-router-dom";
 
 const Postpaid = () => {
+    const [providers, setProviders] = useState([]);
+      
+        useEffect(() => {
+          // Get the service_id from the URL
+          const urlParams = new URLSearchParams(window.location.search);
+          const service_id = urlParams.get("service_id");
+      
+          // Retrieve data from sessionStorage using the service_id
+          const storedData = sessionStorage.getItem(`providers_${service_id}`);
+      
+          if (storedData) {
+            setProviders(JSON.parse(storedData));
+          } else {
+            console.error("No data found for this service ID in sessionStorage.");
+          }
+        }, []);
+
   return (
     <div className="postpaidOuterMost">
       <div className="postpaidOut">
@@ -25,6 +42,7 @@ const Postpaid = () => {
           <ProviderForm
             heading={"Mobile Postpaid"}
             label1={"Provider :"}
+            providers={providers}
             option1={"Airtel Postpaid"}
             option2={"VI Postpaid"}
             option3={"TATA Postpaid"}

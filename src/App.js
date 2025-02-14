@@ -96,6 +96,9 @@ import WaterReport from "./Components/RetailerDashboard/Reports/WaterReport";
 import CCBillHistory from "./Components/RetailerDashboard/Reports/BillPayments/CcBill";
 import LoanRepayHistory from "./Components/RetailerDashboard/Reports/BillPayments/LoanRepay";
 import QRCollectionHistory from "./Components/RetailerDashboard/Reports/QRcollection";
+import DMT2History from "./Components/RetailerDashboard/Reports/Banking/Dmt2";
+import DMT3History from "./Components/RetailerDashboard/Reports/Banking/Dmt3";
+import ResetMpin from "./Components/AdminDashboard/Profile/MpinReset";
 
 const App = () => {
   return (
@@ -111,6 +114,7 @@ const App = () => {
           <Route path="/profile" element={<ProfileView />} />
           {/* password */}
           <Route path="/reset" element={<ResetPassword />} />
+          <Route path ="/reset-mpin" element={<ResetMpin/>} />
         {/* settings */}
           <Route path="/company-settings" element={<CompanySetting/>}/>
           <Route path='/site-settings' element={<SiteSettingOuter/>}/>
@@ -205,6 +209,8 @@ const App = () => {
           <Route path="/reatiler-cc-repayment-history" element={<CCBillHistory/>}/>
           <Route path="/retailer-loan-repayment-history" element={<LoanRepayHistory />}/>
           <Route path="/retailer-qrcollection-history" element={<QRCollectionHistory/>}/>
+          <Route path="/retailer-dmt2-history" element={<DMT2History/>}/>
+          <Route path="/retailer-dmt3-history" element={<DMT3History/>}/>
           
           {/* cc bill payment */}
           <Route path="/retailer-bill-payments" element={<RBillPayment/>}/>

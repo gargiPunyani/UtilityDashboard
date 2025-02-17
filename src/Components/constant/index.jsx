@@ -628,6 +628,7 @@ export const dmtForm= [{
   pincode:"Pin Code: ",
   address: "Address:",
   state:"State:",
+  otp:"OTP:"
 }]
 export const ccBillForm =[{
   id:"cardNumber",

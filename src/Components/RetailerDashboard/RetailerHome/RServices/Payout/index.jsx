@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import RPayoutForm from "./Form";
-import ExecutiveTable from "../../../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable";
 import BeneficiaryList from "./Beneficiary";
 
 const RPayout = () => {

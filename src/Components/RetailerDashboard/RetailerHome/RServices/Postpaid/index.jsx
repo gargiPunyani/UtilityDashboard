@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Postpaid = () => {
     const [providers, setProviders] = useState([]);
+    
       
         useEffect(() => {
           // Get the service_id from the URL

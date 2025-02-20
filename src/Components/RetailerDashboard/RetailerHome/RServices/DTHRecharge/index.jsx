@@ -72,8 +72,8 @@ const DTHRecharge = () => {
               </span>
             </button>
           </div>
-          <div className="dthRecharge flex gap-5 p-4">
-            <div className="dthRechargeForm bg-white w-[45%] rounded-md shadow-lg p-4">
+          <div className="dthRecharge grid sm:grid-cols-2 gap-5 p-4">
+            <div className="dthRechargeForm bg-white rounded-md shadow-lg p-4">
             <form onSubmit={(e) => e.preventDefault()}>
                 <div className="formHead uppercase font-semibold mb-3">DTH</div>
                 <hr />
@@ -84,16 +84,33 @@ const DTHRecharge = () => {
                   </label>
                   <select
                     className="prepaidFormInput w-full mt-2 text-gray-600 border-2 rounded-md p-2 outline-none"
-                    value={selectedProviderId}
-                    onChange={(e) => setSelectedProviderId(e.target.value)}
-                  >
-                    {providers.map((item) => {
+                    value={selectedProviderId}>
+                      <option value="" disabled selected>
+                      Select a provider
+                    </option>
+                    {providers?.length > 0 ? (
+                      providers.map((item) => (
+                        <option key={item.id} value={item.service_id}>
+                          {item.provider_name}
+                        </option>
+                      ))
+                    ) : (
+                      <>
+                        <option value="static1">Airtel Digital TV </option>
+                        <option value="static2">Dish TV </option>
+                        <option value="static3">Sun TV </option>
+                        <option value="static3">Videocon TV </option>
+                        <option value="static3">Reliance TV </option>
+                        <option value="static4">Tata TV </option>
+                      </>
+                    )}
+                    {/* {providers.map((item) => {
                       return (
                         <option key={item.id} value={item.service_id}>
                           {item.provider_name}
                         </option>
                       );
-                    })}
+                    })} */}
                     {/* <option>Airtel Digital TV</option>
               <option>Tata Sky</option>
               <option>Dish TV</option>
@@ -150,19 +167,18 @@ const DTHRecharge = () => {
                   <button
                     type="submit"
                     className="payNowBtn text-white bg-blue-600 py-2 px-5 rounded-lg "
-                    onClick={handlePaymentClick}
-                  >
+                    onClick={handlePaymentClick} >
                      {showMpin ? "Confirm Payment" : "Pay Now"}
                   </button>
                 </div>
               </form>
             </div>
-            <div className="dthRechargeBg h-auto bg-white rounded-md shadow-lg w-[70%]">
+            <div className="dthRechargeBg  bg-white rounded-md shadow-lg ">
               <div className="dthImage p-5 m-auto">
                 <img
                   src="https://res.cloudinary.com/dixfg1bvv/image/upload/v1738827616/dth-recharge_y0dxpm.png"
                   alt="dthImage"
-                  className="m-auto"
+                  className="dthImage m-auto"
                 />
               </div>
             </div>

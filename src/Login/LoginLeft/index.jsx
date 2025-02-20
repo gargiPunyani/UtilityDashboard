@@ -65,6 +65,15 @@ const LoginLeft = () => {
           , {replace: true} 
         )
       }
+      
+      if (responseData.data.status === "success" && responseData.data.name ==="Distibutor User") {
+        localStorage.setItem("userName:" , responseData.data.name)
+        localStorage.setItem("token", responseData.data.api_token);
+        alert("Welcome")
+        navigate("/dashboard"
+          , {replace: true} 
+        )
+      }
       // localStorage.setItem("token",responseData.data.api_token)
       // alert(responseData.data.message)
       // console.log(responseData.data)

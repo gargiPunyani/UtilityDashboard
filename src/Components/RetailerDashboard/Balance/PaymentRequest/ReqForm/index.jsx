@@ -10,13 +10,13 @@ const ReqForm = () => {
     <div className='reqFormOuterMost'>
         <div className="reqFormOut">
             <div className="reqFormInner">
-                <form className='reqForm grid grid-cols-3 gap-5'>
+                <form className='reqForm grid sm:grid-cols-2 md:grid-cols-3 gap-5'>
                     <div className="reqFormHead">
                         <label htmlFor='reqFormLabel'>
                             <span>Bank Name </span>
                             <span className='text-red-600'>*</span>
                         </label>
-                        <select className='reqFormInput text-gray-700 w-full outline-none border-2 p-2 my-2 rounded-md'>
+                        <select className='reqFormInput cursor-pointer text-gray-700 w-full outline-none border-2 p-2 my-2 rounded-md'>
                             <option disabled selected>Select Bank</option>
                             <option>SBI Bank</option>
                             <option>Axis Bank</option>
@@ -28,7 +28,7 @@ const ReqForm = () => {
                             <span>Payment Method </span>
                             <span className='text-red-600'>*</span>
                         </label>
-                        <select className='reqFormInput text-gray-700 w-full outline-none border-2 p-2 my-2 rounded-md'>
+                        <select className='reqFormInput cursor-pointer text-gray-700 w-full outline-none border-2 p-2 my-2 rounded-md'>
                             <option disabled selected>Select Payment</option>
                             <option>Cash</option>
                             <option>RTGS/ NEFT</option>
@@ -41,14 +41,14 @@ const ReqForm = () => {
                             <span>Payment Date </span>
                             <span className='text-red-600'>*</span>
                         </label>
-                       <input type='date' className='reqFormInput text-gray-700 w-full outline-none border-2 p-2 my-2 rounded-md' placeholder='' />
+                       <input type='date' className='reqFormInput cursor-pointer text-gray-700 w-full outline-none border-2 p-2 my-2 rounded-md' placeholder='' />
                     </div>
                     <div className="reqFormHead">
                         <label htmlFor='reqFormLabel'>
                             <span>Amount </span>
                             <span className='text-red-600'>*</span>
                         </label>
-                       <input type='number' className='reqFormInput text-gray-700 w-full outline-none border-2 p-2 my-2 rounded-md' placeholder='Amount' />
+                       <input type='text' className='reqFormInput text-gray-700 w-full outline-none border-2 p-2 my-2 rounded-md' placeholder='Amount' />
                     </div>
                     <div className="reqFormHead">
                         <label htmlFor='reqFormLabel'>
@@ -62,7 +62,7 @@ const ReqForm = () => {
                             <span>Slip Upload </span>
                             <span className='text-red-600'>*</span>
                         </label>
-                       <input type='file' className='reqFormInput text-gray-700 w-full outline-none border-2 p-2 my-2 rounded-md' />
+                       <input type='file' className='reqFormInput cursor-pointer text-gray-700 w-full outline-none border-2 p-2 my-2 rounded-md' />
                     </div>                 
                 </form>
                 <div className='saveAndClose flex gap-5 my-5'>

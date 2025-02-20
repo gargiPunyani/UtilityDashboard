@@ -18,7 +18,6 @@ import CreateUser from "./Components/AdminDashboard/Members/FieldExecutive/Creat
 import IncomeReport from "./Components/Report/IncomeReport";
 import Admin from "./Components/UserIncome/Admin";
 import SuperAdminIncome from "./Components/UserIncome/SuperAdmin";
-import Distributor from "./Components/UserIncome/Distributor";
 import NotWorking from "./Components/UserIncome/NotWorkingMember";
 import CommissionBal from "./Components/Payment/CommissionBalance";
 import BalanceReturn from "./Components/Payment/BalanceReturn";
@@ -208,16 +207,16 @@ const App = () => {
           <Route path="/retailer-water-history" element={<WaterReport/>}/>
           <Route path="/reatiler-cc-repayment-history" element={<CCBillHistory/>}/>
           <Route path="/retailer-loan-repayment-history" element={<LoanRepayHistory />}/>
-          <Route path="/retailer-qrcollection-history" element={<QRCollectionHistory/>}/>
+          <Route path="/retailer-qr-collection-history" element={<QRCollectionHistory/>}/>
           <Route path="/retailer-dmt2-history" element={<DMT2History/>}/>
           <Route path="/retailer-dmt3-history" element={<DMT3History/>}/>
           
           {/* cc bill payment */}
           <Route path="/retailer-bill-payments" element={<RBillPayment/>}/>
-          <Route path="/retailer-payment-request" element={<RPaymentRequest/>}/>
           {/* Ledger reports */}
           <Route path="/retailer-ledger-report" element={<RLedgerReport />}/>
           {/* payments */}
+          <Route path="/retailer-payment-request" element={<RPaymentRequest/>}/>
           <Route path="/retailer-balance-return-request" element={<ReturnRequest/>}/>
           </Route>
           </Routes>

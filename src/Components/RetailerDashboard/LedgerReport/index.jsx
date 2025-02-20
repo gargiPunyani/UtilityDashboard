@@ -63,7 +63,7 @@ const RLedgerReport = () => {
             <WalletDownload />
           </div>
           <div className="dataTable bg-white shadow-xl mt-3 p-3">
-            <div className="dataTableHead uppercase font-medium mb-3">
+            <div className="dataTableHead uppercase text-sm font-medium mb-3">
                 Ledger Report
             </div>
             <hr/>

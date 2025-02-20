@@ -69,10 +69,11 @@ const Prepaid = () => {
         </button>
       </div>
 
-      <div className="prepaidOuter grid grid-cols-2 p-5">
-        <div className="prepaidInner bg-no-repeat h-[63vh] w-full m-auto opacity-80 bg-[url(https://res.cloudinary.com/dixfg1bvv/image/upload/v1738758486/hand-with-mobile-phone-and-sim-card-operator-selection_uoikzm.jpg)]"></div>
-
-        <div className="prepaidForm bg-white w-auto p-4 uppercase">
+      <div className="prepaidOuter grid md:grid-cols-2 gap-5 p-5">
+        <div className="prepaidInner order-1 w-full m-auto bg-white opacity-80 ">
+        <img src="https://res.cloudinary.com/dixfg1bvv/image/upload/v1738758486/hand-with-mobile-phone-and-sim-card-operator-selection_uoikzm.jpg"/>
+        </div>
+        <div className="prepaidForm order-0 bg-white w-auto p-4 uppercase">
           <form onSubmit={(e) => e.preventDefault()}>
             <div className="formHead uppercase font-semibold mb-3">
               Mobile Prepaid
@@ -86,14 +87,26 @@ const Prepaid = () => {
               <select
                 className="prepaidFormInput w-full uppercase mt-2 text-gray-600 border-2 rounded-md p-2 outline-none"
                 value={selectedProviderId}
-                onChange={(e) => setSelectedProviderId(e.target.value)}
-              >
-                <option value="">Select Provider</option>
-                {providers.map((item) => (
-                  <option key={item.id} value={item.id}>
-                    {item.provider_name}
-                  </option>
-                ))}
+                onChange={(e) => setSelectedProviderId(e.target.value)}>
+                <option disabled selected>
+                      Select a provider
+                    </option>
+                    {providers?.length > 0 ? (
+                      providers.map((item) => (
+                        <option key={item.id} value={item.service_id}>
+                          {item.provider_name}
+                        </option>
+                      ))
+                    ) : (
+                      <>
+                        <option value="static1">Airtel</option>
+                        <option value="static2">JIO</option>
+                        <option value="static3">Vodafone</option>
+                        <option value="static3">IDEA</option>
+                        <option value="static3">BSNL</option>
+                        <option value="static4">VI</option>
+                      </>
+                    )}
               </select>
             </div>
 

@@ -13,7 +13,7 @@ const UpdateForm = () => {
         <div className='memberTypeInfo p-3'>
          <form className='personalInfoForm  sm:flex items-center w-full gap-10 sm:text-justify'>
           <label htmlFor='memberType' className='memberType w-[15%] '>Member Tye:</label>
-          <select className='w-full bg-gray-100 text-slate-600 text-sm outline-none border-none sm:ml-6 mt-4 mb-4 p-2 rounded-md' name='member ' >
+          <select className='memberTypeSelect w-full bg-gray-100 text-slate-600 text-sm outline-none border-none sm:ml-6 mt-4 mb-4 p-2 rounded-md' name='member ' >
             <option>CBS</option>
           </select>
           </form>

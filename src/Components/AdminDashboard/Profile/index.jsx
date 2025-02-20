@@ -1,25 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SuperAdmin from "./SuperAdmin";
 import KycDetails from "./Kyc";
 import Footer from "../../SharedComponent/Footer";
 import UpdateForm from "./UpdateProfile";
-import SideNavbar from "../../SharedComponent/SideNavbar";
-import MainNav from "../../SharedComponent/MainNavbar";
 
 const ProfileView = () => {
+  const naviagte= useNavigate()
+  const handleNavigate=()=>{
+    const username= localStorage.getItem("userName:")
+    if (username=== "Retail User") naviagte("/retailer-dashboard")
+    else naviagte('/dashboard')
+  }
   return (
     <div className="profileOuterMost">
       <div className="profileOuter">
-        <div className="w-full">
-
-              <div className="profileOuterMost p-5">
+              <div className="profileInner p-5 w-full">
                 <div className="dashboardBtn button mb-2">
                   <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
-                    <span>
-                      <Link to={"/dashboard"}> Dashboard </Link>
-                      {">"} My Profile
-                    </span>
+                    <span onClick={handleNavigate}>
+                       Dashboard   </span>
+                       <span>  {">"} My Profile</span>
+                 
                   </button>
                 </div>
                 <div className="superAdminDetails bg-white w-full shadow-lg">
@@ -37,8 +39,6 @@ const ProfileView = () => {
               </div>
             </div>
           </div>
-        </div>
- 
   );
 };
 

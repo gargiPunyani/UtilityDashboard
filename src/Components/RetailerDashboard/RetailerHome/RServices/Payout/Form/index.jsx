@@ -5,7 +5,7 @@ const RPayoutForm = ({ label1, label2, label3, label4, label5, label6 }) => {
     <div className="rPayFormOutMost">
       <div className="rPayFormOut">
         <div className="rpayFormInner">
-          <form className="rpayForm grid grid-cols-2 my-5 gap-5">
+          <form className="rpayForm grid sm:grid-cols-2 my-5 gap-5">
             <div className="rpayFormData">
               <label htmlFor={label1}>{label1}</label>
               <input

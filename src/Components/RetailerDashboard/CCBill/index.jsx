@@ -63,7 +63,7 @@ const RBillPayment = () => {
             <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
               <span>
                 <Link to={"/retailer-dashboard"}> Dashboard </Link>
-                {">"} Dashboard
+                {">"} CC Bill Payment Report
               </span>
             </button>
           </div>

@@ -1,17 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const ProviderForm = ({
-  heading,
-  label1,
-  providers,
-  label2,
-  option1,
-  option2,
-  option3,
-  option4,
-  data,
-}) => {
+const ProviderForm = ({ heading, label1, providers, label2, option1, option2, option3, option4, data,}) => {
   const [showStaticOptions, setShowStaticOptions] = useState(false);
   const navigate = useNavigate();
   const handleClose = () => {
@@ -29,7 +19,7 @@ const ProviderForm = ({
           </div>
           <hr />
           <div className="providerFormBody">
-            <form>
+            <form onSubmit={(e) => e.preventDefault()}>
               <div className="providerForm my-5">
                 <label htmlFor="provider">{label1}</label>
                 <div className="providerFormData">
@@ -81,8 +71,7 @@ const ProviderForm = ({
                 <div className="fetch">
                   <button
                     type="submit"
-                    className="closeBtn bg-green-600 text-white rounded-md px-8 py-3"
-                  >
+                    className="closeBtn bg-green-600 text-white rounded-md px-8 py-3">
                     Fetch Bill
                   </button>
                 </div>

@@ -83,7 +83,7 @@ const Distributor = () => {
     <div className='superAdminOutMost'>
         <div className='superAdminOuter'>
             <div className="dashboardBtn button mb-2 p-3">
-              <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
+              <button className="dahsboardButton  p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
                 <span>
                   <Link to={"/dashboard"}> Dashboard </Link>
                     {">"} Income Report

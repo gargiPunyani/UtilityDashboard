@@ -1,10 +1,9 @@
+import { useFormik } from "formik";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { dmtForm } from "../../../../constant";
-import { useFormik } from "formik";
-import { addSenderSchema, numberSchema } from "./FormikSchema";
 import instance from "../../../../../Services/InstanceAxios";
-import { last } from "@tanstack/router-core";
+import { dmtForm } from "../../../../constant";
+import { addSenderSchema, numberSchema } from "./FormikSchema";
 
 const DMT = () => {
   const [showForm, setShowForm] = useState(false);
@@ -74,7 +73,7 @@ const DMT = () => {
     <div className="dmtOuterMost text-sm p-3">
       <div className="dmtOut">
         <div className="dashboardBtn button mb-3">
-          <button className="dahsboardButton relative p-1 items-center text-xs font-semibold">
+          <button className="dahsboardButton  p-1 items-center text-xs font-semibold">
             <span>
               <Link to={"/retailer-dashboard"}> Dashboard </Link>
               {">"} Payout
@@ -279,7 +278,7 @@ export default DMT;
 //     <div className="dmtOuterMost text-sm p-3">
 //       <div className="dmtOut">
 //         <div className="dashboardBtn button mb-3">
-//           <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer">
+//           <button className="dahsboardButton  p-1 items-center text-xs font-semibold decoration-none cursor-pointer">
 //             <span>
 //               <Link to={"/retailer-dashboard"}> Dashboard </Link>
 //               {">"} Payout

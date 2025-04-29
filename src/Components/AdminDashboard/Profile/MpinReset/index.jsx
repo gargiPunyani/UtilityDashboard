@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
 import SuperAdmin from '../SuperAdmin';
 import Mpin from './MPin';
@@ -9,7 +9,7 @@ const ResetMpin = () => {
           <div className="resetOuterMost text-xs sm:text-sm p-5">
             <div className="resetOuter">
               <div className="dashboardBtn button mb-2">
-                <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
+                <button className="dahsboardButton p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
                   <span>
                     <Link to={"/retailer-dashboard"}> Dashboard </Link>
                     {">"} Reset MPIN

@@ -63,7 +63,7 @@ const Prepaid = () => {
   return (
     <div className="prepaidOuterMost text-sm">
       <div className="dashboardBtn button mt-3 px-5">
-        <button className="dahsboardButton relative p-1 items-center text-xs font-semibold">
+        <button className="dahsboardButton  p-1 items-center text-xs font-semibold">
           <Link to={"/retailer-dashboard"}> Dashboard </Link> {">"} Mobile
           Prepaid
         </button>
@@ -216,7 +216,7 @@ export default Prepaid;
 //   return (
 //     <div className="prepaidOuterMost text-sm">
 //       <div className="dashboardBtn button mt-3 px-5">
-//         <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
+//         <button className="dahsboardButton  p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
 //           <span>
 //             <Link to={"/retailer-dashboard"}> Dashboard </Link>
 //             {">"} Mobile Prepaid

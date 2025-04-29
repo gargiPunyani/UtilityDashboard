@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
-import SearchWallet from '../../SharedComponent/SearchWallet';
-import ExecutiveTable from '../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import MainNav from '../../SharedComponent/MainNavbar';
-import SideNavbar from '../../SharedComponent/SideNavbar';
+import ExecutiveTable from '../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable';
+import SearchWallet from '../../SharedComponent/SearchWallet';
 
 const NotWorking = () => {
     const columns = [
@@ -109,7 +107,7 @@ const NotWorking = () => {
     <div className='notWorkingOuterMost'>
         <div className='notWorkingOut'>
             <div className="dashboardBtn button mb-2 p-3">
-              <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
+              <button className="dahsboardButton  p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
                 <span>
                   <Link to={"/dashboard"}> Dashboard </Link>
                   {">"} Income Report

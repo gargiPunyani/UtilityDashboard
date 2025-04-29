@@ -1,8 +1,8 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import SuperAdmin from "./SuperAdmin";
-import KycDetails from "./Kyc";
+import { useNavigate } from "react-router-dom";
 import Footer from "../../SharedComponent/Footer";
+import KycDetails from "./Kyc";
+import SuperAdmin from "./SuperAdmin";
 import UpdateForm from "./UpdateProfile";
 
 const ProfileView = () => {
@@ -17,7 +17,7 @@ const ProfileView = () => {
       <div className="profileOuter">
               <div className="profileInner p-5 w-full">
                 <div className="dashboardBtn button mb-2">
-                  <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
+                  <button className="dahsboardButton p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
                     <span onClick={handleNavigate}>
                        Dashboard   </span>
                        <span>  {">"} My Profile</span>

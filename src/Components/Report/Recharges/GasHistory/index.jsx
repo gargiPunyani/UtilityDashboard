@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import DateWiseSearch from "../../../SharedComponent/DateWiseSearch";
 import ExecutiveTable from "../../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable";
+import DateWiseSearch from "../../../SharedComponent/DateWiseSearch";
 // import axiosInstance from "../../../Services/Instance";
 
 const GasHistory = () => {
@@ -99,7 +99,7 @@ const GasHistory = () => {
       <div className="mobileHistoryOuter">
 
             <div className="dashboardBtn button mb-2 p-3">
-              <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
+              <button className="dahsboardButton  p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
                 <span>
                   <Link to={"/dashboard"}> Dashboard </Link>
                   {">"} Gas History

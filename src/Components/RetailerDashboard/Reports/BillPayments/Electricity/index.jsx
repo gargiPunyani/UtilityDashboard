@@ -24,7 +24,7 @@ const ElectricityHistory = () => {
       <div className="rDthOut">
         <div className="rDthInner text-sm p-3">
           <div className="dashboardBtn button mb-3">
-            <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
+            <button className="dahsboardButton  p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
               <span>
                 <Link to={"/retailer-dashboard"}> Dashboard </Link>
                 {">"}Electricity History

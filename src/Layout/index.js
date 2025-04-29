@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Outlet } from "react-router-dom";
-import SideNavbar from "../Components/SharedComponent/SideNavbar";
 import MainNav from "../Components/SharedComponent/MainNavbar";
+import SideNavbar from "../Components/SharedComponent/SideNavbar";
 
 const Layout = () => {
   const [openPopup, setOpenPopup] = useState(null);
@@ -33,7 +33,7 @@ const Layout = () => {
     <div className="layoutOuterMost">
       <div className="layoutOut">
         <div className="layoutInner w-full flex">
-          <div className="layoutSide bg-white" ref={sidebarRef}>
+          <div className="layoutSide bg-white " ref={sidebarRef}>
             <SideNavbar
               openPopup={openPopup}
               handleTogglePopup={handleTogglePopup}
@@ -41,7 +41,7 @@ const Layout = () => {
           </div>
 
           <div className="layoutMain w-full" >
-          <div className="mainNav" ref={navbarRef}>
+          <div className="mainNav sticky top-0" ref={navbarRef}>
               <MainNav openPopup={openPopup} handleTogglePopup={handleTogglePopup} />
             </div>
 

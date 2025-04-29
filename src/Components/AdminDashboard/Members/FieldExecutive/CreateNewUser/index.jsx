@@ -1,15 +1,15 @@
+import { faRefresh } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
 import { basicDetails, basicDetails2, permanentAddress } from "../../../../constant";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRefresh } from "@fortawesome/free-solid-svg-icons";
 
 const CreateUser = () => {
   return (
     <div className="createUserOuterMost">
       <div className="createUserOuter">
             <div className="dashboardBtn button mb-2 p-3">
-              <button className="dahsboardButton relative p-2 mt-2 items-center text-xs font-semibold decoration-none cursor-pointer ">
+              <button className="dahsboardButton p-1 mt-2 items-center text-xs font-semibold decoration-none cursor-pointer ">
                 <span>
                   <Link to={"/dashboard"}> Dashboard </Link>
                   {">"} FIELDEXECUTIVE(FE)

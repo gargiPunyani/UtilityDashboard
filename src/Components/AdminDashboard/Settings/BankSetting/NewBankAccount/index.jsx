@@ -1,7 +1,6 @@
+import { useFormik } from "formik";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { newAccountDetail } from "../../../../constant";
-import { useFormik } from "formik";
 import { bankAccountSchema } from "../../../../../Login/LoginLeft/Schema";
 
 const initialValues = {
@@ -31,7 +30,7 @@ const NewBank = () => {
       <div className="newBankOuter">
  
             <div className="dashboardBtn button mb-2 p-3">
-              <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
+              <button className="dahsboardButton  p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
                 <span>
                   <Link to={"/dashboard"}> Dashboard </Link>
                   {">"} New Bank Account

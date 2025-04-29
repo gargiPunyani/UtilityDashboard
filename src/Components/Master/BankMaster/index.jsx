@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import SideNavbar from "../../SharedComponent/SideNavbar";
-import MainNav from "../../SharedComponent/MainNavbar";
 import { Link, useNavigate } from "react-router-dom";
 import ExecutiveTable from "../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable";
 
@@ -184,7 +182,7 @@ const BankMaster = () => {
     <div className="bankMasterOuterMost">
       <div className="bankMasterOuter">
             <div className="dashboardBtn button mb-2 p-3">
-              <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
+              <button className="dahsboardButton  p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
                 <span>
                   <Link to={"/dashboard"}> Dashboard </Link>
                   {">"} Bank Master

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import SuperAdmin from "../SuperAdmin";
 import Reset from "./reset";
 
@@ -15,7 +15,7 @@ const ResetPassword = () => {
           <div className="resetOuterMost text-xs sm:text-sm p-5">
             <div className="resetOuter">
               <div className="dashboardBtn button mb-2">
-                <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
+                <button className="dahsboardButton p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
                   <span onClick={handleNavigate}>
                      Dashboard </span>
                      <span>

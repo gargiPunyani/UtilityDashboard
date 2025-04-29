@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import StatusDownload from "../../../../SharedComponent/StatusDownload";
-import ExecutiveTable from "../../../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable";
 import instance from "../../../../../Services/InstanceAxios";
+import ExecutiveTable from "../../../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable";
+import StatusDownload from "../../../../SharedComponent/StatusDownload";
 
 const MobileReport = () => {
   const [data, setData] = useState([]);
@@ -83,7 +83,7 @@ const MobileReport = () => {
       <div className="rMobileOut">
         <div className="rMobileInner text-sm p-3">
           <div className="dashboardBtn button mb-3">
-            <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
+            <button className="dahsboardButton  p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
               <span>
                 <Link to={"/retailer-dashboard"}> Dashboard </Link>
                 {">"} Mobile Report

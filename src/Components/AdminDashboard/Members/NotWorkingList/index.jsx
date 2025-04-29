@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-import ExecutiveTable from '../FieldExecutive/FieldExecutiveTable'
-import SideNavbar from '../../../SharedComponent/SideNavbar'
-import MainNav from '../../../SharedComponent/MainNavbar'
 import { Link } from 'react-router-dom'
+import ExecutiveTable from '../FieldExecutive/FieldExecutiveTable'
 
 const NotWorkingList = () => {
     const columns=[ {
@@ -66,7 +64,7 @@ const NotWorkingList = () => {
         <div className='notWorkingListOuter'>
        
             <div className="dashboardBtn button mb-2 p-3">
-              <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
+              <button className="dahsboardButton  p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
                 <span>
                   <Link to={"/dashboard"}> Dashboard </Link>
                   {">"} Not Working User List

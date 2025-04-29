@@ -7,7 +7,7 @@ const Electricity = () => {
     <div className="electricityOuterMost">
     <div className="electricityOut">
       <div className="dashboardBtn button mt-3 px-5">
-        <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
+        <button className="dahsboardButton  p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
           <span>
             <Link to={"/retailer-dashboard"}> Dashboard </Link>
             {">"} Electricity

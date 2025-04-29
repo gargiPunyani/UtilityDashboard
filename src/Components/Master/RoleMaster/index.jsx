@@ -1,6 +1,4 @@
-import React, { useState } from 'react'
-import SideNavbar from '../../SharedComponent/SideNavbar';
-import MainNav from '../../SharedComponent/MainNavbar';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ExecutiveTable from '../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable';
 
@@ -109,7 +107,7 @@ const RoleMaster = () => {
     <div className='roleMasterOutMost'>
         <div className='roleMasterOuter'>
             <div className="dashboardBtn button mb-2 p-3">
-              <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer "> <span>   <Link to={"/dashboard"}> Dashboard </Link>   {">"} Role Master </span>
+              <button className="dahsboardButton  p-1 items-center text-xs font-semibold decoration-none cursor-pointer "> <span>   <Link to={"/dashboard"}> Dashboard </Link>   {">"} Role Master </span>
               </button>
             </div>
             <div className="packageSettingInner m-5 rounded-lg text-xs sm:text-sm md:text-md p-3 bg-white shadow-lg">

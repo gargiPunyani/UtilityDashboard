@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import SideNavbar from '../../SharedComponent/SideNavbar'
-import MainNav from '../../SharedComponent/MainNavbar'
-import DateWiseSearch from '../../SharedComponent/DateWiseSearch'
 import ExecutiveTable from '../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable'
+import DateWiseSearch from '../../SharedComponent/DateWiseSearch'
 
 const ApiSummary = () => {
     const columns=[{
@@ -113,7 +111,7 @@ const ApiSummary = () => {
     <div className='mobileHistoryOuter'>
    
         <div className="dashboardBtn button mb-2 p-3">
-                <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
+                <button className="dahsboardButton  p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
                   <span>
                     <Link to={"/dashboard"}> Dashboard </Link>
                     {">"} APi Summary

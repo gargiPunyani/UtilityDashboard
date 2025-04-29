@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ReqForm from "./ReqForm";
-import BeneficiaryList from "../../RetailerHome/RServices/Payout/Beneficiary";
 import ExecutiveTable from "../../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable";
+import BeneficiaryList from "../../RetailerHome/RServices/Payout/Beneficiary";
+import ReqForm from "./ReqForm";
 
 const RPaymentRequest = () => {
   const columns = [
@@ -35,7 +35,7 @@ const RPaymentRequest = () => {
     <div className="rPayRequestOuter">
       <div className="rPayRequestOut text-sm p-4">
         <div className="dashboardBtn button mb-3">
-          <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
+          <button className="dahsboardButton  p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
             <span>
               <Link to={"/retailer-dashboard"}> Dashboard </Link>
               {">"} Payment Request

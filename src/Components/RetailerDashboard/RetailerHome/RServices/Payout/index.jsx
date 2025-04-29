@@ -18,7 +18,7 @@ const RPayout = () => {
     <div className="payouterMost text-sm">
       <div className="payOuter p-4">
         <div className="dashboardBtn button mb-3">
-          <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
+          <button className="dahsboardButton  p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
             <span>
               <Link to={"/retailer-dashboard"}> Dashboard </Link>
               {">"} Payout

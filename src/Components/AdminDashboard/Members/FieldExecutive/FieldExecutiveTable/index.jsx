@@ -31,19 +31,10 @@ const ExecutiveTable = ({ handleChange, columns = [], rows = [] }) => {
     setOrderBy(property);
   };
   const sortedRows = [...rows].sort((a, b) => {
-    if (!orderBy) return 0; // No sorting by default
+    if (!orderBy) return 0; 
     if (order === "asc") return a[orderBy] > b[orderBy] ? 1 : -1;
     return a[orderBy] < b[orderBy] ? 1 : -1;
   });
-  // const handleChangePage = (event, newPage) => {
-  //   setRowsPerPage(+event.target.value)
-  //   setPage(newPage);
-  // };
-
-  // const handleChangeRowsPerPage = (event) => {
-  //   setRowsPerPage(+event.target.value);
-  //   setPage(0);
-  // };
 
   return (
     <div className="fieldTableOuterMost text-sm md:text-md bg-white">

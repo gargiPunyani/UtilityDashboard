@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ProviderForm = ({ heading, label1, providers, label2, option1, option2, option3, option4, data,}) => {
-  const [showStaticOptions, setShowStaticOptions] = useState(false);
+  // const [showStaticOptions, setShowStaticOptions] = useState(false);
   const navigate = useNavigate();
   const handleClose = () => {
     navigate("/retailer-dashboard");
   };
-  const toggleStaticOptions = () => {
-    setShowStaticOptions(providers.length === 0);
-  };
+  // const toggleStaticOptions = () => {
+  //   setShowStaticOptions(providers.length === 0);
+  // };
   return (
-    <div className="providerFormOutMost w-[40%]">
+    <div className="providerFormOutMost order-1 sm:order-2 text-sm  lg:w-[40%]">
       <div className="providerFormOuter">
-        <div className="providerFormInner bg-white w-[100%] h-[60vh] shadow-lg rounded-md p-4">
+        <div className="providerFormInner bg-white w-[100%] h-[62vh] shadow-lg rounded-md p-4">
           <div className="providerFormHead uppercase mb-3 font-medium">
             <h3>{heading}</h3>
           </div>
@@ -67,7 +67,7 @@ const ProviderForm = ({ heading, label1, providers, label2, option1, option2, op
                   </div>
                 </div>
               </div>
-              <div className="button flex gap-5">
+              <div className="button xs:flex gap-5">
                 <div className="fetch">
                   <button
                     type="submit"
@@ -75,7 +75,7 @@ const ProviderForm = ({ heading, label1, providers, label2, option1, option2, op
                     Fetch Bill
                   </button>
                 </div>
-                <div className="close">
+                <div className="close mt-5 xs:mt-0">
                   <button
                     className="closeBtn bg-gray-600 text-white rounded-md px-8 py-3"
                     onClick={handleClose}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { mainMenuItem, profileData, retailerMenuItem, SidebarBalance } from "../../constant";
 import { Link, useNavigate } from "react-router-dom";
+import { mainMenuItem, profileData, retailerMenuItem, SidebarBalance } from "../../constant";
 
 const MainNav = () => {
   const [accordionData, setAccordionData] = useState({
@@ -41,8 +41,7 @@ const MainNav = () => {
       setAccordionData({
         ...accordionData, four: !accordionData.four, two: true, one: true, three: true
       });
-    }
-  }
+    }}
   const [activeAccordion, setActiveAccordion] = useState(null);
 
   const toggleAccordion = (id) => {
@@ -55,15 +54,13 @@ const MainNav = () => {
       localStorage.clear()
       navigate("/", { replace: true })
       window.history.pushState(null, null, window.location.href);
-    }
-  };
+    }};
 
   useEffect(() => {
     const checkAuth = () => {
       if (!localStorage.getItem("token")) {
         navigate("/", { replace: true });
-      }
-    };
+      }}; 
     checkAuth();
     window.history.pushState(null, null, window.location.href);
     window.addEventListener("popstate", () => {
@@ -82,8 +79,7 @@ const MainNav = () => {
       setIsRetailer(false);
     }
   }, [userName])
-  const menuItems = isRetailer ? retailerMenuItem || [] : mainMenuItem || [];
-  // const menuItems = isRetailer ? retailerMenuItem : mainMenuItem;
+  const menuItems = isRetailer ? retailerMenuItem : mainMenuItem;
 
   return (
     <div className="navOuterMost w-full bg-white">
@@ -103,10 +99,11 @@ const MainNav = () => {
                       </p>
                     </div>
                     {activeAccordion === menu.id && (
-                      <div className="mainNavItems absolute top-[12%] z-10 bg-white p-5 shadow-lg">
+                      <div className="mainNavItems absolute top-[75%] z-10 bg-white p-5 shadow-lg">
                         <ul>
                           {menu.links.map((link) => (
-                            <li key={link.path} className="mb-4 hover:text-blue-700">
+                            <li key={link.path} className="mb-4 hover:text-blue-700"
+                            onClick={() => setActiveAccordion(null)}>
                               <Link to={link.path}>{link.label}</Link>
                             </li>
                           ))}
@@ -130,7 +127,7 @@ const MainNav = () => {
             </div>
             <div className="People hover:text-blue-700" onClick={() => handleOpen(4)}>
               <svg xmlns="http://www.w3.org/2000/svg" height="27px" viewBox="0 -960 960 960" width="27px" fill="#00000"> <path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z" /> </svg>
-              <div className={`profileViewOption absolute z-10 h-screen right-0 top-0 w-full xs:w-[250px] sm:w-[350px] left-[20%]  xs:left-[70%] lg:left-auto bg-white hidden transition-all text-gray-600 `} style={{ display: accordionData.four ? "none" : "block" }} id={4}>
+              <div className={`profileViewOption absolute z-10 h-screen right-0 top-0 w-full xs:w-[250px] sm:w-[350px] left-0 sm:left-[65%] xs:left-[50%] lg:left-auto bg-white hidden transition-all text-gray-600 `} style={{ display: accordionData.four ? "none" : "block" }} id={4}>
                 <div className="profileDropdown w-full ">
                   <div className="profileOptions text-white text-center bg-blue-700 p-5">
                     <div className="close absolute right-5 top-3 cursor-pointer">
@@ -147,7 +144,6 @@ const MainNav = () => {
                         (CBS)
                       </div>
                     </div>
-
                   </div>
                   <div className="profileData bg-white">
                     {profileData?.map((item) => {
@@ -175,17 +171,14 @@ const MainNav = () => {
                             </div>
                           )}
                         </div>
-                      );
-                    })}
+                      );})}
                   </div>
                 </div>
               </div>
             </div>
-
             <div className="moreInfo hover:text-blue-700" onClick={() => handleOpen(3)}>
               <svg xmlns="http://www.w3.org/2000/svg" height="27px" viewBox="0 -960 960 960" width="27px" fill="#00000"> <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" /></svg>
-
-              <div className={`moreInfoLeftOuter transition-all ease-in-out duration-700 shadow-lg h-screen w-full absolute xs:w-1/2 lg:w-1/4 z-10 left-[30%] xs:left-[70%] md:left-auto bg-white top-0 right-0 ${accordionData.three ? "opacity-0 pointer-events-none " : "opacity-100 pointer-events-auto  "}`}
+              <div className={`moreInfoLeftOuter transition-all ease-in-out duration-700 shadow-lg h-screen w-full absolute xs:w-1/2 lg:w-1/4 z-10 left-[0%] xs:left-[50%] md:left-auto bg-white top-0 right-0 ${accordionData.three ? "opacity-0 pointer-events-none " : "opacity-100 pointer-events-auto  "}`}
                 style={{ transform: accordionData.three ? "translateX(100%)" : "translateX(0)", display: accordionData.three ? "none" : "block" }}
                 id={3}>
                 <div className="moreInfoLeft bg-blue-700 p-5 text-white">
@@ -211,8 +204,7 @@ const MainNav = () => {
                         </div>
                         <hr />
                       </div>
-                    );
-                  })}
+                    ); })}
                 </div>
               </div>
             </div>
@@ -220,7 +212,6 @@ const MainNav = () => {
         </div>
       </div>
     </div>
-  );
-};
+  ) };
 
 export default MainNav;

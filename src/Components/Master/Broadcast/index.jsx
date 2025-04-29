@@ -1,8 +1,6 @@
-import React, { useRef, useState } from 'react'
-import SideNavbar from '../../SharedComponent/SideNavbar'
-import MainNav from '../../SharedComponent/MainNavbar'
-import { Link } from 'react-router-dom'
 import JoditEditor from 'jodit-react'
+import React, { useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Broadcast = () => {
   const editor= useRef()
@@ -15,7 +13,7 @@ const Broadcast = () => {
         <div className='broadcastOuter'>
        
             <div className="dashboardBtn button mb-2 p-3">
-              <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
+              <button className="dahsboardButton  p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
                 <span>
                   <Link to={"/dashboard"}> Dashboard </Link>
                   {">"} Broadcast

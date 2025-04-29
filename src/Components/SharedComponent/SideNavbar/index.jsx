@@ -48,17 +48,33 @@ const SideNavbar = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 640px)");
+  
+    const handleResize = (event) => {
+      requestAnimationFrame(() => {
+        setIsOpen(event.matches); // `true` below 640px, `false` above
+      });
+    };
+  
+    handleResize(mediaQuery); // Run on mount
+    mediaQuery.addEventListener("change", handleResize);
+  
+    return () => {
+      mediaQuery.removeEventListener("change", handleResize);
+    };
+  }, []);
 
   const menuItems = isRetailer ? retailerSidebar : sidebarItems;
 
   return (
-    <div className={`sideNavOuterMost transition-all bg-white ease-in-out duration-500 transform`}>
+    <div className={`sideNavOuterMost transition-all bg-white ease-in-out duration-500 transform sticky top-0`}>
       <div className="sideNavOuter h-screen relative">
         <div className="sideNavInner cursor-pointer p-2 flex items-center justify-between">
-          <div className={`logo h-16 w-40 m-auto transition-transform ${isOpen ? "hidden" : "block"}`}>
+          <div className={`logo h-16 w-40 m-auto  transition-all ease-in-out duration-500   ${isOpen ? "hidden" : "block"}`}>
             <img src={logo} alt="logo" />
           </div>
-          <div className={`logoAlphabet w-20 p-2 transition-transform ${isOpen ? "block" : "hidden"}`}>
+          <div className={`logoAlphabet w-20 p-2 transition-all duration-500 ease-in-out ${isOpen ? "block" : "hidden"}`}>
             <img src={logo2} alt="logo" />
           </div>
           <div
@@ -78,24 +94,24 @@ const SideNavbar = () => {
           {menuItems.map(({ id, label, link, svg }) => (
             <div className="sideNav" key={id}>
               <div
-                className={`sideNavStart flex items-center text-center justify-between p-3 cursor-pointer ${
+                className={`sideNavStart flex items-center text-center justify-between p-3  transition-all ease-in-out duration-500  cursor-pointer ${
                   activeDropdown === id ? "bg-blue-100 text-blue-600" : "text-black"
                 }`}
                 onClick={() => toggleDropdown(id)}>
                 <div className="sideNavData flex items-center gap-2" style={{ margin: isOpen ? "auto" : "" }}>
                   <div className="sideNavIcon">{svg}</div>
-                  <div className="sideNavHeading">{!isOpen && <span>{label}</span>}</div>
+                  <div className="sideNavHeading transition-all duration-500 ease-in-out ">{!isOpen && <span>{label}</span>}</div>
                 </div>
                 {!isOpen && (
                   <FontAwesomeIcon
                     icon={activeDropdown === id ? faAngleUp : faAngleDown}
-                    className="angleUpDown transition-transform"/>
+                    className="angleUpDown transition-all duration-500 ease-in-out "/>
                 )}
               </div>
 
               {activeDropdown === id && Array.isArray(link) && link.length > 0 ? (
                 <div
-                  className="dropdownItems w-full text-xs z-10 bg-white shadow-md rounded p-2 absolute"
+                  className="dropdownItems w-full text-xs z-10 bg-white shadow-md rounded p-2 absolute max-h-[60vh] overflow-auto"
                   style={{ left: `${isOpen ? "60%" : ""}`, width: `${isOpen ? "200px" : "100%"}` }}>
                   <ul>
                     {link.map(({ to, label, subLinks }, index) => (

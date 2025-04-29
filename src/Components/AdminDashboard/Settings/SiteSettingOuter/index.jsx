@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SideNavbar from "../../../SharedComponent/SideNavbar";
-import MainNav from "../../../SharedComponent/MainNavbar";
-import SiteSet from "./SiteSetting";
 import GuestRegistraion from "./GuestRegistion";
 import MailSet from "./MailSetting";
+import SiteSet from "./SiteSetting";
 
 const SiteSettingOuter = () => {
   return (
@@ -14,7 +12,7 @@ const SiteSettingOuter = () => {
           
               <div className="siteSettingOuter p-5">
                 <div className="dashboardBtn button mb-2">
-                  <button className="dahsboardButton relative p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
+                  <button className="dahsboardButton  p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
                     <span>
                       <Link to={"/dashboard"}> Dashboard </Link>
                       {">"} Site Setting

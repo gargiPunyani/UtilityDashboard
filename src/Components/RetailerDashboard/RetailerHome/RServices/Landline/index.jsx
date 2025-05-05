@@ -16,10 +16,10 @@ const Landline = () => {
         if (storedData) {
           setProviders(JSON.parse(storedData));
         } else {
-          console.error("No data found for this service ID in sessionStorage.");
+          console.error("No data found for this service ID");
         }
       }, []);
-  return (
+  return ( 
     <div className="landlineOuterMost">
     <div className="landlineOut">
       <div className="dashboardBtn button mt-3 px-5 text-sm ">

@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import ProviderForm from "../ProviderForm";
+import { Link } from "react-router-dom";
 
-const Electricity = () => {
+const Insurance = () => {
   const [providers, setProviders] = useState([]);
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const categoryId = urlParams.get("category_id");
-    console.log(categoryId);
 
     if (!categoryId) {
       console.error("No category_id found in URL.");
@@ -28,40 +27,41 @@ const Electricity = () => {
       );
     }
   }, []);
+
   return (
-    <div className="electricityOuterMost">
-      <div className="electricityOut">
+    <div className="postpaidOuterMost">
+      <div className="postpaidOut">
         <div className="dashboardBtn button mt-3 px-5">
           <button className="dahsboardButton  p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
             <span>
               <Link to={"/retailer-dashboard"}> Dashboard </Link>
-              {">"} Electricity
+              {">"} Insurance
             </span>
           </button>
         </div>
-        <div className="electricityInner flex gap-5 p-3">
-          <div className="electricityImage bg-white h-[60vh] w-[60%] ">
-            <img
-              className="electricityImage h-[100%] m-auto"
-              src="https://res.cloudinary.com/dixfg1bvv/image/upload/v1738840804/pay-electricity-bill-online-mobile-app-phone-save-money-reduce-consumption_1135642-197_wxd5cd.jpg"
-              alt="electricityImage"
-            />
-          </div>
+        <div className="postpaidInner grid lg:flex gap-5 p-3">
           <ProviderForm
-            heading={"Electricity"}
+            heading={"Insurance"}
             label1={"Provider:"}
             providers={providers}
-            option1={"TSECL Tripura"}
-            option2={"WESCO Odisha"}
-            option3={"TATA Power Mumbai"}
-            option4={"Electricity Department Chandigarh"}
-            label2={"Consumer Number :"}
-            data={"Consumer Number"}
+            option1={"LIC"}
+            option2={"Reliance General Insurance Company LTD"}
+            option3={"Aviva Life Insurance"}
+            option4={"Bajaj Alinaz Life Insurance Company Limited"}
+            label2={"Email Id:"}
+            data={"john134@gmail.com"}
           />
+          <div className="postpaidImage bg-white order-2 sm:order-1 lg:w-[60%] p-5 ">
+            <img
+              className="postpaidImage m-auto"
+              src="https://res.cloudinary.com/dixfg1bvv/image/upload/v1746077137/insurance-clipart-personal-health-life-insurance-icon-png--m2i8G6d3N4i8Z5m2_qqrsnr.png"
+              alt="postpaidImage"
+            />
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default Electricity;
+export default Insurance;

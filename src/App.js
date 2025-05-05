@@ -72,7 +72,7 @@ import GasHistory from "./Components/Report/Recharges/GasHistory";
 import Fastag from "./Components/Report/Recharges/FastagHistory";
 import RetialerHome from "./Components/RetailerDashboard/RetailerHome";
 import RBillPayment from "./Components/RetailerDashboard/CCBill";
-import RLedgerReport from "./Components/RetailerDashboard/LedgerReport"
+import RLedgerReport from "./Components/RetailerDashboard/LedgerReport";
 import ReturnRequest from "./Components/RetailerDashboard/Balance/ReturnRequest";
 import Prepaid from "./Components/RetailerDashboard/RetailerHome/RServices/Prepaid";
 import DTHRecharge from "./Components/RetailerDashboard/RetailerHome/RServices/DTHRecharge";
@@ -98,6 +98,10 @@ import QRCollectionHistory from "./Components/RetailerDashboard/Reports/QRcollec
 import DMT2History from "./Components/RetailerDashboard/Reports/Banking/Dmt2";
 import DMT3History from "./Components/RetailerDashboard/Reports/Banking/Dmt3";
 import ResetMpin from "./Components/AdminDashboard/Profile/MpinReset";
+import Insurance from "./Components/RetailerDashboard/RetailerHome/RServices/Insurance/Insurance";
+import PipeGas from "./Components/RetailerDashboard/RetailerHome/RServices/PipeGas/PipeGas";
+import GasCylinder from "./Components/RetailerDashboard/RetailerHome/RServices/GasCylinder/GasCylinderServices";
+import FastagService from "./Components/RetailerDashboard/RetailerHome/RServices/Fastag/Fastag";
 
 const App = () => {
   return (
@@ -105,121 +109,171 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path='/forgot-password' element={<ForgotPass/>}/>
-          <Route path="/verify-otp" element={<OtpVerify/>}/>
-          
+          <Route path="/forgot-password" element={<ForgotPass />} />
+          <Route path="/verify-otp" element={<OtpVerify />} />
+
           <Route path="/" element={<Layout />}>
-          <Route path="/dashboard" element={<HomeCards/>} />
-          <Route path="/profile" element={<ProfileView />} />
-          {/* password */}
-          <Route path="/reset" element={<ResetPassword />} />
-          <Route path ="/reset-mpin" element={<ResetMpin/>} />
-        {/* settings */}
-          <Route path="/company-settings" element={<CompanySetting/>}/>
-          <Route path='/site-settings' element={<SiteSettingOuter/>}/>
-          <Route path="/bank-setting" element={<BankSetting/>} />
-          <Route path="/new-bank-account" element={<NewBank/>}/>
-          <Route path="/package-setting" element={<PackageSetting/>}/>
-          <Route path="/sms-settings" element={<SMSSetting/>}/>
-          <Route path="/new-package" element={<NewPackage/>}/>
-          {/* report */}
-          <Route path="/pending-report" element={<PendingReport/>}/>
-          <Route path="/ledger-report" element={<LedgerReport/>}/>
-          <Route path="/credit-report" element={<CreditReport/>}/>
-          <Route path="/mobile-history" element={<MobileHistory/>}/>
-          <Route path="/debit-report" element={<DebitReport/>}/>
-          <Route path="/aeps" element={<Aeps/>}/>
-          <Route path="/refund-manager" element={<RefundManager/>}/>
-          <Route path='/banking' element={<Banking/>}/>
-          <Route path="/verify" element={<Verify/>}/>
-          <Route path="/bill-payments" element ={<BilPay/>} />
-          <Route path="/admin-report" element={<AdminProfit/>}/>
-          <Route path="/pancard" element={<Pancard/>}/>
-          <Route path="/payout" element={<Payout />}/>
-          <Route path="/investment" element={<Investment/>}/>
-          <Route path="/api-summary" element={<ApiSummary/>}/>
-          <Route path="/upi" element={<Upi/>}/>
-          <Route path="/qr-collection" element={<QRCollection/>} />
-          <Route path="/wallet-transfer" element={<WalletTransfer/>} />
-          <Route path="/lpg-history" element= {<LPG/>}/>
-          <Route path="/gas-gistory" element = {<GasHistory/>}/>
-          <Route path="/fastags-history" element={<Fastag/>}/>
-          {/* members */}
-          <Route path="/field-executive" element={<FieldExecutive/>}/>
-          <Route path="/distributor-ds" element={<DistributorDS/>}/>
-          <Route path="/retailer" element={<RetailerRT/>}/>
-          <Route path="/create-user" element={<CreateUser/>}/>
-          <Route path="/franchise" element={<Franchise/>}/>
-          <Route path="/not-working" element={<NotWorking />}/>   
-          <Route path="/commission-detail" element={<CommissionBal/>}/>
-          <Route path="/super-distributor" element={<SuperDistributor/>}/>     
-          <Route path="/balance-return" element={<BalanceReturn/>}/>
-          <Route path="/balance-transfer" element={<BalanceTransfer/>}/>
-          <Route path="/suspended-user" element={<SuspendedUser/>}/> 
-          {/* disputes */}
-          <Route path="/solve-dispute" element={<SolvedDisputes/>}/>
-          <Route path="/pending-disputes" element={<PendingDisputes/>}/>
+            <Route path="/dashboard" element={<HomeCards />} />
+            <Route path="/profile" element={<ProfileView />} />
+            {/* password */}
+            <Route path="/reset" element={<ResetPassword />} />
+            <Route path="/reset-mpin" element={<ResetMpin />} />
+            {/* settings */}
+            <Route path="/company-settings" element={<CompanySetting />} />
+            <Route path="/site-settings" element={<SiteSettingOuter />} />
+            <Route path="/bank-setting" element={<BankSetting />} />
+            <Route path="/new-bank-account" element={<NewBank />} />
+            <Route path="/package-setting" element={<PackageSetting />} />
+            <Route path="/sms-settings" element={<SMSSetting />} />
+            <Route path="/new-package" element={<NewPackage />} />
+            {/* report */}
+            <Route path="/pending-report" element={<PendingReport />} />
+            <Route path="/ledger-report" element={<LedgerReport />} />
+            <Route path="/credit-report" element={<CreditReport />} />
+            <Route path="/mobile-history" element={<MobileHistory />} />
+            <Route path="/debit-report" element={<DebitReport />} />
+            <Route path="/aeps" element={<Aeps />} />
+            <Route path="/refund-manager" element={<RefundManager />} />
+            <Route path="/banking" element={<Banking />} />
+            <Route path="/verify" element={<Verify />} />
+            <Route path="/bill-payments" element={<BilPay />} />
+            <Route path="/admin-report" element={<AdminProfit />} />
+            <Route path="/pancard" element={<Pancard />} />
+            <Route path="/payout" element={<Payout />} />
+            <Route path="/investment" element={<Investment />} />
+            <Route path="/api-summary" element={<ApiSummary />} />
+            <Route path="/upi" element={<Upi />} />
+            <Route path="/qr-collection" element={<QRCollection />} />
+            <Route path="/wallet-transfer" element={<WalletTransfer />} />
+            <Route path="/lpg-history" element={<LPG />} />
+            <Route path="/gas-gistory" element={<GasHistory />} />
+            <Route path="/fastags-history" element={<Fastag />} />
+            {/* members */}
+            <Route path="/field-executive" element={<FieldExecutive />} />
+            <Route path="/distributor-ds" element={<DistributorDS />} />
+            <Route path="/retailer" element={<RetailerRT />} />
+            <Route path="/create-user" element={<CreateUser />} />
+            <Route path="/franchise" element={<Franchise />} />
+            <Route path="/not-working" element={<NotWorking />} />
+            <Route path="/commission-detail" element={<CommissionBal />} />
+            <Route path="/super-distributor" element={<SuperDistributor />} />
+            <Route path="/balance-return" element={<BalanceReturn />} />
+            <Route path="/balance-transfer" element={<BalanceTransfer />} />
+            <Route path="/suspended-user" element={<SuspendedUser />} />
+            {/* disputes */}
+            <Route path="/solve-dispute" element={<SolvedDisputes />} />
+            <Route path="/pending-disputes" element={<PendingDisputes />} />
 
-          {/* userIncome & Payment*/}
-          <Route path="/super-admin" element={<SuperAdminIncome/>}/>
-          <Route path="/payment-view" element={<PaymnetView/>}/>
-          <Route path="/admin-income" element={<Admin/>}/>
-          <Route path="/income-data" element={<IncomeReport/>}/>
-          <Route path="/fe-income" element={<FEIncome/>}/>
-          <Route path="/retailer-income" element={<ReatilerIncome/>}/>
-          <Route path="/suspended-user-income" element={<SuspendedUserInc/>}/>
-          <Route path="/not-working-user-list" element={<NotWorkingList/>}/>
-          <Route path= "/balance-return-request" element={<BalanceReturnReq/>} />
-          <Route path= "/purchase-bal" element={<PurchaseBal/>}/>
-          <Route path="/franchise-fsds" element={<FranchiseFSDS/>}/>
-         
-          {/* Master Section */}
-          <Route path="/bank-master" element={<BankMaster/> }/>
-          <Route path="/role-master" element={<RoleMaster/> }/>
-          <Route path="/status-master" element={<StatusMaster/>}  />
-          <Route path="/service-master" element={<ServiceMaster/>}  />
-          <Route path="/payment-beneficiary-method" element={<PaymentMethod/>}  />
-          <Route path="/agent-onboarding-list" element={<AgentOnboarding/>} />
-          <Route path="/contact-enquiry" element={<ContactEnquiry/>} />
-          <Route path="/company-staff-permission" element={<CompanyStaff/>}  />
-          <Route path="/broadcast" element={<Broadcast/>} />
+            {/* userIncome & Payment*/}
+            <Route path="/super-admin" element={<SuperAdminIncome />} />
+            <Route path="/payment-view" element={<PaymnetView />} />
+            <Route path="/admin-income" element={<Admin />} />
+            <Route path="/income-data" element={<IncomeReport />} />
+            <Route path="/fe-income" element={<FEIncome />} />
+            <Route path="/retailer-income" element={<ReatilerIncome />} />
+            <Route
+              path="/suspended-user-income"
+              element={<SuspendedUserInc />}
+            />
+            <Route path="/not-working-user-list" element={<NotWorkingList />} />
+            <Route
+              path="/balance-return-request"
+              element={<BalanceReturnReq />}
+            />
+            <Route path="/purchase-bal" element={<PurchaseBal />} />
+            <Route path="/franchise-fsds" element={<FranchiseFSDS />} />
 
-          {/* Ratialer Dashboard */}
-          <Route path="/retailer-dashboard" element={<RetialerHome/>}/>
-          {/* services */}
-          <Route path='/retailer-mobile-prepaid' element={<Prepaid/>}/>
-          <Route path="/retailer-dth-recharge" element={<DTHRecharge />}/>
-          <Route path="/retailer-mobile-postpaid" element={<Postpaid/>}/>
-          <Route path="/retailer-landline" element={<Landline/>}/>
-          <Route path="/retailer-electricity" element={<Electricity/>}/>
-          <Route path="/retailer-water" element={<Water/>}/>
-          <Route path="/retailer-loan-repay" element={<LoanRepayment/>}/>
-          <Route path="/retailer-upi-transfer" element={<UpiTransfer/>}/>
-          <Route path="/retailer-payout" element={<RPayout/>}/>
-          <Route path="/retailer-dmt" element={<DMT/>}/>
-          <Route path="/retailer-cc-bill" element={<CcBill/>}/>
-          {/* reports */}
-          <Route path="/retailer-mobile-postpaid-history" element={<MobilePostpaid/>} />
-          <Route path="/retailer-electricity-history" element={<ElectricityHistory/>}/>
-          <Route path="/retailer-landline-history" element={<LandlineHistory/>}/>
-          <Route path="/retailer-mobile-report-history" element={<MobileReport/>}/>
-          <Route path="/retailer-dth-history" element={<DTHReport/>}/>
-          <Route path="/retailer-water-history" element={<WaterReport/>}/>
-          <Route path="/reatiler-cc-repayment-history" element={<CCBillHistory/>}/>
-          <Route path="/retailer-loan-repayment-history" element={<LoanRepayHistory />}/>
-          <Route path="/retailer-qr-collection-history" element={<QRCollectionHistory/>}/>
-          <Route path="/retailer-dmt2-history" element={<DMT2History/>}/>
-          <Route path="/retailer-dmt3-history" element={<DMT3History/>}/>
-          
-          {/* cc bill payment */}
-          <Route path="/retailer-bill-payments" element={<RBillPayment/>}/>
-          {/* Ledger reports */}
-          <Route path="/retailer-ledger-report" element={<RLedgerReport />}/>
-          {/* payments */}
-          <Route path="/retailer-payment-request" element={<RPaymentRequest/>}/>
-          <Route path="/retailer-balance-return-request" element={<ReturnRequest/>}/>
+            {/* Master Section */}
+            <Route path="/bank-master" element={<BankMaster />} />
+            <Route path="/role-master" element={<RoleMaster />} />
+            <Route path="/status-master" element={<StatusMaster />} />
+            <Route path="/service-master" element={<ServiceMaster />} />
+            <Route
+              path="/payment-beneficiary-method"
+              element={<PaymentMethod />}
+            />
+            <Route
+              path="/agent-onboarding-list"
+              element={<AgentOnboarding />}
+            />
+            <Route path="/contact-enquiry" element={<ContactEnquiry />} />
+            <Route
+              path="/company-staff-permission"
+              element={<CompanyStaff />}
+            />
+            <Route path="/broadcast" element={<Broadcast />} />
+
+            {/* Ratialer Dashboard */}
+            <Route path="/retailer-dashboard" element={<RetialerHome />} />
+            {/* services */}
+            <Route path="/retailer-mobile-prepaid" element={<Prepaid />} />
+            <Route path="/retailer-dth-recharge" element={<DTHRecharge />} />
+            <Route path="/retailer-mobile-postpaid" element={<Postpaid />} />
+            <Route path="/retailer-landline" element={<Landline />} />
+            <Route path="/retailer-electricity" element={<Electricity />} />
+            <Route path="/retailer-water" element={<Water />} />
+            <Route path="/retailer-loan-repay" element={<LoanRepayment />} />
+            <Route path="/retailer-upi-transfer" element={<UpiTransfer />} />
+            <Route path="/retailer-payout" element={<RPayout />} />
+            <Route path="/retailer-dmt" element={<DMT />} />
+            <Route path="/retailer-cc-bill" element={<CcBill />} />
+            <Route path="/retailer-insurance" element={<Insurance />} />
+            <Route path="/retailer-pipe-gas-service" element={<PipeGas />} />
+            <Route
+              path="/retailer-gas-cylinder-service"
+              element={<GasCylinder />}
+            />
+            <Route path="/retailer-fastag-service" element={<FastagService />} />
+
+            {/* reports */}
+            <Route
+              path="/retailer-mobile-postpaid-history"
+              element={<MobilePostpaid />}
+            />
+            <Route
+              path="/retailer-electricity-history"
+              element={<ElectricityHistory />}
+            />
+            <Route
+              path="/retailer-landline-history"
+              element={<LandlineHistory />}
+            />
+            <Route
+              path="/retailer-mobile-report-history"
+              element={<MobileReport />}
+            />
+            <Route path="/retailer-dth-history" element={<DTHReport />} />
+            <Route path="/retailer-water-history" element={<WaterReport />} />
+            <Route
+              path="/reatiler-cc-repayment-history"
+              element={<CCBillHistory />}
+            />
+            <Route
+              path="/retailer-loan-repayment-history"
+              element={<LoanRepayHistory />}
+            />
+            <Route
+              path="/retailer-qr-collection-history"
+              element={<QRCollectionHistory />}
+            />
+            <Route path="/retailer-dmt2-history" element={<DMT2History />} />
+            <Route path="/retailer-dmt3-history" element={<DMT3History />} />
+
+            {/* cc bill payment */}
+            <Route path="/retailer-bill-payments" element={<RBillPayment />} />
+            {/* Ledger reports */}
+            <Route path="/retailer-ledger-report" element={<RLedgerReport />} />
+            {/* payments */}
+            <Route
+              path="/retailer-payment-request"
+              element={<RPaymentRequest />}
+            />
+            <Route
+              path="/retailer-balance-return-request"
+              element={<ReturnRequest />}
+            />
           </Route>
-          </Routes>
+        </Routes>
       </BrowserRouter>
     </>
   );

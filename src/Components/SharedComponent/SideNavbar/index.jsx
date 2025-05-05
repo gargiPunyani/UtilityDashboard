@@ -53,11 +53,11 @@ const SideNavbar = () => {
   
     const handleResize = (event) => {
       requestAnimationFrame(() => {
-        setIsOpen(event.matches); // `true` below 640px, `false` above
+        setIsOpen(event.matches); 
       });
     };
   
-    handleResize(mediaQuery); // Run on mount
+    handleResize(mediaQuery); 
     mediaQuery.addEventListener("change", handleResize);
   
     return () => {
@@ -68,7 +68,7 @@ const SideNavbar = () => {
   const menuItems = isRetailer ? retailerSidebar : sidebarItems;
 
   return (
-    <div className={`sideNavOuterMost transition-all bg-white ease-in-out duration-500 transform sticky top-0`}>
+    <div className={`sideNavOuterMost transition-all bg-white ease-in-out duration-500 transform `}>
       <div className="sideNavOuter h-screen relative">
         <div className="sideNavInner cursor-pointer p-2 flex items-center justify-between">
           <div className={`logo h-16 w-40 m-auto  transition-all ease-in-out duration-500   ${isOpen ? "hidden" : "block"}`}>

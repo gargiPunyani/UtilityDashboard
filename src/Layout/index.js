@@ -41,7 +41,7 @@ const Layout = () => {
           </div>
 
           <div className="layoutMain w-full" >
-          <div className="mainNav sticky top-0" ref={navbarRef}>
+          <div className="mainNav " ref={navbarRef}>
               <MainNav openPopup={openPopup} handleTogglePopup={handleTogglePopup} />
             </div>
 

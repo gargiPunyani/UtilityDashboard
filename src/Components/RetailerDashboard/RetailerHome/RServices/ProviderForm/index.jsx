@@ -1,7 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const ProviderForm = ({ heading, label1, providers, label2, option1, option2, option3, option4, data,}) => {
+const ProviderForm = ({
+  heading,
+  label1,
+  providers,
+  label2,
+  option1,
+  option2,
+  option3,
+  option4,
+  data,
+}) => {
   // const [showStaticOptions, setShowStaticOptions] = useState(false);
   const navigate = useNavigate();
   const handleClose = () => {
@@ -27,10 +37,13 @@ const ProviderForm = ({ heading, label1, providers, label2, option1, option2, op
                     <option value="" disabled selected>
                       Select a provider
                     </option>
-                    {providers?.length > 0 ? (
+                    {Array.isArray(providers) && providers.length > 0 ? (
                       providers.map((item) => (
-                        <option key={item.id} value={item.service_id}>
-                          {item.provider_name}
+                        <option
+                          key={item.id}
+                          value={item.service_id || item.category_id}
+                        >
+                          {item.provider_name || item.billerName}
                         </option>
                       ))
                     ) : (
@@ -71,7 +84,8 @@ const ProviderForm = ({ heading, label1, providers, label2, option1, option2, op
                 <div className="fetch">
                   <button
                     type="submit"
-                    className="closeBtn bg-green-600 text-white rounded-md px-8 py-3">
+                    className="closeBtn bg-green-600 text-white rounded-md px-8 py-3"
+                  >
                     Fetch Bill
                   </button>
                 </div>

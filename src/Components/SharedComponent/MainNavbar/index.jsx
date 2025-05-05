@@ -80,7 +80,6 @@ const MainNav = () => {
     }
   }, [userName])
   const menuItems = isRetailer ? retailerMenuItem : mainMenuItem;
-
   return (
     <div className="navOuterMost w-full bg-white">
       <div className="navOuter h-20 shadow-lg shadow-gray-500/10 w-full">

@@ -3,22 +3,36 @@ import { retailerHomeCard } from "../../../constant";
 import instance from "../../../../Services/InstanceAxios";
 
 const RetailerHomeCard = () => {
-  const getData = async (service_id) => {
-    console.log(service_id, "serviceeeeeeeeeee");
+  const getData = async ({ service_id, category_id, type }) => {
+    const api_token = localStorage.getItem("token");
+    console.log(category_id);
 
     try {
-      const response = await instance.post("recharge/provider-list", {
-        service_id: service_id,
-        api_token: localStorage.getItem("token"),
-      });
-      console.log(service_id);
-      console.log(response, "Responsee");
-      sessionStorage.setItem(
-        `providers_${service_id}`,
-        JSON.stringify(response.data.providers)
-      );
+      let response;
+
+      if (type === "service") {
+        response = await instance.post("recharge/provider-list", {
+          service_id,
+          api_token,
+        });
+        sessionStorage.setItem(
+          `providers_${service_id}`,
+          JSON.stringify(response.data.providers)
+        );
+      } else if (type === "category") {
+        response = await instance.post("/bbps/biller-list", {
+          category_id,
+          api_token,
+        });
+        sessionStorage.setItem(
+          `providers_${category_id}`,
+          JSON.stringify(response.data)
+        );
+      }
+
+      console.log("Response:", response);
     } catch (error) {
-      console.log(error);
+      console.error("API Error:", error);
     }
   };
 
@@ -30,7 +44,7 @@ const RetailerHomeCard = () => {
   return (
     <div className="cardOuterMost">
       <div className="cardsOuter">
-        <div className="cardInner gap-6 mt-5 grid xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 items-center">
+        <div className="cardInner gap-6 mt-5 grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 items-center">
           {retailerHomeCard.map((item) => {
             return (
               <div
@@ -38,11 +52,25 @@ const RetailerHomeCard = () => {
                 key={item.id}
                 onClick={(e) => {
                   e.preventDefault();
-                  getData(item.service_id);
+
+                  getData({
+                    service_id: item.service_id,
+                    category_id: item.category_id,
+                    type: item.type,
+                  });
+
+                  const paramKey =
+                    item.type === "service" ? "service_id" : "category_id";
+                  const paramValue =
+                    item.type === "service"
+                      ? item.service_id
+                      : item.category_id;
+
                   setTimeout(() => {
-                    window.location.href = `${item.href}?service_id=${item.service_id}`;
+                    window.location.href = `${item.href}?${paramKey}=${paramValue}`;
                   }, 300);
-                }}>
+                }}
+              >
                 {item.href ? (
                   <a href={item.href}>
                     <div className="cardData grid items-center border-2 rounded-md cursor-pointer hover:transition-transition-smooth hover:shadow-2xl gap-3 text-center py-9 px-3 hover:bg-indigo-50">

@@ -52,14 +52,14 @@ const MainNav = () => {
   const handleApi = (item) => {
     if (item.id === "logout") {
       localStorage.clear()
-      navigate("/", { replace: true })
+      navigate("/login", { replace: true })
       window.history.pushState(null, null, window.location.href);
     }};
 
   useEffect(() => {
     const checkAuth = () => {
       if (!localStorage.getItem("token")) {
-        navigate("/", { replace: true });
+        navigate("/login", { replace: true });
       }}; 
     checkAuth();
     window.history.pushState(null, null, window.location.href);

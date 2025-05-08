@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
-import ExecutiveTable from '../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable'
-import SearchWallet from '../../SharedComponent/SearchWallet'
 import { Link } from 'react-router-dom'
-import MainNav from '../../SharedComponent/MainNavbar'
-import SideNavbar from '../../SharedComponent/SideNavbar'
+import ExecutiveTable from '../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable'
+import SearchWallet from '../../SharedComponent/SearchWallet/SearchWallet'
 
 const Distributor = () => {
      const columns = [{

@@ -108,11 +108,11 @@ const App = () => {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/forgot-password" element={<ForgotPass />} />
           <Route path="/verify-otp" element={<OtpVerify />} />
 
-          <Route path="/" element={<Layout />}>
+          <Route path="/login" element={<Layout />}>
             <Route path="/dashboard" element={<HomeCards />} />
             <Route path="/profile" element={<ProfileView />} />
             {/* password */}

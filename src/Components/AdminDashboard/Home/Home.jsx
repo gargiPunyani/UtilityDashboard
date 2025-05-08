@@ -1,6 +1,6 @@
 import React from "react";
 import HomeCards from "./HomeCards/index.jsx";
-import Footer from "../../SharedComponent/Footer/index.jsx";
+import Footer from "../../SharedComponent/Footer/Footer.jsx";
 
 const Home = () => {
   return (

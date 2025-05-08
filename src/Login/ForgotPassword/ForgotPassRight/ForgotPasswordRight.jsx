@@ -29,7 +29,7 @@ const ForgotPasswordRight= () => {
                         </div>
                     </form>
                 <div className='signInOption underline mt-5 text-gray-400 hover:text-blue-400 text-center'>
-                <Link to={"/"}>
+                <Link to={"/login"}>
                     <p>Back to Sign In</p>
                 </Link>
                 </div>

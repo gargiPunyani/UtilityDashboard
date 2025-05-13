@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import GuestRegistraion from "./GuestRegistion";
-import MailSet from "./MailSetting";
-import SiteSet from "./SiteSetting";
+import GuestRegistraion from "./GuestRegistion/GuestRegistraion";
+import MailSet from "./MailSetting/MailSet";
+import SiteSet from "./SiteSetting/SiteSet";
 
 const SiteSettingOuter = () => {
   return (

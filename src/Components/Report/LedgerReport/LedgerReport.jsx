@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import ExecutiveTable from '../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable'
-import WalletDownload from '../../SharedComponent/WalletDownload'
+import ExecutiveTable from '../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable/ExecutiveTable'
+import WalletDownload from '../../SharedComponent/WalletDownload/WalletDownload'
 
 const LedgerReport = () => {
     const columns=[{

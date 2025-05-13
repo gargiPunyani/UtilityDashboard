@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ExecutiveTable from "../../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable";
+import ExecutiveTable from "../../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable/ExecutiveTable";
 import BeneficiaryList from "../../RetailerHome/RServices/Payout/Beneficiary";
-import ReqForm from "./ReqForm";
+import ReqForm from "./ReqForm/ReqForm";
 
 const RPaymentRequest = () => {
   const columns = [

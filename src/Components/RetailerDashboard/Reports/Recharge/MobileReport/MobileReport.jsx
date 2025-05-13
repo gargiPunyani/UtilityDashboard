@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import instance from "../../../../../Services/InstanceAxios";
-import ExecutiveTable from "../../../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable";
-import StatusDownload from "../../../../SharedComponent/StatusDownload";
+import ExecutiveTable from "../../../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable/ExecutiveTable";
+import StatusDownload from "../../../../SharedComponent/StatusDownload/StatusDownload";
 
 const MobileReport = () => {
   const [data, setData] = useState([]);

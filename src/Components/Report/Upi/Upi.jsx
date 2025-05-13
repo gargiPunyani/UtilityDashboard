@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import instance from '../../../Services/InstanceAxios'
-import ExecutiveTable from '../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable'
-import DateWiseSearch from '../../SharedComponent/DateWiseSearch'
+import ExecutiveTable from '../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable/ExecutiveTable'
+import DateWiseSearch from '../../SharedComponent/DateWiseSearch/DateWiseSearch'
 
 const Upi = () => {
     const columns=[{

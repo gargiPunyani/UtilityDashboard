@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Outlet } from "react-router-dom";
-import MainNav from "../Components/SharedComponent/MainNavbar";
-import SideNavbar from "../Components/SharedComponent/SideNavbar";
+import MainNav from "../Components/SharedComponent/MainNavbar/MainNav";
+import SideNavbar from "../Components/SharedComponent/SideNavbar/SideNavbar";
 
 const Layout = () => {
   const [openPopup, setOpenPopup] = useState(null);

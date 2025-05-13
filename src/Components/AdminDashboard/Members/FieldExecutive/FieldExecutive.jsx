@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import ExecutiveTable from "./FieldExecutiveTable";
+import ExecutiveTable from "./FieldExecutiveTable/ExecutiveTable";
 
 const FieldExecutive = () => {
   const columns = [

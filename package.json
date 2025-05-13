@@ -25,6 +25,7 @@
     "react-router-dom": "^7.0.2",
     "react-scripts": "5.0.1",
     "styled-components": "^6.1.14",
+    "swiper": "^11.2.6",
     "yup": "^1.6.1"
   },
   "scripts": {

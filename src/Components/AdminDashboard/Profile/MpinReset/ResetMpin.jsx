@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SuperAdmin from '../SuperAdmin';
-import Mpin from './MPin';
+import SuperAdmin from '../SuperAdmin/SuperAdmin';
+import Mpin from './MPin/Mpin';
 
 const ResetMpin = () => {
   return (

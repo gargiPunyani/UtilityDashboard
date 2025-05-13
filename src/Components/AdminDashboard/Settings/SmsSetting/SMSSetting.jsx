@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import ExecutiveTable from "../../Members/FieldExecutive/FieldExecutiveTable";
+import ExecutiveTable from "../../Members/FieldExecutive/FieldExecutiveTable/ExecutiveTable";
 
 const SMSSetting = () => {
   const columns = [{

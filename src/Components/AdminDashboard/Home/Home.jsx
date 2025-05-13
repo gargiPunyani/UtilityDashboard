@@ -1,15 +1,13 @@
 import React from "react";
-import HomeCards from "./HomeCards/index.jsx";
-import Footer from "../../SharedComponent/Footer/Footer.jsx";
+import HomeCards from "./HomeCards/HomeCards";
 
 const Home = () => {
   return (
     <div className="homeOuterMost w-full ">
       <div className="homeOuter">
-            <HomeCards />
-          </div>
-        </div>
-      
+        <HomeCards />
+      </div>
+    </div>
   );
 };
 

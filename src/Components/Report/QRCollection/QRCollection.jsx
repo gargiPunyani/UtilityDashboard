@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import ExecutiveTable from '../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable'
-import DateWiseSearch from '../../SharedComponent/DateWiseSearch'
-import MainNav from '../../SharedComponent/MainNavbar'
-import SideNavbar from '../../SharedComponent/SideNavbar'
+import ExecutiveTable from '../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable/ExecutiveTable'
+import DateWiseSearch from '../../SharedComponent/DateWiseSearch/DateWiseSearch'
 
 const QRCollection = () => {
     const columns=[{
@@ -100,11 +98,11 @@ const QRCollection = () => {
     <div className='mobileHistoryOuterMost'>
     <div className='mobileHistoryOuter'>
     <div className="homeInner flex w-full">
-            <div className="dashboardLeft bg-white shadow-lg ">
+            {/* <div className="dashboardLeft bg-white shadow-lg ">
               <SideNavbar />
             </div>
             <div className="dashboardRight max-w-full w-full overflow-auto ">
-              <MainNav />
+              <MainNav /> */}
         <div className="dashboardBtn button mb-2 p-3">
                 <button className="dahsboardButton  p-1 items-center text-xs font-semibold decoration-none cursor-pointer ">
                   <span>
@@ -134,7 +132,7 @@ const QRCollection = () => {
       </div>
     </div>
       
-  </div>
+  // </div>
   )
 }
 

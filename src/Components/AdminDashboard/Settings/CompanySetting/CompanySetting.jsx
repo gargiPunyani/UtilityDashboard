@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import CompanyStng from './companyStng'
+import CompanyStng from './companyStng/CompanyStng'
 
 const CompanySetting = () => {
   return (

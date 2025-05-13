@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import ExecutiveTable from '../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable'
+import ExecutiveTable from '../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable/ExecutiveTable'
 
 const BalanceTransfer = () => {
       const columns = [{  name: "User ID",

@@ -1,6 +1,6 @@
 import React from 'react'
-import LoginLeft from './LoginLeft'
-import LoginRight from './LoginRight'
+import LoginLeft from './LoginLeft/LoginLeft'
+import LoginRight from './LoginRight/LoginRight'
 
 const Login = () => {
   return (

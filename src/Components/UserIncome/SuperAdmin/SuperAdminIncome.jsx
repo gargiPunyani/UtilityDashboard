@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import ExecutiveTable from '../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable'
-import SearchWallet from '../../SharedComponent/SearchWallet'
+import ExecutiveTable from '../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable/ExecutiveTable'
+import SearchWallet from '../../SharedComponent/SearchWallet/SearchWallet'
 
 const SuperAdminIncome = () => {
      const columns = [{

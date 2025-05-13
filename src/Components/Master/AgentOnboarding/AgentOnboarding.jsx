@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
-import SideNavbar from '../../SharedComponent/SideNavbar'
-import MainNav from '../../SharedComponent/MainNavbar'
 import { Link, useNavigate } from 'react-router-dom'
-import ExecutiveTable from '../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable'
-import { date, number } from 'yup'
+import ExecutiveTable from '../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable/ExecutiveTable'
 
 const AgentOnboarding = () => {
     const columns=[{

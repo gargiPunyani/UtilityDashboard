@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
-import ExecutiveTable from "../FieldExecutive/FieldExecutiveTable";
+import ExecutiveTable from "../FieldExecutive/FieldExecutiveTable/ExecutiveTable";
 
 const RetailerRT = () => {
     const columns = [

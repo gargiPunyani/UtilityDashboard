@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import ExecutiveTable from "../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable";
-import StatusSearch from "../../SharedComponent/StatusSearch";
+import ExecutiveTable from "../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable/ExecutiveTable";
+import StatusSearch from "../../SharedComponent/StatusSearch/StatusSearch";
 
 const PaymentMethod = () => {
   const columns = [

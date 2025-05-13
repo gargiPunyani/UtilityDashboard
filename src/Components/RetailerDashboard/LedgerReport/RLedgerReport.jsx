@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import WalletDownload from "../../SharedComponent/WalletDownload";
-import ExecutiveTable from "../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable";
+import WalletDownload from "../../SharedComponent/WalletDownload/WalletDownload";
+import ExecutiveTable from "../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable/ExecutiveTable";
 
 const RLedgerReport = () => {
   const columns = [

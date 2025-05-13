@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Footer from "../../SharedComponent/Footer";
-import KycDetails from "./Kyc";
-import SuperAdmin from "./SuperAdmin";
-import UpdateForm from "./UpdateProfile";
+import Footer from "../../SharedComponent/Footer/Footer";
+import KycDetails from "./Kyc/KycDetails";
+import SuperAdmin from "./SuperAdmin/SuperAdmin";
+import UpdateForm from "./UpdateProfile/UpdateForm";
 
 const ProfileView = () => {
   const naviagte= useNavigate()

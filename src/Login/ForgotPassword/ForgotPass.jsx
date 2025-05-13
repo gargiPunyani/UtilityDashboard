@@ -1,6 +1,6 @@
 import React from 'react'
-import ForgotPassLeft from './ForgotPassLeft'
-import ForgotPasswordRight from './ForgotPassRight'
+import ForgotPassLeft from './ForgotPassLeft/ForgotPassLeft'
+import ForgotPasswordRight from './ForgotPassRight/ForgotPasswordRight'
 
 const ForgotPass = () => {
   return (

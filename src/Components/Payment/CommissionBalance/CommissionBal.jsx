@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import ExecutiveTable from "../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable";
-import StatusDownload from "../../SharedComponent/StatusDownload";
-import Commission from "./Commision";
+import ExecutiveTable from "../../AdminDashboard/Members/FieldExecutive/FieldExecutiveTable/ExecutiveTable";
+import StatusDownload from "../../SharedComponent/StatusDownload/StatusDownload";
+import Commission from "./Commision/Commission";
 
 const CommissionBal = () => {
   const columns = [{}];

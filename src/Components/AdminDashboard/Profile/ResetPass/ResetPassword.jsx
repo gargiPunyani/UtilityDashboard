@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import SuperAdmin from "../SuperAdmin";
-import Reset from "./reset";
+import SuperAdmin from "../SuperAdmin/SuperAdmin";
+import Reset from "./reset/Reset";
 
 const ResetPassword = () => {
   const naviagte= useNavigate()

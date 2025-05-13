@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SearchWallet from "../../../SharedComponent/SearchWallet/SearchWallet";
-import ExecutiveTable from "../FieldExecutive/FieldExecutiveTable";
+import ExecutiveTable from "../FieldExecutive/FieldExecutiveTable/ExecutiveTable";
 
 const Franchise = () => {
   const columns = [

@@ -1,10 +1,9 @@
-import sbi from "../../Assests/sbi.png";
-import yesBank from "../../Assests/yesbank.png";
+import airtelPayment from "../../Assests/airtel-payment-bank.png";
 import airtel from "../../Assests/airtel.png";
 import axis from "../../Assests/axis.png";
 import paytem from "../../Assests/paytem.png";
-import rbl from "../../Assests/RBL bank.png";
-import airtelPayment from "../../Assests/airtel-payment-bank.png";
+import sbi from "../../Assests/sbi.png";
+import yesBank from "../../Assests/yesbank.png";
 
 export const ourPartners = [
   {
@@ -27,10 +26,6 @@ export const ourPartners = [
     id: 5,
     image: paytem,
   },
-  // {
-  //   id: 6,
-  //   image: rbl,
-  // },
   {
     id: 7,
     image: airtelPayment,

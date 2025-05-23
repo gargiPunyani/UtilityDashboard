@@ -38,4 +38,15 @@
     height: 100%;
     object-fit: cover;
   }
-  
+  /* Custom arrow size */
+.swiper-button-next,
+.swiper-button-prev {
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+}
+
+/* Optional: Custom icon size inside arrow buttons */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 24px; /* Increase or decrease icon size */
+}

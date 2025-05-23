@@ -4,12 +4,16 @@ export const serviceDetails = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="500"
-        zoomAndPan="magnify"
-        viewBox="0 0 810 809.999993"
-        height="500"
+        viewBox="0 0 810 810"
         preserveAspectRatio="xMidYMid meet"
-        version="1.0"
+        className="w-full h-full"
+        // xmlns="http://www.w3.org/2000/svg"
+        // width="400"
+        // zoomAndPan="magnify"
+        // viewBox="0 0 810 809.999993"
+        // height="400"
+        // preserveAspectRatio="xMidYMid meet"
+        // version="1.0"
       >
         <defs>
           <clipPath id="b77603ffbc">
@@ -327,12 +331,16 @@ export const serviceDetails = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="500"
-        zoomAndPan="magnify"
-        viewBox="0 0 810 809.999993"
-        height="500"
+        viewBox="0 0 810 810"
         preserveAspectRatio="xMidYMid meet"
-        version="1.0"
+        className="w-full h-full"
+        // xmlns="http://www.w3.org/2000/svg"
+        // width="400"
+        // zoomAndPan="magnify"
+        // viewBox="0 0 810 809.999993"
+        // height="400"
+        // preserveAspectRatio="xMidYMid meet"
+        // version="1.0"
       >
         <defs>
           <clipPath id="6cb90a1fa7">
@@ -672,12 +680,16 @@ export const serviceDetails = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="400"
-        zoomAndPan="magnify"
-        viewBox="0 0 810 809.999993"
-        height="400"
+        viewBox="0 0 810 810"
         preserveAspectRatio="xMidYMid meet"
-        version="1.0"
+        className="w-full h-full"
+        // xmlns="http://www.w3.org/2000/svg"
+        // width="400"
+        // zoomAndPan="magnify"
+        // viewBox="0 0 810 809.999993"
+        // height="400"
+        // preserveAspectRatio="xMidYMid meet"
+        // version="1.0"
       >
         <defs>
           <clipPath id="c7d158efe9">
@@ -1363,9 +1375,13 @@ export const serviceDetails = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        version="1.1"
-        width="400"
-        height="400"
+        viewBox="0 0 810 810"
+        preserveAspectRatio="xMidYMid meet"
+        className="w-full h-full"
+        // xmlns="http://www.w3.org/2000/svg"
+        // version="1.1"
+        // width="400"
+        // height="400"
       >
         <path
           d="M0 0 C77.55 0 155.1 0 235 0 C235 162.03 235 324.06 235 491 C157.45 491 79.9 491 0 491 C0 328.97 0 166.94 0 0 Z "
@@ -1708,12 +1724,16 @@ export const serviceDetails = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="400"
-        zoomAndPan="magnify"
-        viewBox="0 0 810 809.999993"
-        height="400"
+        viewBox="0 0 810 810"
         preserveAspectRatio="xMidYMid meet"
-        version="1.0"
+        className="w-full h-full"
+        // xmlns="http://www.w3.org/2000/svg"
+        // width="400"
+        // zoomAndPan="magnify"
+        // viewBox="0 0 810 809.999993"
+        // height="400"
+        // preserveAspectRatio="xMidYMid meet"
+        // version="1.0"
       >
         <defs>
           <clipPath id="c45aee5963">
@@ -1793,12 +1813,16 @@ export const serviceDetails = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="400"
-        zoomAndPan="magnify"
-        viewBox="0 0 810 809.999993"
-        height="400"
+        viewBox="0 0 810 810"
         preserveAspectRatio="xMidYMid meet"
-        version="1.0"
+        className="w-full h-full"
+        // xmlns="http://www.w3.org/2000/svg"
+        // width="400"
+        // zoomAndPan="magnify"
+        // viewBox="0 0 810 809.999993"
+        // height="400"
+        // preserveAspectRatio="xMidYMid meet"
+        // version="1.0"
       >
         <defs>
           <clipPath id="0cb4e92338">

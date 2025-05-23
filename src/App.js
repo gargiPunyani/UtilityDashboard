@@ -105,6 +105,8 @@ import FastagService from "./Components/RetailerDashboard/RetailerHome/RServices
 import WebsiteHome from "./Website/WebsiteHome/WebsiteHome";
 import WebsiteAboutUs from "./Website/WebsiteAboutUs/WebsiteAboutUs";
 import WebsiteServices from "./Website/WebsiteServices/WebsiteServices";
+import WebsiteContact from "./Website/WebsiteContact/WebsiteContact";
+import { Discliamer, PrivacyPolicy, TermCondition } from "./Website/Compliance";
 
 const App = () => {
   return (
@@ -118,6 +120,11 @@ const App = () => {
           <Route path="/" element={<WebsiteHome />} />
           <Route path="/about-us" element={<WebsiteAboutUs />} />
           <Route path="/services" element={<WebsiteServices />} />
+          <Route path="/contact-us" element={<WebsiteContact/>}/>
+          <Route path="/privacy" element={<PrivacyPolicy/>}/>
+          <Route path="/disclaimer" element={<Discliamer/>}/>
+          <Route path="/tnc" element ={<TermCondition/>}/>
+
           <Route path="/" element={<Layout />}>
           <Route path="/dashboard" element={<HomeCards />} />
           <Route path="/profile" element={<ProfileView />} />

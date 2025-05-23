@@ -5,10 +5,10 @@ const Vision = () => {
   return (
     <div className="visionOuter bg-blue-100 px-5 py-10">
       <div className="visionInner text-center ">
-        <div className="text-4xl font-bold text-[#1e40af]">
+        <div className="text-xl  md:text-4xl font-bold text-[#1e40af]">
           <h2>Our Vision</h2>
         </div>
-        <div className="px-48 my-5 leading-7 text-justify">
+        <div className="sm:px-10 md:px-48 my-5 leading-5 xs:!leading-7 text-justify text-xs sm:text-sm ">
           <p>
             At <b>Webwise Studio</b>, our vision is to empower every retail
             outlet across India to become a gateway to digital financial
@@ -18,11 +18,11 @@ const Vision = () => {
             their communities.
           </p>
         </div>
-        <div className="grid grid-cols-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
           {ourVision.map((item) => {
             return (
               <div key={item.id}>
-                <div className="rounded-full h-44 w-44 m-auto">
+                <div className="rounded-full h-32 w-32 lg:h-44 lg:w-44 m-auto">
                   <img
                     className="rounded-full p-2 "
                     src={item.image}

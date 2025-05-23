@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../Assests/webwiseLogo.png";
 import { Link, useNavigate } from "react-router-dom";
 
 const WebsiteNavbar = () => {
+  const [sidebar, setSidebar] = useState(false);
   const navigate = useNavigate();
+  const handleSideNabar = () => {
+    setSidebar(!sidebar);
+  };
   return (
-    <div className="websiteNavbarOuter bg-white shadow-lg ">
+    <div className="websiteNavbarOuter bg-white shadow-2xl p-1 border-b-2">
       <div className="websiteNavbarInner flex justify-between items-center px-5 py-2 ">
-        <div className="navLogo h-16 w-40 cursor-pointer">
+        <div
+          className="navLogo h-16 w-40 cursor-pointer"
+          onClick={() => navigate("/")}
+        >
           <img src={logo} alt="logo" />
         </div>
-        <div>
+        <div className="hidden md:flex">
           <ul className="flex gap-5 text-lg">
             <li className="relative cursor-pointer group">
               <Link to="/">
@@ -38,7 +45,7 @@ const WebsiteNavbar = () => {
               </Link>
             </li>
             <li className="relative cursor-pointer group">
-              <Link to="/">
+              <Link to="/contact-us">
                 <span className="text-black group-hover:text-blue-600 transition-colors duration-300">
                   Contact
                 </span>
@@ -47,13 +54,60 @@ const WebsiteNavbar = () => {
             </li>
           </ul>
         </div>
-        <div className="siginButton">
-          <button
-            className="bg-blue-600 text-white py-2 px-5 text-base rounded-md outline-none hover:bg-white hover:text-blue-600 hover:outline-blue-600"
-            onClick={() => navigate("/login")}
-          >
-            Sign in
-          </button>
+        <div className="flex gap-5 items-center">
+          <div className="siginButton">
+            <button
+              className="bg-blue-600 text-white px-3 py-2 xs:px-5 text-sm xs:text-base rounded-md outline-none hover:bg-white hover:text-blue-600 hover:outline-blue-600"
+              onClick={() => navigate("/login")}
+            >
+              Sign in
+            </button>
+          </div>
+          <div className="flex md:hidden">
+            <div onClick={handleSideNabar}>
+              <p className="text-black h-2 w-7 border-b-4 border-slate-700 "></p>
+              <p className="text-black h-2 w-5 border-b-4 border-slate-700 "></p>
+              <p className="text-black h-2 w-3 border-b-4 border-slate-700 "></p>
+            </div>
+            {sidebar && (
+              <div className="absolute bg-white transition-all top-[11%] w-full z-50 p-3 left-0">
+                <ul className=" leading-10 gap-5 text-lg">
+                  <li className="relative  cursor-pointer group">
+                    <Link to="/">
+                      <span className="text-black group-hover:text-blue-600 transition-colors duration-300">
+                        Home
+                      </span>
+                      <span className="absolute left-0 bottom-0 w-1/2  h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                    </Link>
+                  </li>
+                  <li className="relative cursor-pointer group">
+                    <Link to="/about-us">
+                      <span className="text-black group-hover:text-blue-600 transition-colors duration-300">
+                        About Us
+                      </span>
+                      <span className="absolute left-0 bottom-0 w-1/2  h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                    </Link>
+                  </li>
+                  <li className="relative cursor-pointer group">
+                    <Link to="/services">
+                      <span className="text-black group-hover:text-blue-600 transition-colors duration-300">
+                        Services
+                      </span>
+                      <span className="absolute left-0 bottom-0 w-1/2  h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                    </Link>
+                  </li>
+                  <li className="relative cursor-pointer group">
+                    <Link to="/contact-us">
+                      <span className="text-black group-hover:text-blue-600 transition-colors duration-300">
+                        Contact
+                      </span>
+                      <span className="absolute left-0 bottom-0 w-1/2  h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ const WebAbout = () => {
     <div className="webAboutOuter">
       <div className="text-center bg-white ">
         <div
-          className="webAboutInner h-[75vh] w-full bg-cover bg-center"
+          className="webAboutInner h-[45vh] md:h-[75vh] w-full bg-cover bg-center"
           style={{
             backgroundImage:
               "url('https://res.cloudinary.com/dixfg1bvv/image/upload/v1747117756/Company_Profil_f0ofsv.png')",
@@ -13,13 +13,13 @@ const WebAbout = () => {
           }}
         ></div>
         <div className="px-5 py-10">
-          <div className="font-bold text-4xl">
+          <div className="font-bold text-2xl md:text-4xl">
             <h2>
               About
               <span className="text-blue-700"> Webwise Studio</span>
             </h2>
           </div>
-          <div className="text-base px-48 my-5 leading-7 text-justify ">
+          <div className="text-xs sm:text-sm lg:text-base sm:px-10 md:px-48 my-5 leading-5 xs:!leading-7 text-justify ">
             <p>
               <b>Webwise Studio</b> Private Limited is a software leading
               provider of innovative software solutions. Our mission is to

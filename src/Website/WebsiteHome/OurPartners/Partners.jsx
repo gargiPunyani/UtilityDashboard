@@ -8,11 +8,11 @@ const Partners = () => {
         <div className="partnersInner text-center font-bold text-4xl my-5">
           <h2>Our Partners</h2>
         </div>
-        <div className="flex gap-3 items-center justify-center">
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-3 items-center justify-center">
           {ourPartners.map((item) => {
             return (
               <div key={item.id}>
-                <div className="shadow-xl rounded-lg bg-slate-200 ">
+                <div className="shadow-xl rounded-lg bg-white-200 ">
                   <img src={item.image} alt="our-partners" />
                 </div>
               </div>

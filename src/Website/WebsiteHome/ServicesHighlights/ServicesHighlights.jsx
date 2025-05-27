@@ -7,7 +7,7 @@ import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 const ServicesHighlights = () => {
   return (
     <div className="servicesHighlightsOuter bg-blue-100 px-5 py-10">
-      <div className="text-center ">
+      <div className="text-center max-w-screen-xl mx-auto">
         {/* <div className="servicesHighlight text-sm sm:text-base lg:text-2xl ">
           <h3>
             <p className="text-slate-600">Let's Talk About</p>

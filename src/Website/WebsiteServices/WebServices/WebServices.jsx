@@ -3,7 +3,7 @@ import React from "react";
 const WebServices = () => {
   return (
     <div>
-      <div className="text-center bg-white">
+      <div className="text-center bg-white whitespace-wrap">
         <div
           className="webAboutInner h-[45vh] md:h-[75vh] w-full bg-cover bg-center"
           style={{
@@ -13,7 +13,7 @@ const WebServices = () => {
           }}
         ></div>
         <div>
-          <div className=" px-5 py-10">
+          <div className=" max-w-screen-xl mx-auto px-5 py-10">
             {/* <div className=" text-base md:text-lg">
               <h5>
                 Let's Talk About

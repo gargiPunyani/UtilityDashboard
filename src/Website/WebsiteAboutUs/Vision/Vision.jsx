@@ -1,10 +1,9 @@
-import React from "react";
 import { ourVision } from "../../../Components/constant/OurVision";
 
 const Vision = () => {
   return (
     <div className="visionOuter bg-blue-100 px-5 py-10">
-      <div className="visionInner text-center ">
+      <div className="visionInner text-center max-w-screen-xl mx-auto ">
         <div className="text-xl  md:text-4xl font-bold text-[#1e40af]">
           <h2>Our Vision</h2>
         </div>

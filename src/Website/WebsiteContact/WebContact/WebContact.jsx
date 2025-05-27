@@ -15,7 +15,7 @@ const WebContact = () => {
           }}
         ></div>
         <div className=" ">
-          <div>
+          <div className="max-w-screen-xl mx-auto"> 
             <div className="px-5  py-10">
               <h2>
                 <p className="text-base md:text-2xl font-medium ">

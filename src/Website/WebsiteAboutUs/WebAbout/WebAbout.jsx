@@ -2,17 +2,19 @@ import React from "react";
 
 const WebAbout = () => {
   return (
-    <div className="webAboutOuter">
+    <div className="webAboutOuter whitespace-wrap">
       <div className="text-center bg-white ">
         <div
-          className="webAboutInner h-[45vh] md:h-[75vh] w-full bg-cover bg-center"
+          className="webAboutInner h-[45vh] md:h-[75vh] w-full bg-center bg-cover "
           style={{
             backgroundImage:
               "url('https://res.cloudinary.com/dixfg1bvv/image/upload/v1747117756/Company_Profil_f0ofsv.png')",
             objectFit: "contain",
           }}
-        ></div>
-        <div className="px-5 py-10">
+        >
+          {/* <img src="https://res.cloudinary.com/dixfg1bvv/image/upload/v1747117756/Company_Profil_f0ofsv.png" /> */}
+        </div>
+        <div className="px-5 py-10 max-w-screen-xl mx-auto">
           <div className="font-bold text-2xl md:text-4xl">
             <h2>
               About

@@ -4,7 +4,7 @@ import { joinSteps } from "../../../Components/constant/Steps";
 const JoiningSteps = () => {
   return (
     <div className="stepsOuter px-5 py-10 bg-white">
-      <div className="stepsInner text-center">
+      <div className="stepsInner text-center max-w-screen-xl mx-auto">
         <div className="stepsHead text-lg lg:text-2xl xl:text-4xl font-bold ">
           <h2>Let the journey Begin</h2>
         </div>

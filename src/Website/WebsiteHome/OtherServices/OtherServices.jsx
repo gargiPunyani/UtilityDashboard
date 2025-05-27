@@ -4,7 +4,7 @@ import { otherServices } from "../../../Components/constant/otherServices";
 const OtherServices = () => {
   return (
     <div className="otherServicesOuter bg-blue-100 px-5 py-10">
-      <div className="text-center">
+      <div className="text-center max-w-screen-xl mx-auto">
         <div className="otherServicesHead text-base sm:text-lg lg:text-2xl xl:text-4xl font-bold text-[#1e40af] my-3 lg:my-3 ">
           <h2>Other Offerings</h2>
         </div>

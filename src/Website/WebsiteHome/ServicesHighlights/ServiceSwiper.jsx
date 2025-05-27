@@ -35,9 +35,13 @@ const ServiceSwiper = () => {
             spaceBetween: 40,
           },
           1024: {
-            slidesPerView: 3,
-            spaceBetween: 50,
+            slidesPerView: 4,
+            spaceBetween: 40,
           },
+          1400:{
+             slidesPerView: 4,
+            spaceBetween: 40,
+          }
         }}
         modules={[Autoplay]}
         className="mySwiper"
@@ -50,7 +54,7 @@ const ServiceSwiper = () => {
                 <div className="my-1 font-semibold italic md:text-base  ">
                   <h4>{item.head}</h4>
                 </div>
-                <div className="text-wrap text-xs md:text-base" >
+                <div className="text-wrap text-xs md:text-base">
                   <p>{item.details}</p>
                 </div>
               </div>

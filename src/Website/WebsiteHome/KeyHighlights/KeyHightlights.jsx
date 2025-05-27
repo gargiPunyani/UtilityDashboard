@@ -4,7 +4,7 @@ import { Keyhightlights } from "../../../Components/constant/Keyhightlight";
 const KeyHightlights = () => {
   return (
     <div className="keyHightlightsOuter bg-white px-5 py-10 ">
-      <div>
+      <div className=" max-w-screen-xl mx-auto">
         <div className="text-2xl xl:text-4xl text-center font-bold mb-5">
           <h2>Key Highlights...</h2>
         </div>

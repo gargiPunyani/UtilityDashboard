@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const WebsiteMap = () => {
   return (
     <div className="websiteMapOuter">
-      <div className="webMapInner px-16 py-10 ">
+      <div className="webMapInner px-16 py-10 max-w-screen-xl mx-auto ">
         <div className="pb-10">
           <div className="text-xl md:text-3xl font-bold md:leading-[4.5rem] ">
             <h2>Visit Our Office</h2>

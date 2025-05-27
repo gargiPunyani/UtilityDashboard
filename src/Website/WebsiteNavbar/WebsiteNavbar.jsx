@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import logo from "../../Assests/webwiseLogo.png";
-import { Link, useNavigate } from "react-router-dom";
+import {  NavLink, useNavigate } from "react-router-dom";
 
 const WebsiteNavbar = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -9,7 +9,7 @@ const WebsiteNavbar = () => {
     setSidebar(!sidebar);
   };
   return (
-    <div className="websiteNavbarOuter bg-white shadow-2xl p-1 border-b-2">
+    <div className="websiteNavbarOuter bg-white shadow-2xl p-1 border-b-2 whitespace-wrap">
       <div className="websiteNavbarInner flex justify-between items-center px-5 py-2 ">
         <div
           className="navLogo h-16 w-40 cursor-pointer"
@@ -20,37 +20,37 @@ const WebsiteNavbar = () => {
         <div className="hidden md:flex">
           <ul className="flex gap-5 text-lg">
             <li className="relative cursor-pointer group">
-              <Link to="/">
-                <span className="text-black group-hover:text-blue-600 transition-colors duration-300">
+              < NavLink to="/" className={({ isActive }) => isActive ? "text-blue-600" : "text-black"}>
+                <span className="group-hover:text-blue-600 transition-colors duration-300">
                   Home
                 </span>
                 <span className="absolute left-0 bottom-0 w-1/2 h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-              </Link>
+              </NavLink>
             </li>
             <li className="relative cursor-pointer group">
-              <Link to="/about-us">
-                <span className="text-black group-hover:text-blue-600 transition-colors duration-300">
+              < NavLink to="/about-us" className={({ isActive }) => isActive ? "text-blue-600" : "text-black"} >
+                <span className="group-hover:text-blue-600 transition-colors duration-300">
                   About Us
                 </span>
 
                 <span className="absolute left-0 bottom-0 w-1/2 h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-              </Link>
+              </NavLink>
             </li>
             <li className="relative cursor-pointer group">
-              <Link to="/services">
-                <span className="text-black group-hover:text-blue-600 transition-colors duration-300">
+              < NavLink to="/services" className={({ isActive }) => isActive ? "text-blue-600" : "text-black"} >
+                <span className="group-hover:text-blue-600 transition-colors duration-300">
                   Services
                 </span>
                 <span className="absolute left-0 bottom-0 w-1/2 h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-              </Link>
+              </NavLink>
             </li>
             <li className="relative cursor-pointer group">
-              <Link to="/contact-us">
-                <span className="text-black group-hover:text-blue-600 transition-colors duration-300">
+              <NavLink to="/contact-us" className={({ isActive }) => isActive ? "text-blue-600" : "text-black"}>
+                <span className="group-hover:text-blue-600 transition-colors duration-300">
                   Contact
                 </span>
-                <span className="absolute left-0 bottom-0 w-1/2 h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-              </Link>
+                <span className={`absolute left-0 bottom-0 w-1/2 h-[2px] bg-blue-600 transition-transform duration-300 origin-left ${window.location.pathname === "/contact-us" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}></span>
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -73,36 +73,36 @@ const WebsiteNavbar = () => {
               <div className="absolute bg-white transition-all top-[11%] w-full z-50 p-3 left-0">
                 <ul className=" leading-10 gap-5 text-lg">
                   <li className="relative  cursor-pointer group">
-                    <Link to="/">
-                      <span className="text-black group-hover:text-blue-600 transition-colors duration-300">
+                    < NavLink className={({ isActive }) => isActive ? "text-blue-600" : "text-black"} to="/">
+                      <span className="group-hover:text-blue-600 transition-colors duration-300">
                         Home
                       </span>
                       <span className="absolute left-0 bottom-0 w-1/2  h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                    </Link>
+                    </NavLink>
                   </li>
                   <li className="relative cursor-pointer group">
-                    <Link to="/about-us">
-                      <span className="text-black group-hover:text-blue-600 transition-colors duration-300">
+                    < NavLink className={({ isActive }) => isActive ? "text-blue-600" : "text-black"} to="/about-us">
+                      <span className="group-hover:text-blue-600 transition-colors duration-300">
                         About Us
                       </span>
                       <span className="absolute left-0 bottom-0 w-1/2  h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                    </Link>
+                    </NavLink>
                   </li>
                   <li className="relative cursor-pointer group">
-                    <Link to="/services">
-                      <span className="text-black group-hover:text-blue-600 transition-colors duration-300">
+                    < NavLink className={({ isActive }) => isActive ? "text-blue-600" : "text-black"} to="/services">
+                      <span className="group-hover:text-blue-600 transition-colors duration-300">
                         Services
                       </span>
                       <span className="absolute left-0 bottom-0 w-1/2  h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                    </Link>
+                    </NavLink>
                   </li>
                   <li className="relative cursor-pointer group">
-                    <Link to="/contact-us">
-                      <span className="text-black group-hover:text-blue-600 transition-colors duration-300">
+                    < NavLink className={({ isActive }) => isActive ? "text-blue-600" : "text-black"} to="/contact-us">
+                      <span className="group-hover:text-blue-600 transition-colors duration-300">
                         Contact
                       </span>
                       <span className="absolute left-0 bottom-0 w-1/2  h-[2px] bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                    </Link>
+                    </NavLink>
                   </li>
                 </ul>
               </div>
